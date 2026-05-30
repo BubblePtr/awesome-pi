@@ -1,3 +1,5 @@
+[English](./README.en.md) | 中文
+
 # Awesome Pi [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > 精选 [Pi Coding Agent](https://pi.dev) Package 列表。Pi 是由 earendil-works 开发的终端 AI 编程助手，拥有丰富的 Package 生态。
