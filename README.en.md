@@ -46,6 +46,7 @@ pi list
   - [Theme Packs](#theme-packs)
   - [Featured Themes](#featured-themes)
   - [Theme Tools](#theme-tools)
+- [Alternative Distributions](#alternative-distributions)
 
 ---
 
@@ -238,7 +239,6 @@ Other utility packages.
 
 Curated package collections and suites — install multiple tools at once.
 
-- 🔥 [oh-my-pi](https://github.com/can1357/oh-my-pi) - The LunarVim of Pi — a batteries-included distribution with hash-anchored edits, LSP, Python runtime, browser automation, subagents, and more. `pi install git:github.com/can1357/oh-my-pi`
 - 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - Monorepo of 11 production-grade extensions (statusline, btw, lsp, firecrawl, goal, subagents, sync, etc.). `pi install npm:@narumitw/pi-extensions`
 - 🔥 [juicesharp/rpiv-mono](https://github.com/juicesharp/rpiv-mono) - Pipeline system of 12 npm packages (research→design→plan→implement→validate). `pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher's 15+ extension collection (review, btw, goal, whimsical, notify, todos, etc.). `pi install git:github.com/mitsuhiko/agent-stuff`
@@ -336,6 +336,13 @@ Editor integration packages for embedding Pi into IDEs.
 - [pi-vscode-extension](https://github.com/Zetaphor/pi-vscode-extension) - Embeds Pi as a VS Code extension. `pi install git:github.com/Zetaphor/pi-vscode-extension`
 
 > Zed editor natively supports Pi via the ACP Registry: configure `"agent_servers": { "pi-acp": { "type": "registry" } }`.
+
+
+## Alternative Distributions
+
+Fork/alternative distributions of Pi with enhanced out-of-the-box experiences.
+
+- [oh-my-pi](https://github.com/can1357/oh-my-pi) - A feature-rich fork with 40+ providers, 32 built-in tools, LSP/DAP, Python runtime, and browser automation. Standalone CLI — not a Pi package. `curl -fsSL https://omp.sh/install | sh`
 
 
 ## Contributing

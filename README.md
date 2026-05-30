@@ -44,6 +44,7 @@ pi install npm:context-mode
   - [Theme Packs](#theme-packs)
   - [Featured Themes](#featured-themes)
   - [Theme Tools](#theme-tools)
+- [Alternative Distributions](#alternative-distributions)
 
 ---
 
@@ -236,7 +237,6 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 
 精选 Package 集合与套件，一次安装多个工具。
 
-- 🔥 [oh-my-pi](https://github.com/can1357/oh-my-pi) - Pi 的 LunarVim——开箱即用的全功能发行版，集成 hash-anchored 编辑、LSP、Python 运行时、浏览器自动化、子代理等。`pi install git:github.com/can1357/oh-my-pi`
 - 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - 11 个生产级扩展的 monorepo（statusline, btw, lsp, firecrawl, goal, subagents, sync 等）。`pi install npm:@narumitw/pi-extensions`
 - 🔥 [juicesharp/rpiv-mono](https://github.com/juicesharp/rpiv-mono) - 12 个 npm 包的管道系统（研究→设计→计划→实施→验证）。`pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher 的 15+ 扩展集合（review, btw, goal, whimsical, notify, todos 等）。`pi install git:github.com/mitsuhiko/agent-stuff`
@@ -334,6 +334,13 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [pi-vscode-extension](https://github.com/Zetaphor/pi-vscode-extension) - 将 Pi 嵌入为 VS Code 扩展。`pi install git:github.com/Zetaphor/pi-vscode-extension`
 
 > Zed 编辑器通过 ACP Registry 原生支持 Pi：配置 `"agent_servers": { "pi-acp": { "type": "registry" } }` 即可使用。
+
+
+## Alternative Distributions
+
+Pi 的 fork/替代发行版，提供开箱即用的增强体验。
+
+- [oh-my-pi](https://github.com/can1357/oh-my-pi) - Pi 的增强 fork，集成 40+ provider、32 内置工具、LSP/DAP、Python 运行时、浏览器自动化。独立 CLI，非 Pi Package。`curl -fsSL https://omp.sh/install | sh`
 
 
 ## Contributing
