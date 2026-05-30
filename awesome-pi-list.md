@@ -1,0 +1,861 @@
+# Awesome Pi [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+
+> 精选 [Pi Coding Agent](https://pi.dev) 扩展、主题、工具和资源列表。Pi 是由 earendil-works 开发的终端 AI 编程助手，拥有丰富的扩展生态。
+
+[![Pi](https://img.shields.io/badge/Pi-v0.44+-blue.svg)](https://pi.dev)
+[![Packages](https://img.shields.io/badge/Packages-3300+-green.svg)](https://pi.dev/packages)
+[![License](https://img.shields.io/badge/License-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+[Pi Coding Agent](https://pi.dev) 是一个终端 AI 编程助手，支持通过扩展（Extensions）和主题（Themes）进行深度定制。本列表精选社区最佳资源，帮助开发者打造高效的 AI 编程环境。
+
+```
+# 安装 Pi (macOS/Linux)
+curl -fsSL https://pi.dev/install.sh | sh
+
+# 安装扩展
+pi install npm:context-mode
+
+# 安装主题
+pi install npm:pi-tokyo-night
+```
+
+---
+
+## Contents
+
+- [Extensions](#extensions)
+  - [Web Access & Search](#web-access--search)
+  - [MCP Adapter](#mcp-adapter)
+  - [Subagents](#subagents)
+  - [UI Enhancement](#ui-enhancement)
+  - [Security & Permission](#security--permission)
+  - [Dev Tools & Code Intelligence](#dev-tools--code-intelligence)
+  - [Persistent Memory](#persistent-memory)
+  - [Context Management](#context-management)
+  - [Code Review](#code-review)
+  - [Task Management](#task-management)
+  - [Browser Automation](#browser-automation)
+  - [Communication & Collaboration](#communication--collaboration)
+  - [Utilities](#utilities)
+  - [Extension Collections](#extension-collections)
+- [Themes](#themes)
+  - [Dark Themes](#dark-themes)
+  - [Light Themes](#light-themes)
+  - [Theme Packs](#theme-packs)
+  - [Featured Themes](#featured-themes)
+  - [Theme Tools](#theme-tools)
+
+---
+
+## Extensions
+
+### Web Access & Search
+
+Web 搜索和内容获取扩展，让 Pi 能够访问互联网信息。
+
+- 🔥 [pi-web-access](https://github.com/nicobailon/pi-web-access) - Web 搜索、URL 内容获取、GitHub 克隆、PDF 提取、YouTube 视频理解。零配置，智能降级链。`pi install npm:pi-web-access`
+- 🔥 [@juicesharp/rpiv-web-tools](https://github.com/juicesharp/rpiv-mono) - 可插拔 Web 搜索（Brave, Tavily, Serper, Exa, Jina, Firecrawl, SearXNG, Ollama）。`pi install npm:@juicesharp/rpiv-web-tools`
+- 🔥 [@ollama/pi-web-search](https://pi.dev/packages/@ollama/pi-web-search) - 使用 Ollama Web 搜索和获取 API。`pi install npm:@ollama/pi-web-search`
+- [pi-smart-fetch](https://github.com/Thinkscape/agent-smart-fetch) - 桌面浏览器 TLS 模拟，批量获取，多格式输出（markdown/html/text/json）。`pi install npm:pi-smart-fetch`
+- [@narumitw/pi-firecrawl](https://github.com/narumiruna/pi-extensions) - Firecrawl 驱动的网页抓取、爬取、URL 发现和 Web 搜索。`pi install npm:@narumitw/pi-firecrawl`
+
+<details>
+<summary>更多 Web 扩展</summary>
+
+- [@code-yeongyu/pi-webfetch](https://github.com/code-yeongyu/pi-webfetch) - URL 内容获取，支持 markdown/plain text/raw HTML。`pi install npm:@code-yeongyu/pi-webfetch`
+- [@code-yeongyu/pi-websearch](https://github.com/code-yeongyu/pi-websearch) - Provider-backed Web 搜索，带配置门控和 TUI 状态。`pi install npm:@code-yeongyu/pi-websearch`
+
+</details>
+
+---
+
+### MCP Adapter
+
+MCP (Model Context Protocol) 适配扩展，连接外部工具生态。
+
+- 🔥 [pi-mcp-adapter](https://github.com/nicobailon/pi-mcp-adapter) - MCP 适配器扩展，用约 200 token 代理工具替代数百个 MCP 工具定义。支持惰性启动、元数据缓存、直连工具。`pi install npm:pi-mcp-adapter`
+
+> MCP 生态对接：[Bright Data Web MCP](https://github.com/earendil-works/pi/discussions/76), [Scrapeless MCP](https://github.com/earendil-works/pi/discussions/74)，以及任何兼容 MCP 的服务器。
+
+---
+
+### Subagents
+
+子代理扩展，支持任务委托、并行执行和多代理编排。
+
+- 🔥 [pi-subagents](https://github.com/nicobailon/pi-subagents) - 官方子代理扩展，支持链式、并行执行和 TUI 澄清。`pi install npm:pi-subagents`
+- 🔥 [@tintinweb/pi-subagents](https://github.com/tintinweb/pi-subagents) - Claude Code 风格子代理，并行后台代理、实时 widget、Git worktree 隔离。`pi install npm:@tintinweb/pi-subagents`
+- 🔥 [@gotgenes/pi-subagents](https://pi.dev/packages/@gotgenes/pi-subagents) - tintinweb 的友好分支。`pi install npm:@gotgenes/pi-subagents`
+- [@narumitw/pi-subagents](https://github.com/narumiruna/pi-extensions) - 单/并行/链式执行模式的子代理。`pi install npm:@narumitw/pi-subagents`
+- [pi-interactive-subagents](https://github.com/HazAT/pi-interactive-subagents) - 异步交互式子代理，完全非阻塞，支持多路复用器。`pi install git:github.com/HazAT/pi-interactive-subagents`
+- [pi-agent-bus](https://github.com/kylebrodeur/pi-agent-bus) - 基于 MessageBus pub/sub 的 Agent 编排运行时。`pi install npm:pi-agent-bus`
+- [roach-pi](https://github.com/tmdgusya/roach-pi) - 严格工程纪律多代理编排套件（clarify→goal→verifier→subagent→review→LSP→MCP）。`pi install git:github.com/tmdgusya/roach-pi`
+
+---
+
+### UI Enhancement
+
+终端 UI 增强扩展，提升交互体验。
+
+- 🔥 [@narumitw/pi-statusline](https://github.com/narumiruna/pi-extensions) - 丰富的状态栏，显示模型、工具、git 分支、上下文使用、token 总计、费用和时间。`pi install npm:@narumitw/pi-statusline`
+- 🔥 [pi-powerline-footer](https://pi.dev/packages/pi-powerline-footer) - Powerline 风格的状态栏扩展。`pi install npm:pi-powerline-footer`
+- 🔥 [pi-btw](https://pi.dev/packages/pi-btw) - `/btw` 侧边问题命令，不污染主对话。多版本可选（nicopreme 原版、juicesharp 版、Naru 版）。`pi install npm:pi-btw`
+- [pi-caveman](https://github.com/v2nic/pi-caveman) - 让 Pi 像 caveman 一样说话，减少约 75% 输出 token。`pi install git:github.com/v2nic/pi-caveman`
+- [whimsical](https://github.com/mitsuhiko/agent-stuff) - 将 "thinking..." 替换为有趣随机短语（如 "Hiking through the headers..."）。`pi install git:github.com/mitsuhiko/agent-stuff`
+- [notify](https://github.com/mitsuhiko/agent-stuff) - 代理完成时桌面通知（OSC 777）。`pi install git:github.com/mitsuhiko/agent-stuff`
+- [@narumitw/pi-caffeinate](https://github.com/narumiruna/pi-extensions) - 跨平台防止睡眠，长提示处理时保持唤醒。`pi install npm:@narumitw/pi-caffeinate`
+
+<details>
+<summary>更多 UI 扩展</summary>
+
+- [pi-ext](https://github.com/tomsej/pi-ext) - 综合 UI 套件：leader-key 浮动面板、powerline footer、工具药丸标签、telescope 模糊查找。`pi install git:github.com/tomsej/pi-ext`
+- [@juicesharp/rpiv-btw](https://github.com/juicesharp/rpiv-mono) - juicesharp 版 btw 侧对话。`pi install npm:@juicesharp/rpiv-btw`
+
+</details>
+
+---
+
+### Security & Permission
+
+安全与权限控制扩展。
+
+- 🔥 [@gotgenes/pi-permission-system](https://github.com/MasuRii/pi-permission-system) - 三层权限状态（allow/deny/ask），生命周期钩子集成、子代理权限转发、审计日志。`pi install npm:@gotgenes/pi-permission-system`
+- [pi-permission-system](https://pi.dev/packages/pi-permission-system) - 权限强制执行扩展。`pi install npm:pi-permission-system`
+- [@vigolium/piolium](https://pi.dev/packages/@vigolium/piolium) - 多阶段安全审计，专业子代理、隔离上下文窗口、并发上限。`pi install npm:@vigolium/piolium`
+- [pi-hooks/permission](https://github.com/prateekmedia/pi-hooks) - 四层权限控制（Minimal/Low/Medium/High）。`pi install npm:pi-hooks`
+- [filter-output](https://github.com/michalvavra/agents) - 自动捕获敏感值并在发送给 AI 前编辑。`pi install git:github.com/michalvavra/agents`
+- [security](https://github.com/michalvavra/agents) - 阻止危险命令（如 sudo），需要显式用户批准。`pi install git:github.com/michalvavra/agents`
+
+---
+
+### Dev Tools & Code Intelligence
+
+开发工具与代码智能扩展。
+
+- 🔥 [pi-lens](https://github.com/apmantza/pi-lens) - 实时代码反馈——LSP、linter、formatter、类型检查、结构分析。`pi install npm:pi-lens`
+- 🔥 [pi-simplify](https://pi.dev/packages/pi-simplify) - 审查最近变更代码的清晰性、一致性和可维护性。`pi install npm:pi-simplify`
+- 🔥 [@nitra/cursor](https://pi.dev/packages/@nitra/cursor) - CLI 下载 Cursor 规则到本地仓库。`pi install npm:@nitra/cursor`
+- 🔥 [@narumitw/pi-lsp](https://github.com/narumiruna/pi-extensions) - 可配置 LSP 诊断和源码修复，按文件扩展名路由。`pi install npm:@narumitw/pi-lsp`
+- [pi-chrome](https://pi.dev/packages/pi-chrome) - 让 Pi 使用你已登录的 Chrome 配置文件。`pi install npm:pi-chrome`
+- [@narumitw/pi-chrome-devtools](https://github.com/narumiruna/pi-extensions) - 原生 Chrome DevTools Protocol 工具——列出标签页、导航页面、执行 JS、截图。`pi install npm:@narumitw/pi-chrome-devtools`
+- [@ff-labs/pi-fff](https://pi.dev/packages/@ff-labs/pi-fff) - FFF 驱动的模糊文件和内容搜索。`pi install npm:@ff-labs/pi-fff`
+- [@narumitw/pi-retry](https://github.com/narumiruna/pi-extensions) - Provider 响应失败时的重试支持。`pi install npm:@narumitw/pi-retry`
+- [@code-yeongyu/pi-lsp-client](https://github.com/code-yeongyu/pi-lsp-client) - LSP 集成：重命名、转到定义、查找引用、诊断。`pi install git:github.com/code-yeongyu/pi-lsp-client`
+- [@code-yeongyu/pi-ast-grep](https://github.com/code-yeongyu/pi-ast-grep) - AST 感知代码搜索/替换，支持 25 种语言。`pi install git:github.com/code-yeongyu/pi-ast-grep`
+
+---
+
+### Persistent Memory
+
+持久化记忆扩展，跨会话保留信息。
+
+- 🔥 [pi-hermes-memory](https://github.com/chandra447/pi-hermes-memory) - 持久记忆 + 会话搜索 + 密钥扫描。SQLite FTS5 搜索、自动整合、368 个测试。`pi install npm:pi-hermes-memory`
+- [gentle-engram](https://pi.dev/packages/gentle-engram) - 跨会话、压缩和 MCP 代理共享的本地或云端大脑。`pi install npm:gentle-engram`
+- [@samfp/pi-memory](https://pi.dev/packages/@samfp/pi-memory) - 从会话中学习更正、偏好和模式，注入未来对话。`pi install npm:@samfp/pi-memory`
+- [pi-memory-honcho](https://github.com/acsezen/pi-memory-honcho) - Honcho 支持的持久记忆，跨工作空间记忆共享。`pi install npm:pi-memory-honcho`
+
+---
+
+### Context Management
+
+上下文管理扩展，优化 token 使用。
+
+- 🔥 [context-mode](https://pi.dev/packages/context-mode) - MCP 插件，节省 98% 上下文窗口，支持沙箱代码执行、FTS5 知识库。`pi install npm:context-mode`
+- [pi-context-prune](https://github.com/championswimmer/pi-context-prune) - 总结已完成的工具调用批次，从 LLM 上下文中修剪原始输出。5 种修剪模式。`pi install npm:pi-context-prune`
+- [pi-cache-graph](https://github.com/championswimmer/pi-cache-graph) - Provider 前缀缓存命中/未命中的实时图形显示。`pi install npm:pi-cache-graph`
+- [pi-lean-ctx](https://pi.dev/packages/pi-lean-ctx) - 通过 lean-ctx CLI 路由命令以节省 token。`pi install npm:pi-lean-ctx`
+
+---
+
+### Code Review
+
+代码审查扩展，提升代码质量。
+
+- 🔥 [@plannotator/pi-extension](https://pi.dev/packages/@plannotator/pi-extension) - 交互式计划审查和注释，支持代码/PR 标注。`pi install npm:@plannotator/pi-extension`
+- 🔥 [pi-simplify](https://pi.dev/packages/pi-simplify) - 审查代码的清晰性、一致性和可维护性。`pi install npm:pi-simplify`
+- [review](https://github.com/mitsuhiko/agent-stuff) - 代码审查命令（工作树、PR 风格 diff、提交、自定义指令）。`pi install git:github.com/mitsuhiko/agent-stuff`
+- [@juicesharp/rpiv-advisor](https://github.com/juicesharp/rpiv-mono) - 模型可在行动前向更强的审查模型请求第二意见。`pi install npm:@juicesharp/rpiv-advisor`
+- [pi-ext/review](https://github.com/tomsej/pi-ext) - 多模式代码审查（GitHub PR、分支 diff、未提交更改）。`pi install git:github.com/tomsej/pi-ext`
+
+---
+
+### Task Management
+
+任务管理与目标追踪扩展。
+
+- 🔥 [@juicesharp/rpiv-todo](https://github.com/juicesharp/rpiv-mono) - 模型的 todo 列表，实时覆盖层，4 状态机、依赖跟踪。`pi install npm:@juicesharp/rpiv-todo`
+- 🔥 [gentle-pi](https://pi.dev/packages/gentle-pi) - 将 Pi 转变为高级架构开发工具，SDD/OpenSpec、严格 TDD。`pi install npm:gentle-pi`
+- [@narumitw/pi-goal](https://github.com/narumiruna/pi-extensions) - `/goal` 模式，保持代理工作直到任务完成。`pi install npm:@narumitw/pi-goal`
+- [@juicesharp/rpiv-workflow](https://pi.dev/packages/@juicesharp/rpiv-workflow) - 将技能链入类型化的多阶段管道，`/wf` 命令。`pi install npm:@juicesharp/rpiv-workflow`
+- [goal](https://github.com/mitsuhiko/agent-stuff) - 持久目标追踪，带状态控制和模型工具。`pi install git:github.com/mitsuhiko/agent-stuff`
+- [@narumitw/pi-sync](https://github.com/narumiruna/pi-extensions) - 通过 Cloudflare R2 或 S3 同步 Pi 设置、技能、主题和扩展。`pi install npm:@narumitw/pi-sync`
+- [pi-agent-flow](https://pi.dev/packages/pi-agent-flow) - Agent 工作流编排工具。`pi install npm:pi-agent-flow`
+- [@gonrocca/zero-pi](https://pi.dev/packages/@gonrocca/zero-pi) - 规范驱动开发工作流（探索→计划→构建→验证）。`pi install npm:@gonrocca/zero-pi`
+
+---
+
+### Browser Automation
+
+浏览器自动化扩展。
+
+- 🔥 [pi-chrome](https://pi.dev/packages/pi-chrome) - 使用已登录的 Chrome 配置文件。`pi install npm:pi-chrome`
+- 🔥 [pi-agent-browser-native](https://github.com/fitchmultz/pi-agent-browser-native) - 将 agent-browser 作为原生工具暴露，紧凑页面快照、交互式引用、截图。`pi install npm:pi-agent-browser-native`
+- [@narumitw/pi-chrome-devtools](https://github.com/narumiruna/pi-extensions) - 原生 Chrome DevTools Protocol 工具。`pi install npm:@narumitw/pi-chrome-devtools`
+
+---
+
+### Communication & Collaboration
+
+通信与协作扩展。
+
+- 🔥 [pi-crew](https://pi.dev/packages/pi-crew) - 协调的 AI 团队、工作流、worktree 和异步任务编排。`pi install npm:pi-crew`
+- [pi-intercom](https://pi.dev/packages/pi-intercom) - 子代理向父会话请求决策。`pi install npm:pi-intercom`
+- [@cryptolibertus/pi-peer](https://pi.dev/packages/@cryptolibertus/pi-peer) - 本地 Pi-to-Pi 对等消息、斜杠命令、工具和运行时传输。`pi install npm:@cryptolibertus/pi-peer`
+- [@llblab/pi-telegram](https://pi.dev/packages/@llblab/pi-telegram) - Telegram 运行时适配器。`pi install npm:@llblab/pi-telegram`
+- [agent-comms](https://pi.dev/packages/agent-comms) - LLM 代理跨 harness 通信网格——房间、DM、在线状态。`pi install npm:agent-comms`
+
+---
+
+### Utilities
+
+其他实用扩展。
+
+- 🔥 [@juicesharp/rpiv-ask-user-question](https://github.com/juicesharp/rpiv-mono) - 交互式 ask_user 工具，可搜索分割窗格选择 UI、多选、自由输入。`pi install npm:@juicesharp/rpiv-ask-user-question`
+- 🔥 [pi-markdown-preview](https://pi.dev/packages/pi-markdown-preview) - 渲染 markdown + LaTeX 预览，支持终端、浏览器和 PDF 输出。`pi install npm:pi-markdown-preview`
+- 🔥 [pi-studio](https://pi.dev/packages/pi-studio) - 双窗格浏览器工作空间，支持提示/响应编辑、注释、实时预览。`pi install npm:pi-studio`
+- [pi-ask-user](https://pi.dev/packages/pi-ask-user) - 交互式 ask_user 工具。`pi install npm:pi-ask-user`
+- [pi-rules](https://github.com/code-yeongyu/pi-rules) - 自动发现 .claude/rules, .cursor/rules, AGENTS.md 等规则文件。`pi install npm:@code-yeongyu/pi-rules`
+- [pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse 可观测性，追踪 token、费用、模型和工具调用。`pi install npm:@ravan08/pi-langfuse`
+- [pi-venice](https://github.com/tunnckoCore/pi-venice) - Venice.AI 扩展，支持文本/图像/视频模型。`pi install npm:pi-venice`
+- [@juicesharp/rpiv-i18n](https://pi.dev/packages/@juicesharp/rpiv-i18n) - rpiv-* 扩展的本地化基础。`pi install npm:@juicesharp/rpiv-i18n`
+- [@a5c-ai/babysitter-pi](https://pi.dev/packages/@a5c-ai/babysitter-pi) - AI 监护扩展。`pi install npm:@a5c-ai/babysitter-pi`
+
+---
+
+### Extension Collections
+
+精选扩展集合与套件，一次安装多个工具。
+
+- 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - 11 个生产级扩展的 monorepo（statusline, btw, lsp, firecrawl, goal, subagents, sync 等）。`pi install npm:@narumitw/pi-extensions`
+- 🔥 [juicesharp/rpiv-mono](https://github.com/juicesharp/rpiv-mono) - 12 个 npm 包的管道系统（研究→设计→计划→实施→验证）。`pi install npm:@juicesharp/rpiv-pi`
+- [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher 的 15+ 扩展集合（review, btw, goal, whimsical, notify, todos 等）。`pi install git:github.com/mitsuhiko/agent-stuff`
+- [tomsej/pi-ext](https://github.com/tomsej/pi-ext) - 综合 UI 和工作流工具集合（leader-key, telescope, powerline footer, semantic git 等）。`pi install git:github.com/tomsej/pi-ext`
+- [code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) - 从 OMO 移植的 15+ 扩展（lsp-client, ast-grep, websearch, sandbox 等）。`pi install git:github.com/code-yeongyu/senpi`
+- [jayshah5696/pi-agent-extensions](https://github.com/jayshah5696/pi-agent-extensions) - 15+ 扩展集合（sessions, ask_user, handoff, powerline-footer 等）。`pi install git:github.com/jayshah5696/pi-agent-extensions`
+- [pi-toolbox](https://github.com/indydevdan/pi-toolbox) - 17 个扩展 + 11 个主题 + 技能和智能体编排模板的综合工具包。`pi install npm:pi-toolbox`
+- [pi-workstation](https://github.com/marv1nnnnn/pi-workstation) - 9 个手工制作主题（前卫剧场、赛博朋克、葛饰北斋风格等）+ 扩展。`pi install npm:pi-workstation`
+
+---
+
+## Themes
+
+### Dark Themes
+
+精选暗色主题，适合长时间编码。
+
+- 🔥 [pi-tokyo-night](https://github.com/MitoroMisaka/pi-tokyo-night) - 深蓝色海军背景，东京蓝强调色，含自定义 ASCII 艺术头扩展。`pi install npm:pi-tokyo-night`
+- 🔥 [@sherif-fanous/pi-catppuccin](https://github.com/sherif-fanous/pi-catppuccin) - Catppuccin Mocha 暗色变体，柔和温暖的 pastel 色调。`pi install npm:@sherif-fanous/pi-catppuccin`
+- 🔥 [pi-themes-rose-pine](https://github.com/samfoy/pi-rose-pine) - 原始 Rosé Pine 暗色变体，柔和的 pastel 玫瑰色调。`pi install npm:pi-themes-rose-pine`
+- 🔥 [pi-theme-synthwave-84](https://github.com/robzolkos/pi-theme-synthwave-84) - 霓虹 Synthwave '84 主题，80 年代复古未来主义美学。`pi install npm:pi-theme-synthwave-84`
+- [pi-code-theme](https://github.com/ElieMessieCode/pi-code-theme) - 温暖深色调主题，烧橙色和金色强调色。`pi install npm:@eliemessiecode/pi-code-theme`
+- [pi-remembra-theme](https://pi.dev/packages/@m64/pi-remembra-theme) - 精致紫蓝渐变，精心平衡的文本颜色。`pi install npm:@m64/pi-remembra-theme`
+- [@codella/pi-theme-cyberpunk](https://github.com/codella/pi-packages) - 霓虹赛博朋克主题，未来都市美学。`pi install npm:@codella/pi-theme-cyberpunk`
+- [@javiportillo/pi-hackerman](https://github.com/javierportillo/pi-hackerman) - 霓虹黑客风格，灵感来自 Hackerman 主题。`pi install npm:@javiportillo/pi-hackerman`
+- [pi-theme-flexoki](https://github.com/markacianfrani/pi-theme-flexoki) - Flexoki 暗色主题，受模拟墨水和温暖纸张启发。`pi install npm:pi-theme-flexoki`
+- [pi-digital-rust-theme](https://pi.dev/packages/pi-digital-rust-theme) - 受损坏硬件启发的温暖技术反乌托邦配色。`pi install npm:pi-digital-rust-theme`
+- [@gravewhisper/pi-theme-monokai-classic](https://pi.dev/packages/@gravewhisper/pi-theme-monokai-classic) - Monokai Classic，更柔和的边框和平衡的代码颜色。`pi install npm:@gravewhisper/pi-theme-monokai-classic`
+- [pi-cursor-theme](https://github.com/dkmnx/pi-cursor-theme) - 受 Cursor IDE 启发的深色主题。`pi install npm:pi-cursor-theme`
+- [@baretread/pi-forge](https://pi.dev/packages/@baretread/pi-forge) - Matte graphite 哑光石墨和熔融铜 Forge 主题。`pi install npm:@baretread/pi-forge`
+- [@codella/pi-theme-candy](https://github.com/codella/pi-packages) - 明亮的霓虹糖果主题。`pi install npm:@codella/pi-theme-candy`
+
+---
+
+### Light Themes
+
+亮色主题，适合明亮环境。
+
+- 🔥 [@sherif-fanous/pi-catppuccin](https://github.com/sherif-fanous/pi-catppuccin) - Catppuccin Latte 亮色，奶油色背景。`pi install npm:@sherif-fanous/pi-catppuccin`
+- [pi-themes-rose-pine](https://github.com/samfoy/pi-rose-pine) - Rosé Pine Dawn 亮色变体，纸张般的平静优雅。`pi install npm:pi-themes-rose-pine`
+- [pi-theme-flexoki](https://github.com/markacianfrani/pi-theme-flexoki) - Flexoki 亮色主题，墨水在纸上的感觉。`pi install npm:pi-theme-flexoki`
+
+---
+
+### Theme Packs
+
+主题合集包，一次安装多种配色。
+
+- 🔥 [@spences10/pi-themes](https://github.com/spences10/my-pi) - 11 个主题：Catppuccin Mocha、Dracula、Gruvbox Dark、Night Owl、Neon Noir、Nord、Rosé Pine、Tokyo Night 等。`pi install npm:@spences10/pi-themes`
+- 🔥 [@victor-software-house/pi-curated-themes](https://github.com/victor-software-house/pi-curated-themes) - 65 个主题大合集，从 iTerm2 配色适配：Adventure、Aura、Catppuccin、Dracula+、Everforest、Gruvbox、Jellybeans、Kanagawa、Nord、Tomorrow Night 等。`pi install npm:@victor-software-house/pi-curated-themes`
+- [@ifi/oh-pi-themes](https://pi.dev/packages/@ifi/oh-pi-themes) - 6 个主题：Catppuccin Mocha、Cyberpunk、Gruvbox Dark、Nord、Tokyo Night。`pi install npm:@ifi/oh-pi-themes`
+- [hasit/pi-community-themes](https://github.com/hasit/pi-community-themes) - 社区精选：atom-one、catppuccin（4 变体）、dracula、gruvbox（6 变体）、nord、solarized。`pi install git:github.com/hasit/pi-community-themes`
+- [@smoose/pi-themes](https://github.com/smoose/pi-themes) - 支持亮暗配对切换：Everforest、Tundra、Rosé Pine、OneDark、Gruvbox 等。`pi install npm:@smoose/pi-themes`
+- [my-pi-themes](https://pi.dev/packages/my-pi-themes) - 14 个主题：monokai-pro、onedark-pro、tokyo-dark、e-ink/e-ink-dark、gruvbox-light 等。`pi install npm:my-pi-themes`
+- [@matyah00/openpi](https://github.com/heyhuynhgiabuu/openpi) - 11 个捆绑主题 + 多智能体编排。`pi install npm:@matyah00/openpi`
+- [pi-toolbox](https://github.com/indydevdan/pi-toolbox) - 17 个扩展 + 11 个主题的综合工具包。`pi install npm:pi-toolbox`
+
+---
+
+### Featured Themes
+
+特色主题，独特的设计理念和用途。
+
+- 🔥 [pi-kanagawa](https://github.com/earendil-works/pi-kanagawa) - 受葛饰北斋《神奈川冲浪里》启发，深蓝色和温暖金色，含波浪动画和 git 分支小部件。`pi install npm:pi-kanagawa`
+- [pi-terminal-theme](https://github.com/mavam/pi-terminal-theme) - 使用 ANSI 0-15 颜色的终端主题，让终端提供实际颜色。`pi install npm:pi-terminal-theme`
+- [pi-ansi-themes](https://github.com/leblancfg/pi-ansi-themes) - 标准 16 色 ANSI 主题，避免与终端主题冲突。`pi install git:github.com/leblancfg/pi-ansi-themes`
+- [my-pi-themes/e-ink](https://pi.dev/packages/my-pi-themes) - 电子墨水友好主题，高对比度低色彩。`pi install npm:my-pi-themes`
+- [pi-peacock](https://pi.dev/packages/pi-peacock) - Peacock 风格的工作区着色，为不同工作区提供独特颜色标识。`pi install npm:pi-peacock`
+- [@codella/pi-theme-christmas](https://pi.dev/packages/@codella/pi-theme-christmas) - 节日圣诞主题。`pi install npm:@codella/pi-theme-christmas`
+- [@codella/pi-theme-grayscale](https://pi.dev/packages/@codella/pi-theme-grayscale) - 最小化灰度主题。`pi install npm:@codella/pi-theme-grayscale`
+- [@taterdoge/pi-ayu](https://pi.dev/packages/@taterdoge/pi-ayu) - 受 Ayu 启发的暗色和亮色主题。`pi install npm:@taterdoge/pi-ayu`
+- [pi-workstation](https://github.com/marv1nnnnn/pi-workstation) - 9 个艺术主题：前卫剧场、Serial Experiments Lain、90年代网吧、葛饰北斋风格等。`pi install npm:pi-workstation`
+
+---
+
+### Theme Tools
+
+主题工具和辅助扩展。
+
+- 🔥 [@sherif-fanous/pi-theme-sync](https://github.com/sherif-fanous/pi-theme-sync) - 自动将 Pi 主题与终端或操作系统外观同步，支持 DEC mode 2031 实时通知。`pi install npm:@sherif-fanous/pi-theme-sync`
+- [pi-theme-switcher](https://github.com/milanglacier/pi-theme-switcher) - 根据环境变量、THEME_MODE 或一天中的时间自动切换亮暗主题。`pi install npm:pi-theme-switcher`
+- [pi-theme-flip](https://github.com/adstastic/pi-theme-flip) - 添加命令来切换亮暗主题。`pi install npm:pi-theme-flip`
+- [pi-system-theme](https://pi.dev/packages/pi-system-theme) - 将 Pi 主题与 macOS 亮暗外观同步。`pi install npm:pi-system-theme`
+- [pi-macos-theme-sync](https://pi.dev/packages/pi-macos-theme-sync) - macOS 主题同步，无需轮询。`pi install npm:pi-macos-theme-sync`
+- [@ogulcancelik/pi-ghostty-theme-sync](https://github.com/ogulcancelik/pi-extensions) - 将 Pi 主题与 Ghostty 终端颜色同步。`pi install npm:@ogulcancelik/pi-ghostty-theme-sync`
+
+---
+
+### Editor Integration
+
+编辑器集成扩展，将 Pi 嵌入到 IDE 中。
+
+- [pi-acp](https://github.com/svkozak/pi-acp) - Pi 的 ACP（Agent Client Protocol）适配器，桥接到 Zed 等编辑器。`npm install -g pi-acp`
+- [VS Code Pi Chat Provider](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-pi-model-chat-provider) - VS Code 语言模型聊天提供程序集成。`pi install npm:@tintinweb/vscode-pi-model-chat-provider`
+- [pi-vscode-extension](https://github.com/Zetaphor/pi-vscode-extension) - 将 Pi 嵌入为 VS Code 扩展。`pi install git:github.com/Zetaphor/pi-vscode-extension`
+
+> Zed 编辑器通过 ACP Registry 原生支持 Pi：配置 `"agent_servers": { "pi-acp": { "type": "registry" } }` 即可使用。
+
+  - [Skills](#skills)
+    - [Development Workflow](#development-workflow)
+    - [Code Review & Quality](#code-review--quality)
+    - [Git Operations](#git-operations)
+    - [Web Development & Research](#web-development--research)
+    - [Learning & Media](#learning--media)
+    - [AI Assistant & Automation](#ai-assistant--automation)
+    - [Utilities](#utilities-1)
+    - [Content Creation & Documentation](#content-creation--documentation)
+  - [Prompt Templates](#prompt-templates)
+  - [Packages](#packages)
+  - [Community Resources](#community-resources)
+  - [Contributing](#contributing)
+
+---
+
+## Quick Start
+
+### Install Pi
+
+```bash
+# macOS/Linux
+curl -fsSL https://pi.dev/install.sh | sh
+
+# 或使用 npm
+npm install -g @earendil-works/pi
+```
+
+### Install Extensions & Themes
+
+```bash
+# 安装单个扩展
+pi install npm:pi-web-access
+pi install npm:pi-subagents
+pi install npm:pi-mcp-adapter
+
+# 安装主题
+pi install npm:pi-tokyo-night
+
+# 安装扩展集
+pi install npm:@narumitw/pi-extensions
+
+# 从 GitHub 安装
+pi install git:github.com/mitsuhiko/agent-stuff
+```
+
+### Configure
+
+```bash
+# 查看已安装的扩展和主题
+pi extensions
+
+# 交互式设置
+/settings
+
+# 编辑配置文件
+~/.pi/agent/settings.json
+```
+
+### settings.json Example
+
+```json
+{
+  "theme": "tokyo-night",
+  "extensions": [
+    "pi-web-access",
+    "pi-subagents",
+    "pi-mcp-adapter",
+    "pi-permission-system"
+  ]
+}
+```
+
+---
+
+*本列表精选自 pi.dev/packages（3328+ 包）及 GitHub/npm 社区。热门标记 🔥 基于月下载量。欢迎通过 PR 贡献更多优质资源！*
+
+*最后更新：2026年5月*
+
+---
+
+## Skills
+
+> Skills 是定义在 `skills/<skill-name>/SKILL.md` 文件中的工作流指导，包含 YAML frontmatter 和详细的工作流说明。
+> Pi 从 `~/.pi/agent/skills/`（全局）、`.pi/skills/`（项目级）以及已安装包的 `skills/` 目录中加载 Skills。
+> 安装方式：`pi install npm:<package>` 或 `pi install git:github.com/<user>/<repo>`
+
+### Development Workflow
+
+完整的软件开发周期 Skills，从需求发现到实现验证。
+
+- [@juicesharp/rpiv-pi](https://github.com/juicesharp/rpiv-mono) - 完整的 Skill-based 开发工作流，包含 discover → research → design → plan → implement → validate 管道，共 14 个技能。Install: `pi install npm:@juicesharp/rpiv-pi`
+- [pi-superpowers](https://github.com/coctostan/pi-superpowers) - 从 Superpowers by Jesse Vincent 改编的结构化工作流 Skills，涵盖头脑风暴 → 规划 → TDD → 调试 → 代码审查 → 完成。Install: `pi install git:github.com/coctostan/pi-superpowers`
+- [pi-superpowers-plus](https://github.com/coctostan/pi-superpowers-plus) - 带运行时强制执行的增强版 Superpowers，含 Workflow Monitor、Subagent 和 Plan Tracker。Install: `pi install npm:pi-superpowers-plus`
+- [pi-supergsd](https://pi.dev/packages/pi-supergsd) - 经过整理和修补的 Superpowers 预打包版本。Install: `pi install npm:pi-supergsd`
+- [pi-agent-codebase-workflows](https://github.com/PriNova/pi-agent-codebase-workflows) - 代码库重建、架构感知审查、安全变更和遗留文档迁移。Install: `pi install npm:pi-agent-codebase-workflows`
+- [@alchemiststudios/pi-harness-skills](https://github.com/alchemiststudiosDOTai/pi-harness-skills) - 研究 → 规划 → 执行 → QA 工作流，含 ast-grep 和 AGENTS.md 映射。Install: `pi install npm:@alchemiststudios/pi-harness-skills`
+- [ultimate-pi](https://pi.dev/packages/ultimate-pi) - 治理式 AI 编码 Harness，通过确定性策略门控引导、规划、执行、审查。Install: `pi install npm:ultimate-pi`
+- [pi-dots](https://github.com/VenTheZone/pi-dots) - 60+ Skills、agents 和 workflows 的综合集合，覆盖项目全生命周期。Install: `pi install git:github.com/VenTheZone/pi-dots`
+
+### Code Review & Quality
+
+代码审查、质量保障和重构相关 Skills。
+
+- [code-review](https://github.com/ferologics/pi-skills) - 本地 PR 审查，查找错误、风格问题、指南违规。Install: `pi install git:github.com/ferologics/pi-skills`
+- [multi-review](https://github.com/ferologics/pi-skills) - 3 模型并行 PR 审查，然后综合结果。Install: `pi install git:github.com/ferologics/pi-skills`
+- [code-simplifier](https://github.com/ferologics/pi-skills) - 简化/精炼代码以提高清晰度。Install: `pi install git:github.com/ferologics/pi-skills`
+- [requesting-code-review](https://github.com/coctostan/pi-superpowers) - 带严重级别分类的预合并审查，可 dispatch reviewer subagent。Install: `pi install npm:pi-superpowers`
+- [receiving-code-review](https://github.com/coctostan/pi-superpowers) - 审查反馈的技术评估，防止盲目同意。Install: `pi install npm:pi-superpowers`
+- [pi-review-loop](https://github.com/nicobailon/pi-review-loop) - 自动代码审查循环，反复提示代理审查自己的工作直到确认无问题。Install: `pi install npm:pi-review-loop`
+- [security-review](https://github.com/VenTheZone/pi-dots) - 认证、密钥、API 安全审查。Install: `pi install git:github.com/VenTheZone/pi-dots`
+- [verification-loop](https://github.com/VenTheZone/pi-dots) - 系统化验证工作流。Install: `pi install git:github.com/VenTheZone/pi-dots`
+
+### Git Operations
+
+Git 工作流管理、提交规范和分支操作 Skills。
+
+- [git-workflow](https://github.com/alnah/agent) - Git 和 GitHub 操作规则，涵盖状态、差异、提交、同步、PR 和恢复。
+- [commit](https://github.com/tomsej/pi-ext) - 约定式提交风格的 `git commit`，从差异推断类型、范围和摘要。Install: `pi install git:github.com/tomsej/pi-ext`
+- [github](https://github.com/tomsej/pi-ext) - `gh` CLI 配方 — PR 检查、CI 运行、问题查询、JSON 输出。Install: `pi install git:github.com/tomsej/pi-ext`
+- [pi-git-commands-extension](https://github.com/qualiti/pi-git-commands-extension) - 添加 `/commit`, `/push`, `/commit-and-push`, `/commit-pr` git 命令。Install: `pi install npm:pi-git-commands-extension`
+- [using-git-worktrees](https://github.com/coctostan/pi-superpowers) - 创建隔离的分支工作区，支持并行开发。Install: `pi install npm:pi-superpowers`
+- [finishing-a-development-branch](https://github.com/coctostan/pi-superpowers) - 合并/PR 决策工作流。Install: `pi install npm:pi-superpowers`
+
+### Web Development & Research
+
+网页搜索、内容提取、深度研究和前端设计 Skills。
+
+- [web-search](https://github.com/tomsej/pi-ext) - 通过 Jina Search API 进行轻量级网页搜索，无需浏览器。Install: `pi install git:github.com/tomsej/pi-ext`
+- [visit-webpage](https://github.com/tomsej/pi-ext) - 从 URL 获取并提取内容为 Markdown（通过 Jina Reader）。Install: `pi install git:github.com/tomsej/pi-ext`
+- [brave-search](https://github.com/badlogic/pi-skills) - 通过 Brave Search API 进行网页搜索和内容提取。Install: `pi install git:github.com/badlogic/pi-skills`
+- [pi-web-access](https://github.com/nicobailon/pi-web-access) - 综合网页访问 — 搜索、URL 获取、GitHub 克隆、PDF 提取、YouTube 视频理解。Install: `pi install npm:pi-web-access`
+- [pi-skill-tavily](https://github.com/A-Legg/pi-skill-tavily) - Tavily 网页搜索、提取、爬取和研究技能，含 4 个深度级别。Install: `npm install pi-skill-tavily`
+- [pi-deep-research](https://github.com/czhiming-maker/pi-deep-research) - 深度研究 — 结构化搜索、反思和分析，代码强制检查点。Install: `pi install npm:pi-deep-research`
+- [web-research](https://github.com/alnah/agent) - 网页研究工作流：使用 Codex 进行发现，使用 Rodney 进行获取和验证。
+- [frontend-design](https://github.com/skillcreatorai/ai-agent-skills) - 前端美学指南，避免通用的 AI 生成美学，创造性解释。
+- [premium-frontend-ui](https://github.com/github/awesome-copilot) - 打造沉浸式、高性能 Web 体验的综合指南，含高级动效和排版。Install: `npx skills add https://github.com/github/awesome-copilot --skill premium-frontend-ui`
+
+### Learning & Media
+
+YouTube 转录、语音转文本和学习辅助 Skills。
+
+- [youtube-transcript](https://github.com/badlogic/pi-skills) - 获取 YouTube 视频转录。Install: `pi install git:github.com/badlogic/pi-skills`
+- [youtube-full](https://github.com/ZeroPointRepo/youtube-skills) - YouTube 综合工具集 — 转录 + 搜索 + 频道 + 播放列表。Install: `npx skills add ZeroPointRepo/youtube-skills --skill youtube-full`
+- [gemini-yt-video-transcript](https://github.com/odrobnik/gemini-yt-video-transcript-skill) - 使用 Google Gemini 创建 YouTube 字幕转录。
+- [transcribe](https://github.com/badlogic/pi-skills) - 通过 Groq Whisper API 进行语音转文本。Install: `pi install git:github.com/badlogic/pi-skills`
+
+### AI Assistant & Automation
+
+Subagent 委托、Skill 管理、记忆持久化和自动化工具。
+
+- [pi-subagents](https://github.com/nicobailon/pi-subagents) - 委托任务给 subagents，支持链式、并行执行和 TUI 澄清。Install: `pi install npm:pi-subagents`
+- [pi-skill-palette](https://github.com/nicobailon/pi-skill-palette) - 命令面板用于选择将哪个 skill 注入到下一条消息中。Install: `pi install npm:pi-skill-palette`
+- [pi-skill-toggle](https://github.com/Whamp/pi-skill-toggle) - 启用/禁用 skills 加载到 Pi 上下文中，避免上下文膨胀。Install: `pi install npm:pi-skill-toggle`
+- [pi-skill-shiori](https://pi.dev/packages/pi-skill-shiori) - 将大型 Agent Skill 目录保留在模型提示之外，仅加载匹配当前任务的 skills。Install: `pi install npm:pi-skill-shiori`
+- [pi-skill-deck](https://pi.dev/packages/pi-skill-deck) - 两窗格分类 skill 浏览器，将平铺的 150+ skills 替换为可导航的分类 TUI 覆盖层。Install: `pi install pi-skill-deck`
+- [visual-explainer](https://github.com/nicobailon/visual-explainer) - 将复杂终端输出转换为样式化的 HTML 页面（图表、diff 审查、计划审计）。Install: `pi install git:github.com/nicobailon/visual-explainer`
+- [pi-hermes-memory](https://pi.dev/packages/pi-hermes-memory) - 持久化记忆 + 会话搜索 + Secret 扫描，SQLite FTS5 搜索。Install: `pi install npm:pi-hermes-memory`
+- [pi-prompt-template-model](https://github.com/nicobailon/pi-prompt-template-model) - 在 prompt templates 中指定模型选择。Install: `pi install npm:pi-prompt-template-model`
+- [pi-schedule-prompt](https://github.com/tintinweb/pi-schedule-prompt) - 调度重复和一次性代理提示的扩展，支持 cron 风格功能。Install: `pi install npm:pi-schedule-prompt`
+
+### Utilities
+
+实用工具 Skills — Google 工具集成、VS Code、浏览器自动化和上下文管理。
+
+- [gccli](https://github.com/badlogic/pi-skills) - Google Calendar CLI 事件和可用性管理。Install: `pi install git:github.com/badlogic/pi-skills`
+- [gdcli](https://github.com/badlogic/pi-skills) - Google Drive CLI 文件管理和共享。Install: `pi install git:github.com/badlogic/pi-skills`
+- [gmcli](https://github.com/badlogic/pi-skills) - Gmail CLI 邮件、草稿和标签管理。Install: `pi install git:github.com/badlogic/pi-skills`
+- [vscode](https://github.com/badlogic/pi-skills) - VS Code 集成，用于差异和文件比较。Install: `pi install git:github.com/badlogic/pi-skills`
+- [browser-tools](https://github.com/badlogic/pi-skills) - 通过 Chrome DevTools Protocol 的交互式浏览器自动化。Install: `pi install git:github.com/badlogic/pi-skills`
+- [context-packer](https://github.com/ferologics/pi-skills) - 构建 LLM 就绪的代码转储并使用 `o200k-base` 计数令牌。Install: `pi install git:github.com/ferologics/pi-skills`
+- [pr-context-packer](https://github.com/ferologics/pi-skills) - 构建 PR 包（差异 + 完整变更文件 + 相关文件）。Install: `pi install git:github.com/ferologics/pi-skills`
+- [markdown-converter](https://github.com/ferologics/pi-skills) - 通过 `uvx markitdown` 将文件转换为 Markdown。Install: `pi install git:github.com/ferologics/pi-skills`
+- [image-compress](https://github.com/ferologics/pi-skills) - 通过 `sips` 将图片压缩到目标大小。Install: `pi install git:github.com/ferologics/pi-skills`
+- [video-compress](https://github.com/ferologics/pi-skills) - 通过 `ffmpeg` 将视频压缩到目标大小。Install: `pi install git:github.com/ferologics/pi-skills`
+- [session-query](https://github.com/tomsej/pi-ext) - 通过 `session-query` 工具查询过去的 Pi 会话。Install: `pi install git:github.com/tomsej/pi-ext`
+
+### Content Creation & Documentation
+
+内容创建、文档润色和品牌声音 Skills。
+
+- [content-engine](https://github.com/VenTheZone/pi-dots) - 平台原生内容创建（X, LinkedIn, 新闻通讯）。Install: `pi install git:github.com/VenTheZone/pi-dots`
+- [article-writing](https://github.com/VenTheZone/pi-dots) - 长篇文章和指南写作。Install: `pi install git:github.com/VenTheZone/pi-dots`
+- [brand-voice](https://github.com/VenTheZone/pi-dots) - 从真实示例构建可复用的声音配置文件。Install: `pi install git:github.com/VenTheZone/pi-dots`
+- [crosspost](https://github.com/VenTheZone/pi-dots) - 多平台内容分发。Install: `pi install git:github.com/VenTheZone/pi-dots`
+- [humanizer](https://github.com/VenTheZone/pi-dots) - 润色和人性化文档。Install: `pi install git:github.com/VenTheZone/pi-dots`
+
+---
+
+## Prompt Templates
+
+> Prompt Templates 是 `prompts/*.md` 文件中的可复用提示词模板，通过 `/name` 命令调用。
+> 加载位置：`~/.pi/agent/prompts/*.md`（全局）、`.pi/prompts/*.md`（项目级）、包内 `prompts/` 目录。
+> 支持变量替换：`$1`, `$2`, `$@`, `$ARGUMENTS`, `${@:N}`, `${@:N:L}`
+
+### Official Prompt Templates
+
+- [pi-agent-codebase-workflows](https://github.com/PriNova/pi-agent-codebase-workflows) - 最全面的 Prompt Templates 集合，含 30+ 模板：
+  - `/recon-all` — 完整代码库重建
+  - `/safe-start-all` — 完整安全启动
+  - `/preflight` — 预检
+  - `/bug-diagnose`, `/bug-implement` — 错误诊断与修复
+  - `/feature-design`, `/feature-implement` — 功能设计与实现
+  - `/refactor-design`, `/refactor-implement` — 重构
+  - `/review-arch` — 架构审查
+  - `/risk-fix` — 风险修复
+  - `/migrate-structured-docs` — 迁移结构化文档
+  - Install: `pi install npm:pi-agent-codebase-workflows`
+
+- [visual-explainer](https://github.com/nicobailon/visual-explainer) - 可视化 Prompt Templates：
+  - `/diff-review` — Diff 审查可视化
+  - `/plan-review` — 计划审查可视化
+  - `/project-recap` — 项目回顾
+  - `/generate-slides` — 生成幻灯片
+  - `/generate-web-diagram` — 生成 Web 图表
+  - `/generate-visual-plan` — 生成可视化计划
+  - `/fact-check` — 事实核查
+  - `/share-page` — 分享页面
+  - Install: `pi install git:github.com/nicobailon/visual-explainer`
+
+### Utility Prompts
+
+- [title](https://github.com/tomsej/pi-ext) - 生成 ISO 前缀的 Pi 会话标题。Install: `pi install git:github.com/tomsej/pi-ext`
+- [pi-prompt-composer](https://pi.dev/packages/pi-prompt-composer) - 从纯文本提示构建多选项斜杠命令，支持变量展开和交互选择器。Install: `pi install npm:pi-prompt-composer`
+- [pi-schedule-prompt](https://github.com/tintinweb/pi-schedule-prompt) - 定时重复/一次性提示调度，支持 cron 表达式。Install: `pi install npm:pi-schedule-prompt`
+
+### Custom Prompt Template Guide
+
+创建自己的 Prompt Template：
+
+```bash
+mkdir -p ~/.pi/agent/prompts
+```
+
+创建 `.md` 文件：
+
+```markdown
+---
+description: Brief description shown in autocomplete
+argument-hint: "<required-arg> [optional-arg]"
+---
+
+Template content with $1, $2, $@ variables...
+```
+
+使用方式：
+```
+/prompt-name arg1 arg2
+```
+
+---
+
+## Packages
+
+> Pi 包管理系统支持从 npm 和 GitHub 安装扩展。截至 2026 年 5 月，[pi.dev/packages](https://pi.dev/packages) 已收录 **3,328+ 个包**。
+> 包类型：`package`（综合包）、`extension`（扩展）、`skill`（技能）、`theme`（主题）、`prompt`（提示模板）
+
+### Package Management Cheatsheet
+
+#### Install
+
+```bash
+# 从 npm 安装
+pi install npm:@foo/pi-tools
+pi install npm:@foo/pi-tools@1.2.3          # 固定版本
+
+# 从 GitHub 安装
+pi install git:github.com/user/repo
+pi install git:github.com/user/repo@v1       # tag 或 commit
+pi install https://github.com/user/repo       # 原始 URL
+
+# 从本地路径安装
+pi install /absolute/path/to/package
+pi install ./relative/path/to/package
+
+# 临时试用（仅当前会话）
+pi -e npm:@foo/bar
+
+# 项目级安装
+pi install -l npm:@foo/bar                    # 安装到 .pi/settings.json
+```
+
+#### Update & Remove
+
+```bash
+pi update                                     # 更新 pi + 所有包（跳过固定版本）
+pi update --extensions                        # 仅更新包
+pi update --self                              # 仅更新 pi
+pi update npm:@foo/pi-tools                   # 更新单个包
+
+pi remove npm:@foo/pi-tools                   # 移除包
+pi uninstall npm:@foo/pi-tools                # remove 的别名
+pi list                                       # 列出已安装包
+
+pi config                                     # 启用/禁用扩展、技能、提示、主题
+```
+
+#### Package Structure
+
+发布自己的 Pi 包 — 在 `package.json` 中添加 `pi` 键：
+
+```json
+{
+  "name": "my-pi-package",
+  "keywords": ["pi-package"],
+  "pi": {
+    "extensions": ["./extensions"],
+    "skills": ["./skills"],
+    "prompts": ["./prompts"],
+    "themes": ["./themes"]
+  }
+}
+```
+
+**安全提示**：Pi 包运行时有完整的系统访问权限。扩展执行任意代码，Skills 可以指示模型执行任何操作。安装第三方包前请审查源代码。
+
+
+### Top 50 Packages
+
+> 数据截至 2026-05，按 pi.dev/packages 下载量排序。
+
+| # | Package | Downloads | Type | Author | Description |
+|---|---------|-----------|------|--------|-------------|
+| 1 | **context-mode** | 117.6K/mo | package | mksglu | MCP 插件，节省 98% 上下文窗口 |
+| 2 | **pi-subagents** | 101.1K/mo | package | nicopreme | 子代理任务委派，链式/并行/TUI |
+| 3 | **pi-mcp-adapter** | 97.5K/mo | extension | nicopreme | MCP (Model Context Protocol) 适配器 |
+| 4 | **pi-web-access** | 78.9K/mo | extension | nicopreme | Web 搜索/获取/GitHub 克隆/PDF 提取/YouTube |
+| 5 | **@juicesharp/rpiv-ask-user-question** | 45.2K/mo | extension | juicesharp | 结构化问卷，带类型选项 |
+| 6 | **@juicesharp/rpiv-todo** | 40K/mo | extension | juicesharp | 待办覆盖层，支持 `/reload` 和压缩 |
+| 7 | **@plannotator/pi-extension** | 31.9K/mo | package | backnotprop | 交互式计划审查，带注释 |
+| 8 | **@nitra/cursor** | 26.4K/mo | package | vitaliytv | Cursor 规则下载 CLI |
+| 9 | **pi-simplify** | 26K/mo | extension | mdevy | 代码简化审查 |
+| 10 | **pi-lens** | 24.4K/mo | extension | apmantza | 实时代码反馈，LSP/linters/formatters |
+| 11 | **@vigolium/piolium** | 23.2K/mo | extension | j3ssie | 多阶段安全审计，带子代理 |
+| 12 | **@ollama/pi-web-search** | 22.6K/mo | extension | jmorgan | Ollama Web 搜索和获取工具 |
+| 13 | **@a5c-ai/babysitter-pi** | 19.6K/mo | package | tmuskal | Pi Coding Agent babysitter |
+| 14 | **@juicesharp/rpiv-advisor** | 17.5K/mo | extension | juicesharp | 第二意见审查模型 |
+| 15 | **@juicesharp/rpiv-web-tools** | 16.3K/mo | extension | juicesharp | Web 搜索和获取，可插拔提供商 |
+| 16 | **@juicesharp/rpiv-btw** | 15.9K/mo | extension | juicesharp | `/btw` 并行侧对话 |
+| 17 | **@gotgenes/pi-permission-system** | 15.5K/mo | extension | gotgenes | 权限执行系统 |
+| 18 | **pi-agent-flow** | 15.3K/mo | package | tuanhung303 | 流状态转换扩展 |
+| 19 | **pi-powerline-footer** | 14.3K/mo | extension | nicopreme | Powerline 风格状态栏 |
+| 20 | **@gotgenes/pi-subagents** | 14.1K/mo | extension | gotgenes | Claude Code 风格子代理 |
+| 21 | **@tintinweb/pi-subagents** | 13.6K/mo | extension | tintinweb | 智能 Claude Code 风格子代理 |
+| 22 | **@juicesharp/rpiv-pi** | 13.4K/mo | ext+skill | juicesharp | 技能驱动开发工作流 |
+| 23 | **pi-markdown-preview** | 12.4K/mo | package | omacl | Markdown + LaTeX 预览 |
+| 24 | **pi-hermes-memory** | 11.5K/mo | ext+skill | chandra447 | 持久记忆 + 会话搜索 + Secret 扫描 |
+| 25 | **pi-studio** | 11K/mo | ext+theme | omacl | 双面板浏览器工作区，REPL 工作流 |
+| 26 | **pi-chrome** | 10.7K/mo | extension | tianrendong | 让 Pi 使用 Chrome 已登录配置文件 |
+| 27 | **pi-crew** | 10.7K/mo | package | bom0792 | AI 团队协调、工作流、worktrees |
+| 28 | **@juicesharp/rpiv-i18n** | 10.6K/mo | extension | juicesharp | 本地化基础 |
+| 29 | **pi-lean-ctx** | 10.6K/mo | package | pounce_ch | 通过 lean-ctx CLI 实现 Token 节省 |
+| 30 | **pi-ask-user** | 10.5K/mo | extension | edlsh | 交互式 ask_user 工具 |
+| 31 | **@howaboua/pi-codex-conversion** | 10.3K/mo | extension | howaboua | Codex 工具/提示适配器 |
+| 32 | **gentle-pi** | 10.2K/mo | package | alan_buscaglia | 高级架构开发框架 |
+| 33 | **pi-btw** | 10.2K/mo | extension | dbachelder | 并行侧对话扩展 |
+| 34 | **@runfusion/fusion** | 9,711/mo | package | gsxdsm | Fusion AI 代理 CLI |
+| 35 | **@samfp/pi-memory** | 9,538/mo | extension | samfp | 持久记忆，学习纠正和偏好 |
+| 36 | **@llblab/pi-actors** | 9,408/mo | extension | llblab | 本地 Actor 内核 |
+| 37 | **@raindrop-ai/pi-agent** | 8,857/mo | package | rsd-raindrop | Raindrop 可观测性 |
+| 38 | **pi-intercom** | 8,784/mo | package | nicopreme | 跨代理通信 |
+| 39 | **pi-smart-fetch** | 8,480/mo | package | thinkscape | 智能 web_fetch，桌面浏览器 TLS |
+| 40 | **@ff-labs/pi-fff** | 8,477/mo | extension | dmtr.kovalenko | FFF 模糊文件搜索 |
+| 41 | **glimpseui** | 8,423/mo | prompt | haza | 原生微 UI，跨平台 WebView |
+| 42 | **@llblab/pi-telegram** | 8,213/mo | extension | llblab | Telegram 运行时适配器 |
+| 43 | **gentle-engram** | 7,890/mo | extension | alan_buscaglia | 持久记忆，本地或云端 |
+| 44 | **@undefineds.co/models** | 7,358/mo | package | cuilinsu | Solid Pod 数据模型 |
+| 45 | **pi-agent-browser-native** | 7,161/mo | extension | fitchmultz | 浏览器自动化原生工具 |
+| 46 | **@linimin/pi-letscook** | 6,808/mo | package | linimin | 长完成工作流，角色子代理 |
+| 47 | **@cryptolibertus/pi-peer** | 6,607/mo | extension | cryptolibertus | Pi-to-Pi 点对点消息 |
+| 48 | **@gonrocca/zero-pi** | 6,579/mo | extension | gonrocca | 零规范驱动开发工作流 |
+| 49 | **@pi-unipi/core** | 6,493/mo | extension | neuron-mr-white | Unipi 扩展套件共享工具 |
+| 50 | **@syntesseraai/pi-feature-factory** | 6,302/mo | package | joe__syntessera | Feature Factory 工具编排 |
+
+### Top Packages by Category
+
+| Category | Package | Install Command |
+|----------|---------|-----------------|
+| **Agent** | pi-subagents, pi-crew, @gotgenes/pi-subagents | `pi install npm:pi-subagents` |
+| **MCP** | pi-mcp-adapter, context-mode | `pi install npm:pi-mcp-adapter` |
+| **Web** | pi-web-access, pi-smart-fetch, @juicesharp/rpiv-web-tools | `pi install npm:pi-web-access` |
+| **Dev Tools** | pi-lens, pi-simplify, pi-git-commands-extension | `pi install npm:pi-lens` |
+| **Memory** | pi-hermes-memory, @samfp/pi-memory, gentle-engram | `pi install npm:pi-hermes-memory` |
+| **UI/Theme** | pi-studio, pi-powerline-footer, pi-markdown-preview | `pi install npm:pi-studio` |
+| **Security** | @vigolium/piolium, @gotgenes/pi-permission-system, @vtstech/pi-security | `pi install npm:@vigolium/piolium` |
+| **Communication** | pi-intercom, @cryptolibertus/pi-peer | `pi install npm:pi-intercom` |
+| **Workflow** | gentle-pi, @gonrocca/zero-pi, @plannotator/pi-extension | `pi install npm:gentle-pi` |
+| **Browser** | pi-chrome, pi-agent-browser-native | `pi install npm:pi-chrome` |
+
+### Themes
+
+| Package | Themes | Install |
+|---------|--------|---------|
+| pi-studio | 内置双面板工作区主题 | `pi install npm:pi-studio` |
+| pi-themes-rose-pine | Rose Pine (main, moon, dawn) | `pi install npm:pi-themes-rose-pine` |
+| @spences10/pi-themes | 11 主题 (Catppuccin, Dracula, Nord, Tokyo Night...) | `pi install npm:@spences10/pi-themes` |
+| pi-curated-themes | 65 个从 iTerm2 适配的主题 | `pi install npm:pi-curated-themes` |
+| my-pi-themes | 14 主题 (neapple, monokai-pro, onedark, e-ink) | `pi install npm:my-pi-themes` |
+| @mjakl/pi-dark-or-light | 自动检测暗/亮主题 | `pi install npm:@mjakl/pi-dark-or-light` |
+
+---
+
+## Community Resources
+
+### Official Resources
+
+| Resource | Link | Description |
+|----------|------|-------------|
+| **Official Website** | [pi.dev](https://pi.dev) | 项目主页，包含介绍和演示 |
+| **Official Docs** | [pi.dev/docs/latest](https://pi.dev/docs/latest) | 完整官方文档 |
+| **Quick Start** | [pi.dev/docs/latest/quickstart](https://pi.dev/docs/latest/quickstart) | 安装、认证和首会话指南 |
+| **Package Registry** | [pi.dev/packages](https://pi.dev/packages) | 3,328+ 扩展包目录 |
+| **Changelog** | [pi.dev/news/releases](https://pi.dev/news/releases) | 版本变更日志 |
+| **Main Repository** | [github.com/earendil-works/pi](https://github.com/earendil-works/pi) | 主仓库，~57.6k stars |
+| **Interactive Tutorial** | [pi-tutorial](https://github.com/earendil-works/pi-tutorial) | 实验性交互式 Pi 教程 |
+| **Official Review Ext** | [pi-review](https://github.com/earendil-works/pi-review) | 官方代码审查扩展 |
+
+### Awesome Lists & Community Collections
+
+| Resource | Link | Description |
+|----------|------|-------------|
+| **awesome-pi-agent** | [github.com/qualisero/awesome-pi-agent](https://github.com/qualisero/awesome-pi-agent) | 社区维护的精选资源列表，最全面的生态汇总 |
+| **LazyPi** | [github.com/robzolkos/LazyPi](https://github.com/robzolkos/LazyPi) | 一键配置 Pi（60+ skills, 76 themes, MCP） |
+| **pi-skills** | [github.com/badlogic/pi-skills](https://github.com/badlogic/pi-skills) | 多代理兼容的 skills 集合 |
+| **tomsej/pi-ext** | [github.com/tomsej/pi-ext](https://github.com/tomsej/pi-ext) | 扩展、skills 和主题集合 |
+| **GitHub Discussion #3373** | [earendil-works/pi/discussions/3373](https://github.com/earendil-works/pi/discussions/3373) | 社区插件推荐讨论 |
+
+### Tutorials & Setup Guides
+
+| Article | Link | Description |
+|---------|------|-------------|
+| **Pi Setup Guide (bitdoze)** | [bitdoze.com](https://www.bitdoze.com/pi-coding-agent-setup-guide/) | 最全面的设置指南，含模型配置和扩展推荐 |
+| **Pi Setup Guide (Gist)** | [gist.github.com/schpet](https://gist.github.com/schpet/85531b6a05a5d8119e859bdec6b0e0b8) | 社区维护的快速入门指南 |
+| **Pi: A Minimal Terminal Coding Harness** | [dev-ore.com](https://www.dev-ore.com/blog/pi-dev-terminal-coding-harness/) | 官方文档结构概述 |
+| **Getting Started (awesomeagents)** | [awesomeagents.ai](https://awesomeagents.ai/guides/getting-started-with-ai-coding-assistants/) | AI 编码助手入门对比 |
+
+### Reviews & Comparisons
+
+| Article | Link | Description |
+|---------|------|-------------|
+| **Claude Code vs Codex vs Aider vs OpenCode vs Pi** | [thoughts.jock.pl](https://thoughts.jock.pl/p/ai-coding-harness-agents-2026) | 最全面的五工具对比 |
+| **Best AI Coding Agents 2026** | [admix.software](https://admix.software/blog/best-ai-coding-agents) | Pi vs Claude Code vs Codex vs Cursor |
+| **Pi vs Claude Code** | [alexdunlop.com](https://www.alexdunlop.com/writing/pi-vs-claude-code-which-ai-coding-agent-in-2026) | Pi 与 Claude Code 详细对比 |
+| **Is Pi better than Claude Code?** | [newsletter.owainlewis.com](https://newsletter.owainlewis.com/p/is-pi-better-than-claude-code) | 深度功能对比 |
+| **Pi Coding Agent Review 2026** | [vibecodinghub.org](https://vibecodinghub.org/tools/pi-coding-agent) | 优缺点全面分析 |
+| **Local Harness Benchmark** | [grigio.org](https://grigio.org/local-harness-benchmark-pi-coding-agent-vs-opencode/) | 性能基准测试对比 |
+
+### Deep Technical Articles
+
+| Article | Link | Description |
+|---------|------|-------------|
+| **Pi: The Minimal Agent Within OpenClaw** | [lucumr.pocoo.org](https://lucumr.pocoo.org/2026/1/31/pi/) | Armin Ronacher 深度技术分析 |
+| **Pi: The Deliberately Minimal Coding Agent** | [metabureau.com.au](https://metabureau.com.au/blog/pi-coding-agent-strategic-minimalism) | 四包系统架构详解 |
+| **Pi integration architecture** | [docs.openclaw.ai](https://docs.openclaw.ai/pi) | OpenClaw Pi 集成文档 |
+| **Pi: A Coding Agent Harness** | [silenceper.com](https://silenceper.com/en/article/2026-05-27-pi-coding-agent-harness/) | 功能详解和架构分析 |
+
+### Chinese Resources
+
+| Resource | Link | Description |
+|----------|------|-------------|
+| **2026年AI Agent框架完全选型指南** | [gm7.org](https://www.gm7.org/archives/46851) | 中文全面选型指南，含 Pi |
+| **上下文工程与Agent选型指南** | [51cto.com](https://blog.51cto.com/u_13259/14577943) | 六层架构分析 |
+| **OpenClaw项目介绍（中文）** | [github.com/KimYx0207](https://github.com/KimYx0207/AI-Coding-Guide-Zh) | 中文 OpenClaw/Pi 技术栈详解 |
+
+### Related Projects
+
+| Project | Link | Description |
+|---------|------|-------------|
+| **OpenClaw** | [github.com/openclaw/openclaw](https://github.com/openclaw/openclaw) | 基于 Pi SDK 的多通道 AI 网关（350k+ stars） |
+| **gondolin** | [github.com/earendil-works/gondolin](https://github.com/earendil-works/gondolin) | Linux microVM 沙箱 |
+| **pi-doom** | [github.com/badlogic/pi-doom](https://github.com/badlogic/pi-doom) | 在终端中玩 DOOM |
+| **PiSwift** | 社区项目 | Pi 的 Swift 移植版本 |
+
+### Community Configurations
+
+| Config | Link | Description |
+|--------|------|-------------|
+| **umgbhalla/pi-config** | [GitHub](https://github.com/umgbhalla/pi-config) | 子代理、cmux、计划工作流 |
+| **HazAT/pi-config** | [GitHub](https://github.com/HazAT/pi-config) | 子代理配置示例 |
+| **s1lver091/pi-agent-config** | [GitHub](https://github.com/s1lver091/pi-agent-config) | 安全扩展和结构化开发配置 |
+| **Auda29/pi-setup** | [GitHub](https://github.com/Auda29/pi-setup) | Windows 完整 Pi 栈安装 |
+
+---
+
+## Contributing
+
+欢迎贡献！请通过以下方式参与：
+
+1. **提交 PR** — 添加新的 Skills、Packages 或资源链接
+2. **报告问题** — 发现过期链接或错误描述请提 Issue
+3. **分享配置** — 分享你的 Pi 配置和常用包组合
+
+### 贡献规范
+
+- 使用中文描述，保留英文名称和命令
+- 每个条目包含名称、链接、描述和安装命令（如果适用）
+- 按功能分类，保持格式一致
+- 优先选择有 GitHub 仓库或官方文档的资源
+- 标注作者信息（如有）
+
+### npm Scope 迁移说明
+
+2026-05-07，Pi 从 `@mariozechner` 迁移到 `@earendil-works` npm 作用域。旧包已弃用但不会被删除，运行 `pi update` 即可自动迁移。
+
+| 旧包名 | 新包名 |
+|--------|--------|
+| `@mariozechner/pi-coding-agent` | `@earendil-works/pi-coding-agent` |
+| `@mariozechner/pi-agent-core` | `@earendil-works/pi-agent-core` |
+| `@mariozechner/pi-ai` | `@earendil-works/pi-ai` |
+| `@mariozechner/pi-tui` | `@earendil-works/pi-tui` |
+
+---
+
+## License
+
+本列表采用 [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) 许可。
+
+> 数据来源于 [pi.dev/packages](https://pi.dev/packages)、GitHub、npm 和社区公开资源。
+> 各项目版权归原作者所有，遵循其各自的许可证条款。
+
+---
+
+*本文档最后更新于 2026 年 6 月。Pi 生态持续发展，建议定期查看 [pi.dev/packages](https://pi.dev/packages) 获取最新信息。*
+
+<!-- END OF awesome-pi-list.md Part 2 -->
