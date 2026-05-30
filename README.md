@@ -17,7 +17,9 @@ curl -fsSL https://pi.dev/install.sh | sh
 # 安装 Pi ckage
 pi install npm:context-mode
 
-# 查看已安装的 Pi Package```
+# 查看已安装的 Pi Package
+pi list
+```
 
 ---
 
@@ -59,14 +61,8 @@ Web 搜索和内容获取 Package，让 Pi 能够访问互联网信息。
 - 🔥 [@ollama/pi-web-search](https://pi.dev/packages/@ollama/pi-web-search) - 使用 Ollama Web 搜索和获取 API。`pi install npm:@ollama/pi-web-search`
 - [pi-smart-fetch](https://github.com/Thinkscape/agent-smart-fetch) - 桌面浏览器 TLS 模拟，批量获取，多格式输出（markdown/html/text/json）。`pi install npm:pi-smart-fetch`
 - [@narumitw/pi-firecrawl](https://github.com/narumiruna/pi-extensions) - Firecrawl 驱动的网页抓取、爬取、URL 发现和 Web 搜索。`pi install npm:@narumitw/pi-firecrawl`
-
-<details>
-<summary>更多 Web 扩展</summary>
-
 - [@code-yeongyu/pi-webfetch](https://github.com/code-yeongyu/pi-webfetch) - URL 内容获取，支持 markdown/plain text/raw HTML。`pi install npm:@code-yeongyu/pi-webfetch`
 - [@code-yeongyu/pi-websearch](https://github.com/code-yeongyu/pi-websearch) - Provider-backed Web 搜索，带配置门控和 TUI 状态。`pi install npm:@code-yeongyu/pi-websearch`
-
-</details>
 
 ---
 
@@ -105,14 +101,8 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [whimsical](https://github.com/mitsuhiko/agent-stuff) - 将 "thinking..." 替换为有趣随机短语（如 "Hiking through the headers..."）。`pi install git:github.com/mitsuhiko/agent-stuff`
 - [notify](https://github.com/mitsuhiko/agent-stuff) - 代理完成时桌面通知（OSC 777）。`pi install git:github.com/mitsuhiko/agent-stuff`
 - [@narumitw/pi-caffeinate](https://github.com/narumiruna/pi-extensions) - 跨平台防止睡眠，长提示处理时保持唤醒。`pi install npm:@narumitw/pi-caffeinate`
-
-<details>
-<summary>更多 UI 扩展</summary>
-
 - [pi-ext](https://github.com/tomsej/pi-ext) - 综合 UI 套件：leader-key 浮动面板、powerline footer、工具药丸标签、telescope 模糊查找。`pi install git:github.com/tomsej/pi-ext`
 - [@juicesharp/rpiv-btw](https://github.com/juicesharp/rpiv-mono) - juicesharp 版 btw 侧对话。`pi install npm:@juicesharp/rpiv-btw`
-
-</details>
 
 ---
 

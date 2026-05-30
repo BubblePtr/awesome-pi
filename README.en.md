@@ -61,14 +61,8 @@ Web search and content fetching packages that give Pi access to internet informa
 - 🔥 [@ollama/pi-web-search](https://pi.dev/packages/@ollama/pi-web-search) - Ollama web search and fetch API integration. `pi install npm:@ollama/pi-web-search`
 - [pi-smart-fetch](https://github.com/Thinkscape/agent-smart-fetch) - Desktop browser TLS emulation, batch fetching, multi-format output (markdown/html/text/json). `pi install npm:pi-smart-fetch`
 - [@narumitw/pi-firecrawl](https://github.com/narumiruna/pi-extensions) - Firecrawl-powered web scraping, crawling, URL discovery, and web search. `pi install npm:@narumitw/pi-firecrawl`
-
-<details>
-<summary>More web packages</summary>
-
 - [@code-yeongyu/pi-webfetch](https://github.com/code-yeongyu/pi-webfetch) - URL content fetching with markdown/plain text/raw HTML support. `pi install npm:@code-yeongyu/pi-webfetch`
 - [@code-yeongyu/pi-websearch](https://github.com/code-yeongyu/pi-websearch) - Provider-backed web search with configuration gating and TUI status. `pi install npm:@code-yeongyu/pi-websearch`
-
-</details>
 
 ---
 
@@ -107,14 +101,8 @@ Terminal UI enhancement packages for better interactive experience.
 - [whimsical](https://github.com/mitsuhiko/agent-stuff) - Replaces "thinking..." with fun random phrases (e.g., "Hiking through the headers..."). `pi install git:github.com/mitsuhiko/agent-stuff`
 - [notify](https://github.com/mitsuhiko/agent-stuff) - Desktop notification on agent completion (OSC 777). `pi install git:github.com/mitsuhiko/agent-stuff`
 - [@narumitw/pi-caffeinate](https://github.com/narumiruna/pi-extensions) - Cross-platform sleep prevention, keeps system awake during long prompts. `pi install npm:@narumitw/pi-caffeinate`
-
-<details>
-<summary>More UI packages</summary>
-
 - [pi-ext](https://github.com/tomsej/pi-ext) - Comprehensive UI suite: leader-key floating panel, powerline footer, tool pill tags, telescope fuzzy finder. `pi install git:github.com/tomsej/pi-ext`
 - [@juicesharp/rpiv-btw](https://github.com/juicesharp/rpiv-mono) - Juicesharp's btw side conversation variant. `pi install npm:@juicesharp/rpiv-btw`
-
-</details>
 
 ---
 
