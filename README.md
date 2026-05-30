@@ -17,8 +17,8 @@ curl -fsSL https://pi.dev/install.sh | sh
 # 安装 Package
 pi install npm:context-mode
 
-# 安装主题
-pi install npm:pi-tokyo-night
+# 查看已安装的包
+pi list
 ```
 
 ---

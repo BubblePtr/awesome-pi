@@ -17,8 +17,8 @@ curl -fsSL https://pi.dev/install.sh | sh
 # Install a package
 pi install npm:context-mode
 
-# Install a theme
-pi install npm:pi-tokyo-night
+# List installed packages
+pi list
 ```
 
 ---
