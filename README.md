@@ -11,15 +11,13 @@
 [Pi Coding Agent](https://pi.dev) 是一个终端 AI 编程助手，通过 Package 机制支持扩展（Extensions）、技能（Skills）、主题（Themes）和提示模板（Prompt Templates）。本列表精选社区最佳 Package，帮助开发者打造高效的 AI 编程环境。
 
 ```
-# 安装 Pi (macOS/Linux)
+# 安装 Pi AgentOS/Linux)
 curl -fsSL https://pi.dev/install.sh | sh
 
-# 安装 Package
+# 安装 Pi ckage
 pi install npm:context-mode
 
-# 查看已安装的包
-pi list
-```
+# 查看已安装的 Pi Package```
 
 ---
 
@@ -238,6 +236,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 
 精选 Package 集合与套件，一次安装多个工具。
 
+- 🔥 [oh-my-pi](https://github.com/can1357/oh-my-pi) - Pi 的 LunarVim——开箱即用的全功能发行版，集成 hash-anchored 编辑、LSP、Python 运行时、浏览器自动化、子代理等。`pi install git:github.com/can1357/oh-my-pi`
 - 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - 11 个生产级扩展的 monorepo（statusline, btw, lsp, firecrawl, goal, subagents, sync 等）。`pi install npm:@narumitw/pi-extensions`
 - 🔥 [juicesharp/rpiv-mono](https://github.com/juicesharp/rpiv-mono) - 12 个 npm 包的管道系统（研究→设计→计划→实施→验证）。`pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher 的 15+ 扩展集合（review, btw, goal, whimsical, notify, todos 等）。`pi install git:github.com/mitsuhiko/agent-stuff`

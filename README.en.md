@@ -11,13 +11,13 @@ English | [中文](./README.md)
 [Pi Coding Agent](https://pi.dev) is a terminal AI coding harness that supports Extensions, Skills, Themes, and Prompt Templates through its Package system. This list curates the best community packages to help developers build an efficient AI-powered coding environment.
 
 ```
-# Install Pi (macOS/Linux)
+# Install Pi AgentOS/Linux)
 curl -fsSL https://pi.dev/install.sh | sh
 
-# Install a package
+# Install a Pi Page
 pi install npm:context-mode
 
-# List installed packages
+# List installed Pi Pages
 pi list
 ```
 
@@ -238,6 +238,7 @@ Other utility packages.
 
 Curated package collections and suites — install multiple tools at once.
 
+- 🔥 [oh-my-pi](https://github.com/can1357/oh-my-pi) - The LunarVim of Pi — a batteries-included distribution with hash-anchored edits, LSP, Python runtime, browser automation, subagents, and more. `pi install git:github.com/can1357/oh-my-pi`
 - 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - Monorepo of 11 production-grade extensions (statusline, btw, lsp, firecrawl, goal, subagents, sync, etc.). `pi install npm:@narumitw/pi-extensions`
 - 🔥 [juicesharp/rpiv-mono](https://github.com/juicesharp/rpiv-mono) - Pipeline system of 12 npm packages (research→design→plan→implement→validate). `pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher's 15+ extension collection (review, btw, goal, whimsical, notify, todos, etc.). `pi install git:github.com/mitsuhiko/agent-stuff`
