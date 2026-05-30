@@ -8,7 +8,7 @@
 [![Packages](https://img.shields.io/badge/Packages-3300+-green.svg)](https://pi.dev/packages)
 [![License](https://img.shields.io/badge/License-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-[Pi Coding Agent](https://pi.dev) 是一个 AI Coding Harness 框架Package 机制支持扩展（Extensions）、技能（Skills）、主题（Themes）和提示词模板（Prompt Templates）。本列表精选社区最佳 Package，帮助开发者打造高效的 AI 编程环境。
+[Pi Coding Agent](https://pi.dev) 是一个 AI Coding Harness 框架 Package 机制支持扩展（Extensions）、技能（Skills）、主题（Themes）和提示词模板（Prompt Templates）。本列表精选社区最佳 Package，帮助开发者打造高效的 AI 编程环境。
 
 ```
 # 安装 Pi AgentOS/Linux)
