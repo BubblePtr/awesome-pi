@@ -8,7 +8,7 @@ English | [中文](./README.md)
 [![Packages](https://img.shields.io/badge/Packages-3300+-green.svg)](https://pi.dev/packages)
 [![License](https://img.shields.io/badge/License-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-[Pi Coding Agent](https://pi.dev) is a terminal AI coding harness that supports Extensions, Skills, Themes, and Prompt Templates through its Package system. This list curates the best community packages to help developers build an efficient AI-powered coding environment.
+[Pi Coding Agent](https://pi.dev) is an AI coding harness that supports Extensions, Skills, Themes, and Prompt Templates through its Package system. This list curates the best community packages to help developers build an efficient AI-powered coding environment.
 
 ```
 # Install Pi AgentOS/Linux)
