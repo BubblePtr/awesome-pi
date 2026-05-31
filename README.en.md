@@ -52,6 +52,8 @@ pi list
 
 ## Packages
 
+> 🔵 **Official Packages**: Installed without `@scope` (e.g. `pi install npm:context-mode`). 🟢 **Community Packages**: Installed with `@scope` (e.g. `pi install npm:@narumitw/pi-statusline`), shown in `@scope/name` format.
+
 ### Web Access & Search
 
 Web search and content fetching packages that give Pi access to internet information.
@@ -215,8 +217,8 @@ Other utility packages.
 - 🔥 [pi-markdown-preview](https://pi.dev/packages/pi-markdown-preview) - Renders markdown + LaTeX previews with terminal, browser, and PDF output. `pi install npm:pi-markdown-preview`
 - 🔥 [pi-studio](https://pi.dev/packages/pi-studio) - Dual-pane browser workspace with prompt/response editing, annotations, and live preview. `pi install npm:pi-studio`
 - [pi-ask-user](https://pi.dev/packages/pi-ask-user) - Interactive ask_user tool. `pi install npm:pi-ask-user`
-- [pi-rules](https://github.com/code-yeongyu/pi-rules) - Auto-discovers rule files like .claude/rules, .cursor/rules, AGENTS.md, etc. `pi install npm:@code-yeongyu/pi-rules`
-- [pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse observability, tracking tokens, cost, model, and tool calls. `pi install npm:@ravan08/pi-langfuse`
+- [@code-yeongyu/pi-rules](https://github.com/code-yeongyu/pi-rules) - Auto-discovers rule files like .claude/rules, .cursor/rules, AGENTS.md, etc. `pi install npm:@code-yeongyu/pi-rules`
+- [@ravan08/pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse observability, tracking tokens, cost, model, and tool calls. `pi install npm:@ravan08/pi-langfuse`
 - [pi-venice](https://github.com/tunnckoCore/pi-venice) - Venice.AI extension supporting text/image/video models. `pi install npm:pi-venice`
 - [@juicesharp/rpiv-i18n](https://pi.dev/packages/@juicesharp/rpiv-i18n) - Localization foundation for rpiv-* extensions. `pi install npm:@juicesharp/rpiv-i18n`
 - [@a5c-ai/babysitter-pi](https://pi.dev/packages/@a5c-ai/babysitter-pi) - AI babysitter extension. `pi install npm:@a5c-ai/babysitter-pi`
@@ -228,7 +230,7 @@ Other utility packages.
 Curated package collections and suites — install multiple tools at once.
 
 - 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - Monorepo of 11 production-grade extensions (statusline, btw, lsp, firecrawl, goal, subagents, sync, etc.). `pi install npm:@narumitw/pi-extensions`
-- 🔥 [juicesharp/rpiv-mono](https://github.com/juicesharp/rpiv-mono) - Pipeline system of 12 npm packages (research→design→plan→implement→validate). `pi install npm:@juicesharp/rpiv-pi`
+- 🔥 [@juicesharp/rpiv-pi](https://github.com/juicesharp/rpiv-mono) - Pipeline system of 12 npm packages (research→design→plan→implement→validate). `pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher's 15+ extension collection (review, btw, goal, whimsical, notify, todos, etc.). `pi install git:github.com/mitsuhiko/agent-stuff`
 - [tomsej/pi-ext](https://github.com/tomsej/pi-ext) - Comprehensive UI and workflow tools (leader-key, telescope, powerline footer, semantic git, etc.). `pi install git:github.com/tomsej/pi-ext`
 - [code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) - 15+ extensions ported from OMO (lsp-client, ast-grep, websearch, sandbox, etc.). `pi install git:github.com/code-yeongyu/senpi`
@@ -248,8 +250,8 @@ Curated dark themes for comfortable long coding sessions.
 - 🔥 [@sherif-fanous/pi-catppuccin](https://github.com/sherif-fanous/pi-catppuccin) - Catppuccin Mocha dark variant with soft, warm pastel tones. `pi install npm:@sherif-fanous/pi-catppuccin`
 - 🔥 [pi-themes-rose-pine](https://github.com/samfoy/pi-rose-pine) - Original Rosé Pine dark variant with soft pastel rose tones. `pi install npm:pi-themes-rose-pine`
 - 🔥 [pi-theme-synthwave-84](https://github.com/robzolkos/pi-theme-synthwave-84) - Neon Synthwave '84 theme with 80s retro-futuristic aesthetics. `pi install npm:pi-theme-synthwave-84`
-- [pi-code-theme](https://github.com/ElieMessieCode/pi-code-theme) - Warm dark theme with burnt orange and gold accents. `pi install npm:@eliemessiecode/pi-code-theme`
-- [pi-remembra-theme](https://pi.dev/packages/@m64/pi-remembra-theme) - Refined purple-blue gradient with carefully balanced text colors. `pi install npm:@m64/pi-remembra-theme`
+- [@eliemessiecode/pi-code-theme](https://github.com/ElieMessieCode/pi-code-theme) - Warm dark theme with burnt orange and gold accents. `pi install npm:@eliemessiecode/pi-code-theme`
+- [@m64/pi-remembra-theme](https://pi.dev/packages/@m64/pi-remembra-theme) - Refined purple-blue gradient with carefully balanced text colors. `pi install npm:@m64/pi-remembra-theme`
 - [@codella/pi-theme-cyberpunk](https://github.com/codella/pi-packages) - Neon cyberpunk theme with futuristic urban aesthetics. `pi install npm:@codella/pi-theme-cyberpunk`
 - [@javiportillo/pi-hackerman](https://github.com/javierportillo/pi-hackerman) - Neon hacker style inspired by the Hackerman theme. `pi install npm:@javiportillo/pi-hackerman`
 - [pi-theme-flexoki](https://github.com/markacianfrani/pi-theme-flexoki) - Flexoki dark theme inspired by analog ink and warm paper. `pi install npm:pi-theme-flexoki`

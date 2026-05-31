@@ -52,6 +52,8 @@ pi list
 
 ## Packages
 
+> 🔵 **官方 Package**：无需 `@scope` 即可安装的包（如 `pi install npm:context-mode`）。🟢 **社区 Package**：需带 `@scope` 安装的包（如 `pi install npm:@narumitw/pi-statusline`），列表中以 `@scope/name` 格式标注。
+
 ### Web Access & Search
 
 Web 搜索和内容获取 Package，让 Pi 能够访问互联网信息。
@@ -215,8 +217,8 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - 🔥 [pi-markdown-preview](https://pi.dev/packages/pi-markdown-preview) - 渲染 markdown + LaTeX 预览，支持终端、浏览器和 PDF 输出。`pi install npm:pi-markdown-preview`
 - 🔥 [pi-studio](https://pi.dev/packages/pi-studio) - 双窗格浏览器工作空间，支持提示/响应编辑、注释、实时预览。`pi install npm:pi-studio`
 - [pi-ask-user](https://pi.dev/packages/pi-ask-user) - 交互式 ask_user 工具。`pi install npm:pi-ask-user`
-- [pi-rules](https://github.com/code-yeongyu/pi-rules) - 自动发现 .claude/rules, .cursor/rules, AGENTS.md 等规则文件。`pi install npm:@code-yeongyu/pi-rules`
-- [pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse 可观测性，追踪 token、费用、模型和工具调用。`pi install npm:@ravan08/pi-langfuse`
+- [@code-yeongyu/pi-rules](https://github.com/code-yeongyu/pi-rules) - 自动发现 .claude/rules, .cursor/rules, AGENTS.md 等规则文件。`pi install npm:@code-yeongyu/pi-rules`
+- [@ravan08/pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse 可观测性，追踪 token、费用、模型和工具调用。`pi install npm:@ravan08/pi-langfuse`
 - [pi-venice](https://github.com/tunnckoCore/pi-venice) - Venice.AI 扩展，支持文本/图像/视频模型。`pi install npm:pi-venice`
 - [@juicesharp/rpiv-i18n](https://pi.dev/packages/@juicesharp/rpiv-i18n) - rpiv-* 扩展的本地化基础。`pi install npm:@juicesharp/rpiv-i18n`
 - [@a5c-ai/babysitter-pi](https://pi.dev/packages/@a5c-ai/babysitter-pi) - AI 监护扩展。`pi install npm:@a5c-ai/babysitter-pi`
@@ -228,7 +230,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 精选 Package 集合与套件，一次安装多个工具。
 
 - 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - 11 个生产级扩展的 monorepo（statusline, btw, lsp, firecrawl, goal, subagents, sync 等）。`pi install npm:@narumitw/pi-extensions`
-- 🔥 [juicesharp/rpiv-mono](https://github.com/juicesharp/rpiv-mono) - 12 个 npm 包的管道系统（研究→设计→计划→实施→验证）。`pi install npm:@juicesharp/rpiv-pi`
+- 🔥 [@juicesharp/rpiv-pi](https://github.com/juicesharp/rpiv-mono) - 12 个 npm 包的管道系统（研究→设计→计划→实施→验证）。`pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher 的 15+ 扩展集合（review, btw, goal, whimsical, notify, todos 等）。`pi install git:github.com/mitsuhiko/agent-stuff`
 - [tomsej/pi-ext](https://github.com/tomsej/pi-ext) - 综合 UI 和工作流工具集合（leader-key, telescope, powerline footer, semantic git 等）。`pi install git:github.com/tomsej/pi-ext`
 - [code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) - 从 OMO 移植的 15+ 扩展（lsp-client, ast-grep, websearch, sandbox 等）。`pi install git:github.com/code-yeongyu/senpi`
@@ -248,8 +250,8 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - 🔥 [@sherif-fanous/pi-catppuccin](https://github.com/sherif-fanous/pi-catppuccin) - Catppuccin Mocha 暗色变体，柔和温暖的 pastel 色调。`pi install npm:@sherif-fanous/pi-catppuccin`
 - 🔥 [pi-themes-rose-pine](https://github.com/samfoy/pi-rose-pine) - 原始 Rosé Pine 暗色变体，柔和的 pastel 玫瑰色调。`pi install npm:pi-themes-rose-pine`
 - 🔥 [pi-theme-synthwave-84](https://github.com/robzolkos/pi-theme-synthwave-84) - 霓虹 Synthwave '84 主题，80 年代复古未来主义美学。`pi install npm:pi-theme-synthwave-84`
-- [pi-code-theme](https://github.com/ElieMessieCode/pi-code-theme) - 温暖深色调主题，烧橙色和金色强调色。`pi install npm:@eliemessiecode/pi-code-theme`
-- [pi-remembra-theme](https://pi.dev/packages/@m64/pi-remembra-theme) - 精致紫蓝渐变，精心平衡的文本颜色。`pi install npm:@m64/pi-remembra-theme`
+- [@eliemessiecode/pi-code-theme](https://github.com/ElieMessieCode/pi-code-theme) - 温暖深色调主题，烧橙色和金色强调色。`pi install npm:@eliemessiecode/pi-code-theme`
+- [@m64/pi-remembra-theme](https://pi.dev/packages/@m64/pi-remembra-theme) - 精致紫蓝渐变，精心平衡的文本颜色。`pi install npm:@m64/pi-remembra-theme`
 - [@codella/pi-theme-cyberpunk](https://github.com/codella/pi-packages) - 霓虹赛博朋克主题，未来都市美学。`pi install npm:@codella/pi-theme-cyberpunk`
 - [@javiportillo/pi-hackerman](https://github.com/javierportillo/pi-hackerman) - 霓虹黑客风格，灵感来自 Hackerman 主题。`pi install npm:@javiportillo/pi-hackerman`
 - [pi-theme-flexoki](https://github.com/markacianfrani/pi-theme-flexoki) - Flexoki 暗色主题，受模拟墨水和温暖纸张启发。`pi install npm:pi-theme-flexoki`
