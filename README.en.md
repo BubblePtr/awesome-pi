@@ -158,6 +158,11 @@ Context management packages for optimizing token usage.
 - [pi-cache-graph](https://github.com/championswimmer/pi-cache-graph) - Real-time graphical display of provider prefix cache hits and misses. `pi install npm:pi-cache-graph`
 - [pi-lean-ctx](https://pi.dev/packages/pi-lean-ctx) - Routes commands through lean-ctx CLI to save tokens. `pi install npm:pi-lean-ctx`
 
+### Loop Engineering
+
+Loop engineering packages
+
+- 🕶️✨ [neuralyzer](https://github.com/gintasz/neuralyzer) - Allow agent to wipe its own session context and re-run the first message. Easier Ralph loop engineering. `pi install npm:@gintasz/pi-neuralyzer`
 ---
 
 ### Code Review

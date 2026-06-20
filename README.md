@@ -158,6 +158,11 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [pi-cache-graph](https://github.com/championswimmer/pi-cache-graph) - Provider 前缀缓存命中/未命中的实时图形显示。`pi install npm:pi-cache-graph`
 - [pi-lean-ctx](https://pi.dev/packages/pi-lean-ctx) - 通过 lean-ctx CLI 路由命令以节省 token。`pi install npm:pi-lean-ctx`
 
+### Loop Engineering
+
+循环工程 Package
+
+- 🕶️✨ [neuralyzer](https://github.com/gintasz/neuralyzer) - 允许 Agent 擦除自身会话上下文并重新运行首条消息，让 Ralph 循环工程更简单。`pi install npm:@gintasz/pi-neuralyzer`
 ---
 
 ### Code Review
