@@ -40,6 +40,7 @@ pi list
   - [Communication & Collaboration](#communication--collaboration)
   - [Utilities](#utilities)
   - [Package Collections](#package-collections)
+- [Skills](#skills)
 - [Themes](#themes)
   - [Dark Themes](#dark-themes)
   - [Light Themes](#light-themes)
@@ -237,6 +238,15 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [jayshah5696/pi-agent-extensions](https://github.com/jayshah5696/pi-agent-extensions) - 15+ 扩展集合（sessions, ask_user, handoff, powerline-footer 等）。`pi install git:github.com/jayshah5696/pi-agent-extensions`
 - [pi-toolbox](https://github.com/indydevdan/pi-toolbox) - 17 个扩展 + 11 个主题 + 技能和智能体编排模板的综合工具包。`pi install npm:pi-toolbox`
 - [pi-workstation](https://github.com/marv1nnnnn/pi-workstation) - 9 个手工制作主题（前卫剧场、赛博朋克、葛饰北斋风格等）+ 扩展。`pi install npm:pi-workstation`
+
+---
+
+## Skills
+
+社区 Skill 资源（非 npm Package，复制到 `~/.pi/agent/skills/` 即可使用）。
+
+- [mac-declutter](https://github.com/Offwhite-Del/mac-declutter) - macOS 深度清理 skill：AI agent 泛滥盘点、僵尸服务与应用残留清除、代理断连分诊、缓存清理、性能审计。`cp -R mac-declutter ~/.pi/agent/skills/`
+- [callsign](https://github.com/Offwhite-Del/callsign) - 审美驱动的起名 skill：为仓库、产品、工具、功能起符合人类审美的名字，含撞名检查。`cp -R callsign ~/.pi/agent/skills/`
 
 ---
 
