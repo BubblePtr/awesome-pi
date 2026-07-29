@@ -34,6 +34,7 @@ pi list
   - [Dev Tools & Code Intelligence](#dev-tools--code-intelligence)
   - [Persistent Memory](#persistent-memory)
   - [Context Management](#context-management)
+  - [Loop Engineering](#loop-engineering)
   - [Code Review](#code-review)
   - [Task Management](#task-management)
   - [Browser Automation](#browser-automation)
@@ -113,6 +114,7 @@ Terminal UI enhancement packages for better interactive experience.
 Security and permission control packages.
 
 - 🔥 [@gotgenes/pi-permission-system](https://github.com/MasuRii/pi-permission-system) - Three-tier permission states (allow/deny/ask), lifecycle hook integration, subagent permission forwarding, audit logs. `pi install npm:@gotgenes/pi-permission-system`
+- [@aliou/pi-guardrails](https://github.com/aliou/pi-guardrails) - Safety guardrail suite: file protection policies, path access control outside the workspace, confirmation/blocking of risky shell commands, with guided onboarding. `pi install npm:@aliou/pi-guardrails`
 - [pi-permission-system](https://pi.dev/packages/pi-permission-system) - Permission enforcement extension. `pi install npm:pi-permission-system`
 - [@vigolium/piolium](https://pi.dev/packages/@vigolium/piolium) - Multi-phase security audit with specialized subagents, isolated context windows, and concurrency limits. `pi install npm:@vigolium/piolium`
 - [pi-hooks/permission](https://github.com/prateekmedia/pi-hooks) - Four-tier permission control (Minimal/Low/Medium/High). `pi install npm:pi-hooks`
@@ -160,9 +162,10 @@ Context management packages for optimizing token usage.
 
 ### Loop Engineering
 
-Loop engineering packages
+Loop engineering packages.
 
-- 🕶️✨ [neuralyzer](https://github.com/gintasz/neuralyzer) - Allow agent to wipe its own session context and re-run the first message. Easier Ralph loop engineering. `pi install npm:@gintasz/pi-neuralyzer`
+- [@gintasz/pi-neuralyzer](https://github.com/gintasz/neuralyzer) - Allows the agent to wipe its own session context and re-run the first message. Easier Ralph loop engineering. `pi install npm:@gintasz/pi-neuralyzer`
+
 ---
 
 ### Code Review

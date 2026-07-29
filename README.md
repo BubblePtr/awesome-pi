@@ -34,6 +34,7 @@ pi list
   - [Dev Tools & Code Intelligence](#dev-tools--code-intelligence)
   - [Persistent Memory](#persistent-memory)
   - [Context Management](#context-management)
+  - [Loop Engineering](#loop-engineering)
   - [Code Review](#code-review)
   - [Task Management](#task-management)
   - [Browser Automation](#browser-automation)
@@ -113,6 +114,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 安全与权限控制 Package。
 
 - 🔥 [@gotgenes/pi-permission-system](https://github.com/MasuRii/pi-permission-system) - 三层权限状态（allow/deny/ask），生命周期钩子集成、子代理权限转发、审计日志。`pi install npm:@gotgenes/pi-permission-system`
+- [@aliou/pi-guardrails](https://github.com/aliou/pi-guardrails) - 安全护栏套件：文件保护策略、工作区外路径访问控制、危险 shell 命令确认/拦截，含引导式配置。`pi install npm:@aliou/pi-guardrails`
 - [pi-permission-system](https://pi.dev/packages/pi-permission-system) - 权限强制执行扩展。`pi install npm:pi-permission-system`
 - [@vigolium/piolium](https://pi.dev/packages/@vigolium/piolium) - 多阶段安全审计，专业子代理、隔离上下文窗口、并发上限。`pi install npm:@vigolium/piolium`
 - [pi-hooks/permission](https://github.com/prateekmedia/pi-hooks) - 四层权限控制（Minimal/Low/Medium/High）。`pi install npm:pi-hooks`
@@ -160,9 +162,10 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 
 ### Loop Engineering
 
-循环工程 Package
+循环工程 Package。
 
-- 🕶️✨ [neuralyzer](https://github.com/gintasz/neuralyzer) - 允许 Agent 擦除自身会话上下文并重新运行首条消息，让 Ralph 循环工程更简单。`pi install npm:@gintasz/pi-neuralyzer`
+- [@gintasz/pi-neuralyzer](https://github.com/gintasz/neuralyzer) - 允许 Agent 擦除自身会话上下文并重新运行首条消息，让 Ralph 循环工程更简单。`pi install npm:@gintasz/pi-neuralyzer`
+
 ---
 
 ### Code Review
