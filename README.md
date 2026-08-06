@@ -228,6 +228,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [@code-yeongyu/pi-rules](https://github.com/code-yeongyu/pi-rules) - 自动发现 .claude/rules, .cursor/rules, AGENTS.md 等规则文件。`pi install npm:@code-yeongyu/pi-rules`
 - [@ravan08/pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse 可观测性，追踪 token、费用、模型和工具调用。`pi install npm:@ravan08/pi-langfuse`
 - [pi-venice](https://github.com/tunnckoCore/pi-venice) - Venice.AI 扩展，支持文本/图像/视频模型。`pi install npm:pi-venice`
+- [pi-vision-bridge](https://github.com/wuxiangru915/pi-vision-bridge) - 让纯文本模型获得识图能力——`describe_image` 工具 + 粘贴图片自动转文字，支持 Gemini/Qwen-VL/GLM 等任意视觉模型，自动发现并失败回退。`pi install git:github.com/wuxiangru915/pi-vision-bridge`
 - [@juicesharp/rpiv-i18n](https://pi.dev/packages/@juicesharp/rpiv-i18n) - rpiv-* 扩展的本地化基础。`pi install npm:@juicesharp/rpiv-i18n`
 - [@a5c-ai/babysitter-pi](https://pi.dev/packages/@a5c-ai/babysitter-pi) - AI 监护扩展。`pi install npm:@a5c-ai/babysitter-pi`
 
