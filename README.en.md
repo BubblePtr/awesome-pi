@@ -228,6 +228,7 @@ Other utility packages.
 - [@code-yeongyu/pi-rules](https://github.com/code-yeongyu/pi-rules) - Auto-discovers rule files like .claude/rules, .cursor/rules, AGENTS.md, etc. `pi install npm:@code-yeongyu/pi-rules`
 - [@ravan08/pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse observability, tracking tokens, cost, model, and tool calls. `pi install npm:@ravan08/pi-langfuse`
 - [pi-venice](https://github.com/tunnckoCore/pi-venice) - Venice.AI extension supporting text/image/video models. `pi install npm:pi-venice`
+- [pi-vision-bridge](https://github.com/wuxiangru915/pi-vision-bridge) - Gives text-only models image understanding — a `describe_image` tool plus automatic image-to-text fallback, works with any vision model (Gemini/Qwen-VL/GLM), auto-discovery with fallback. `pi install npm:@wuxiangru/pi-vision-bridge`
 - [@juicesharp/rpiv-i18n](https://pi.dev/packages/@juicesharp/rpiv-i18n) - Localization foundation for rpiv-* extensions. `pi install npm:@juicesharp/rpiv-i18n`
 - [@a5c-ai/babysitter-pi](https://pi.dev/packages/@a5c-ai/babysitter-pi) - AI babysitter extension. `pi install npm:@a5c-ai/babysitter-pi`
 
