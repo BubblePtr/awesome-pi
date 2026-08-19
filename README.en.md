@@ -4,8 +4,8 @@ English | [中文](./README.md)
 
 > A curated list of [Pi Coding Agent](https://pi.dev) packages. Pi is a terminal AI coding harness by earendil-works with a thriving package ecosystem.
 
-[![Pi](https://img.shields.io/badge/Pi-v0.44+-blue.svg)](https://pi.dev)
-[![Packages](https://img.shields.io/badge/Packages-3300+-green.svg)](https://pi.dev/packages)
+[![Pi](https://img.shields.io/badge/Pi-v0.84+-blue.svg)](https://pi.dev)
+[![Packages](https://img.shields.io/badge/Packages-5500+-green.svg)](https://pi.dev/packages)
 [![License](https://img.shields.io/badge/License-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 [Pi Coding Agent](https://pi.dev) is an AI coding harness that supports Extensions, Skills, Themes, and Prompt Templates through its Package system. This list curates the best community packages to help developers build an efficient AI-powered coding environment.
@@ -37,7 +37,10 @@ pi list
   - [Loop Engineering](#loop-engineering)
   - [Code Review](#code-review)
   - [Task Management](#task-management)
+  - [Plan Mode](#plan-mode)
+  - [Background Tasks](#background-tasks)
   - [Browser Automation](#browser-automation)
+  - [Web UI](#web-ui)
   - [Communication & Collaboration](#communication--collaboration)
   - [Utilities](#utilities)
   - [Package Collections](#package-collections)
@@ -47,6 +50,7 @@ pi list
   - [Theme Packs](#theme-packs)
   - [Featured Themes](#featured-themes)
   - [Theme Tools](#theme-tools)
+- [Editor Integration](#editor-integration)
 - [Alternative Distributions](#alternative-distributions)
 
 ---
@@ -90,6 +94,8 @@ Subagent packages for task delegation, parallel execution, and multi-agent orche
 - [pi-interactive-subagents](https://github.com/HazAT/pi-interactive-subagents) - Async interactive subagents, fully non-blocking with multiplexer support. `pi install git:github.com/HazAT/pi-interactive-subagents`
 - [pi-agent-bus](https://github.com/kylebrodeur/pi-agent-bus) - Agent orchestration runtime based on MessageBus pub/sub. `pi install npm:pi-agent-bus`
 - [roach-pi](https://github.com/tmdgusya/roach-pi) - Strict engineering discipline multi-agent orchestration suite (clarify→goal→verifier→subagent→review→LSP→MCP). `pi install git:github.com/tmdgusya/roach-pi`
+- 🔥 [pi-fabric](https://github.com/monotykamary/pi-fabric) - Programmable tool runtime: compose core tools, MCP, agents, and workflows in checked TypeScript. `pi install npm:pi-fabric`
+- 🔥 [@quintinshaw/pi-dynamic-workflows](https://github.com/QuintinShaw/pi-dynamic-workflows) - Fan one request across isolated subagents, route models per task, and cross-check results. `pi install npm:@quintinshaw/pi-dynamic-workflows`
 
 ---
 
@@ -99,8 +105,9 @@ Terminal UI enhancement packages for better interactive experience.
 
 - 🔥 [@narumitw/pi-statusline](https://github.com/narumiruna/pi-extensions) - Rich status bar showing model, tools, git branch, context usage, token totals, cost, and time. `pi install npm:@narumitw/pi-statusline`
 - 🔥 [pi-powerline-footer](https://pi.dev/packages/pi-powerline-footer) - Powerline-style status bar extension. `pi install npm:pi-powerline-footer`
-- 🔥 [pi-btw](https://pi.dev/packages/pi-btw) - `/btw` side question command without polluting the main conversation. Multiple versions available (nicopreme, juicesharp, Naru). `pi install npm:pi-btw`
-- [pi-caveman](https://github.com/v2nic/pi-caveman) - Makes Pi talk like a caveman, reducing output tokens by ~75%. `pi install git:github.com/v2nic/pi-caveman`
+- 🔥 [pi-btw](https://github.com/dbachelder/pi-btw) - `/btw` side question command without polluting the main conversation. Multiple versions available (dbachelder, juicesharp, Naru). `pi install npm:pi-btw`
+- 🔥 [@juicesharp/rpiv-voice](https://github.com/juicesharp/rpiv-mono) - `/voice` on-device Whisper dictation — no cloud, no API key. `pi install npm:@juicesharp/rpiv-voice`
+- [pi-caveman](https://github.com/jonjonrankin/pi-caveman) - Makes Pi talk like a caveman, reducing output tokens by ~75%. `pi install npm:pi-caveman`
 - [whimsical](https://github.com/mitsuhiko/agent-stuff) - Replaces "thinking..." with fun random phrases (e.g., "Hiking through the headers..."). `pi install git:github.com/mitsuhiko/agent-stuff`
 - [notify](https://github.com/mitsuhiko/agent-stuff) - Desktop notification on agent completion (OSC 777). `pi install git:github.com/mitsuhiko/agent-stuff`
 - [@narumitw/pi-caffeinate](https://github.com/narumiruna/pi-extensions) - Cross-platform sleep prevention, keeps system awake during long prompts. `pi install npm:@narumitw/pi-caffeinate`
@@ -113,8 +120,9 @@ Terminal UI enhancement packages for better interactive experience.
 
 Security and permission control packages.
 
-- 🔥 [@gotgenes/pi-permission-system](https://github.com/MasuRii/pi-permission-system) - Three-tier permission states (allow/deny/ask), lifecycle hook integration, subagent permission forwarding, audit logs. `pi install npm:@gotgenes/pi-permission-system`
+- 🔥 [@gotgenes/pi-permission-system](https://github.com/gotgenes/pi-packages) - Three-tier permission states (allow/deny/ask), lifecycle hook integration, subagent permission forwarding, audit logs. `pi install npm:@gotgenes/pi-permission-system`
 - [@aliou/pi-guardrails](https://github.com/aliou/pi-guardrails) - Safety guardrail suite: file protection policies, path access control outside the workspace, confirmation/blocking of risky shell commands, with guided onboarding. `pi install npm:@aliou/pi-guardrails`
+- [pi-sandbox](https://github.com/carderne/pi-sandbox) - OS-level bash sandbox (Anthropic sandbox-runtime) plus file allow/deny, with interactive approval on intercept. `pi install npm:pi-sandbox`
 - [pi-permission-system](https://pi.dev/packages/pi-permission-system) - Permission enforcement extension. `pi install npm:pi-permission-system`
 - [@vigolium/piolium](https://pi.dev/packages/@vigolium/piolium) - Multi-phase security audit with specialized subagents, isolated context windows, and concurrency limits. `pi install npm:@vigolium/piolium`
 - [pi-hooks/permission](https://github.com/prateekmedia/pi-hooks) - Four-tier permission control (Minimal/Low/Medium/High). `pi install npm:pi-hooks`
@@ -128,15 +136,15 @@ Security and permission control packages.
 Development tools and code intelligence packages.
 
 - 🔥 [pi-lens](https://github.com/apmantza/pi-lens) - Real-time code feedback — LSP, linters, formatters, type checking, structural analysis. `pi install npm:pi-lens`
-- 🔥 [pi-simplify](https://pi.dev/packages/pi-simplify) - Reviews recently changed code for clarity, consistency, and maintainability. `pi install npm:pi-simplify`
 - 🔥 [@nitra/cursor](https://pi.dev/packages/@nitra/cursor) - CLI to download Cursor rules into local repositories. `pi install npm:@nitra/cursor`
 - 🔥 [@narumitw/pi-lsp](https://github.com/narumiruna/pi-extensions) - Configurable LSP diagnostics and source fixes, routed by file extension. `pi install npm:@narumitw/pi-lsp`
-- [pi-chrome](https://pi.dev/packages/pi-chrome) - Lets Pi use your already-logged-in Chrome profile. `pi install npm:pi-chrome`
-- [@narumitw/pi-chrome-devtools](https://github.com/narumiruna/pi-extensions) - Native Chrome DevTools Protocol tools — list tabs, navigate pages, execute JS, take screenshots. `pi install npm:@narumitw/pi-chrome-devtools`
 - [@ff-labs/pi-fff](https://pi.dev/packages/@ff-labs/pi-fff) - FFF-powered fuzzy file and content search. `pi install npm:@ff-labs/pi-fff`
 - [@narumitw/pi-retry](https://github.com/narumiruna/pi-extensions) - Retry support on provider response failures. `pi install npm:@narumitw/pi-retry`
 - [@code-yeongyu/pi-lsp-client](https://github.com/code-yeongyu/pi-lsp-client) - LSP integration: rename, go-to-definition, find references, diagnostics. `pi install git:github.com/code-yeongyu/pi-lsp-client`
 - [@code-yeongyu/pi-ast-grep](https://github.com/code-yeongyu/pi-ast-grep) - AST-aware code search/replace supporting 25 languages. `pi install git:github.com/code-yeongyu/pi-ast-grep`
+- 🔥 [pi-interactive-shell](https://github.com/nicobailon/pi-interactive-shell) - Run interactive CLIs (vim / psql / ssh / rebase) in a TUI overlay the user can take over. `pi install npm:pi-interactive-shell`
+
+> Code review: `pi-simplify` in [Code Review](#code-review). Browser tools: [Browser Automation](#browser-automation).
 
 ---
 
@@ -145,6 +153,7 @@ Development tools and code intelligence packages.
 Persistent memory packages for retaining information across sessions.
 
 - 🔥 [pi-hermes-memory](https://github.com/chandra447/pi-hermes-memory) - Persistent memory + session search + secret scanning. SQLite FTS5 search, auto-consolidation, 368 tests. `pi install npm:pi-hermes-memory`
+- [pi-memory](https://github.com/jayzeng/pi-memory) - Plain-markdown long-term memory plus daily log and scratchpad, with optional qmd semantic search. Do not confuse with `@samfp/pi-memory`. `pi install npm:pi-memory`
 - [gentle-engram](https://pi.dev/packages/gentle-engram) - Local or cloud-based brain shared across sessions, compactions, and MCP agents. `pi install npm:gentle-engram`
 - [@samfp/pi-memory](https://pi.dev/packages/@samfp/pi-memory) - Learns corrections, preferences, and patterns from sessions and injects them into future conversations. `pi install npm:@samfp/pi-memory`
 - [pi-memory-honcho](https://github.com/acsezen/pi-memory-honcho) - Honcho-backed persistent memory with cross-workspace memory sharing. `pi install npm:pi-memory-honcho`
@@ -159,6 +168,7 @@ Context management packages for optimizing token usage.
 - [pi-context-prune](https://github.com/championswimmer/pi-context-prune) - Summarizes completed tool call batches and prunes raw output from LLM context. 5 pruning modes. `pi install npm:pi-context-prune`
 - [pi-cache-graph](https://github.com/championswimmer/pi-cache-graph) - Real-time graphical display of provider prefix cache hits and misses. `pi install npm:pi-cache-graph`
 - [pi-lean-ctx](https://pi.dev/packages/pi-lean-ctx) - Routes commands through lean-ctx CLI to save tokens. `pi install npm:pi-lean-ctx`
+- [@hypabolic/pi-hypa](https://github.com/Hypabolic/Hypa) - Deterministic local compression of noisy command output (git / docker / kubectl, etc.) before it hits context. `pi install npm:@hypabolic/pi-hypa`
 
 ### Loop Engineering
 
@@ -185,13 +195,32 @@ Code review packages for improving code quality.
 Task management and goal tracking packages.
 
 - 🔥 [@juicesharp/rpiv-todo](https://github.com/juicesharp/rpiv-mono) - Model todo list with real-time overlay, 4-state machine, and dependency tracking. `pi install npm:@juicesharp/rpiv-todo`
+- [@tintinweb/pi-tasks](https://github.com/tintinweb/pi-tasks) - Claude Code-style task tools, dependency DAG, and file-locked lists shared across sessions. `pi install npm:@tintinweb/pi-tasks`
+- [@mjasnikovs/pi-task](https://github.com/mjasnikovs/pi-task) - Deterministic staged orchestration for local models (refine→research→grill→compose→critique) with crash-safe on-disk state. `pi install npm:@mjasnikovs/pi-task`
 - 🔥 [gentle-pi](https://pi.dev/packages/gentle-pi) - Transforms Pi into an advanced architecture development tool with SDD/OpenSpec and strict TDD. `pi install npm:gentle-pi`
 - [@narumitw/pi-goal](https://github.com/narumiruna/pi-extensions) - `/goal` mode that keeps the agent working until the task is complete. `pi install npm:@narumitw/pi-goal`
 - [@juicesharp/rpiv-workflow](https://pi.dev/packages/@juicesharp/rpiv-workflow) - Chains skills into typed multi-stage pipelines with `/wf` command. `pi install npm:@juicesharp/rpiv-workflow`
 - [goal](https://github.com/mitsuhiko/agent-stuff) - Persistent goal tracking with state control and model tools. `pi install git:github.com/mitsuhiko/agent-stuff`
-- [@narumitw/pi-sync](https://github.com/narumiruna/pi-extensions) - Sync Pi settings, skills, themes, and extensions via Cloudflare R2 or S3. `pi install npm:@narumitw/pi-sync`
+- [@narumitw/pi-sync](https://github.com/narumiruna/pi-extensions) - Sync Pi settings, skills, themes, and extensions via Git, WebDAV, Cloudflare R2, or S3. `pi install npm:@narumitw/pi-sync`
 - [pi-agent-flow](https://pi.dev/packages/pi-agent-flow) - Agent workflow orchestration tool. `pi install npm:pi-agent-flow`
 - [@gonrocca/zero-pi](https://pi.dev/packages/@gonrocca/zero-pi) - Spec-driven development workflow (explore→plan→build→verify). `pi install npm:@gonrocca/zero-pi`
+- [@narumitw/pi-worktree](https://github.com/narumiruna/pi-extensions) - Interactive Git worktrees: create, switch, remove, and move the Pi session into the new workspace. `pi install npm:@narumitw/pi-worktree`
+
+---
+
+### Plan Mode
+
+Pi core does not ship plan mode — add a read-only planning extension.
+
+- 🔥 [@narumitw/pi-plan-mode](https://github.com/narumiruna/pi-extensions) - Codex-style read-only `/plan`: explore, clarify, and produce an implementation-ready plan before mutating code. `pi install npm:@narumitw/pi-plan-mode`
+
+---
+
+### Background Tasks
+
+Long-running processes that do not block the main conversation.
+
+- [@aliou/pi-processes](https://github.com/aliou/pi-processes) - Background processes that do not block the session: dev servers, test watchers, logs, with a `/ps` panel. `pi install npm:@aliou/pi-processes`
 
 ---
 
@@ -202,6 +231,15 @@ Browser automation packages.
 - 🔥 [pi-chrome](https://pi.dev/packages/pi-chrome) - Uses your already-logged-in Chrome profile. `pi install npm:pi-chrome`
 - 🔥 [pi-agent-browser-native](https://github.com/fitchmultz/pi-agent-browser-native) - Exposes agent-browser as native tools with compact page snapshots, interactive references, and screenshots. `pi install npm:pi-agent-browser-native`
 - [@narumitw/pi-chrome-devtools](https://github.com/narumiruna/pi-extensions) - Native Chrome DevTools Protocol tools. `pi install npm:@narumitw/pi-chrome-devtools`
+- [betterwright](https://github.com/BetterWright/betterwright) - Persistent, policy-guarded Playwright: network policy, credential vault, and attested screenshots. `pi install npm:betterwright`
+
+---
+
+### Web UI
+
+Supervise Pi sessions that keep running in real workspaces.
+
+- 🔥 [@jmfederico/pi-web](https://github.com/jmfederico/pi-web) - Browser control surface for Pi sessions in real workspaces; disconnecting does not kill the agent. [pi-web.dev](https://pi-web.dev/) `pi install npm:@jmfederico/pi-web`
 
 ---
 
@@ -230,6 +268,9 @@ Other utility packages.
 - [pi-venice](https://github.com/tunnckoCore/pi-venice) - Venice.AI extension supporting text/image/video models. `pi install npm:pi-venice`
 - [@juicesharp/rpiv-i18n](https://pi.dev/packages/@juicesharp/rpiv-i18n) - Localization foundation for rpiv-* extensions. `pi install npm:@juicesharp/rpiv-i18n`
 - [@a5c-ai/babysitter-pi](https://pi.dev/packages/@a5c-ai/babysitter-pi) - AI babysitter extension. `pi install npm:@a5c-ai/babysitter-pi`
+- [@narumitw/pi-usage](https://github.com/narumiruna/pi-extensions) - `/usage` for the current Codex / Copilot / OpenRouter account limits. `pi install npm:@narumitw/pi-usage`
+- [@narumitw/pi-accounts](https://github.com/narumiruna/pi-extensions) - `/account` to switch Codex / Anthropic / Copilot OAuth accounts. `pi install npm:@narumitw/pi-accounts`
+- [pi-claude-marketplace](https://github.com/acolomba/pi-claude-marketplace) - Install commands, skills, agents, partial hooks, and MCP from Claude plugin marketplaces. `pi install npm:pi-claude-marketplace`
 
 ---
 
@@ -237,8 +278,8 @@ Other utility packages.
 
 Curated package collections and suites — install multiple tools at once.
 
-- 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - Monorepo of 11 production-grade extensions (statusline, btw, lsp, firecrawl, goal, subagents, sync, etc.). `pi install npm:@narumitw/pi-extensions`
-- 🔥 [@juicesharp/rpiv-pi](https://github.com/juicesharp/rpiv-mono) - Pipeline system of 12 npm packages (research→design→plan→implement→validate). `pi install npm:@juicesharp/rpiv-pi`
+- 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - Monorepo grouped as Coding / Browser / Workflow / Accounts / Observability (statusline, plan-mode, worktree, usage, lsp, firecrawl, goal, subagents, sync, etc.). `pi install npm:@narumitw/pi-extensions`
+- 🔥 [@juicesharp/rpiv-pi](https://github.com/juicesharp/rpiv-mono) - Pipeline system (research→design→plan→implement→validate), plus optional voice, warp, and args packages. `pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher's 15+ extension collection (review, btw, goal, whimsical, notify, todos, etc.). `pi install git:github.com/mitsuhiko/agent-stuff`
 - [tomsej/pi-ext](https://github.com/tomsej/pi-ext) - Comprehensive UI and workflow tools (leader-key, telescope, powerline footer, semantic git, etc.). `pi install git:github.com/tomsej/pi-ext`
 - [code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) - 15+ extensions ported from OMO (lsp-client, ast-grep, websearch, sandbox, etc.). `pi install git:github.com/code-yeongyu/senpi`
@@ -292,7 +333,8 @@ Theme collection packs — install multiple color schemes at once.
 - [@smoose/pi-themes](https://github.com/smoose/pi-themes) - Light/dark pairing toggle: Everforest, Tundra, Rosé Pine, OneDark, Gruvbox, and more. `pi install npm:@smoose/pi-themes`
 - [my-pi-themes](https://pi.dev/packages/my-pi-themes) - 14 themes: monokai-pro, onedark-pro, tokyo-dark, e-ink/e-ink-dark, gruvbox-light, and more. `pi install npm:my-pi-themes`
 - [@matyah00/openpi](https://github.com/heyhuynhgiabuu/openpi) - 11 bundled themes + multi-agent orchestration. `pi install npm:@matyah00/openpi`
-- [pi-toolbox](https://github.com/indydevdan/pi-toolbox) - Comprehensive toolkit with 17 extensions + 11 themes. `pi install npm:pi-toolbox`
+
+> Also listed under [Package Collections](#package-collections): [pi-toolbox](https://github.com/indydevdan/pi-toolbox).
 
 ---
 
@@ -308,7 +350,8 @@ Featured themes with unique design concepts and purposes.
 - [@codella/pi-theme-christmas](https://pi.dev/packages/@codella/pi-theme-christmas) - Festive Christmas theme. `pi install npm:@codella/pi-theme-christmas`
 - [@codella/pi-theme-grayscale](https://pi.dev/packages/@codella/pi-theme-grayscale) - Minimal grayscale theme. `pi install npm:@codella/pi-theme-grayscale`
 - [@taterdoge/pi-ayu](https://pi.dev/packages/@taterdoge/pi-ayu) - Ayu-inspired dark and light themes. `pi install npm:@taterdoge/pi-ayu`
-- [pi-workstation](https://github.com/marv1nnnnn/pi-workstation) - 9 artistic themes: avant-garde theatre, Serial Experiments Lain, 90s internet café, Hokusai style, and more. `pi install npm:pi-workstation`
+
+> Also listed under [Package Collections](#package-collections): [pi-workstation](https://github.com/marv1nnnnn/pi-workstation).
 
 ---
 
@@ -340,7 +383,7 @@ Editor integration packages for embedding Pi into IDEs.
 
 Fork/alternative distributions of Pi with enhanced out-of-the-box experiences.
 
-- [oh-my-pi](https://github.com/can1357/oh-my-pi) - A feature-rich fork with 40+ providers, 32 built-in tools, LSP/DAP, Python runtime, and browser automation. Standalone CLI — not a Pi package. `curl -fsSL https://omp.sh/install | sh`
+- [oh-my-pi](https://github.com/can1357/oh-my-pi) - A feature-rich fork (~25.8k★) with 40+ providers, 32 built-in tools, LSP/DAP, Python runtime, and browser automation. Standalone CLI — not a Pi package. Do not confuse with the unrelated npm package `oh-my-pi` (acidsugarx). `curl -fsSL https://omp.sh/install | sh`
 
 
 ## Contributing
@@ -380,4 +423,4 @@ This list is licensed under [CC0 1.0 Universal](https://creativecommons.org/publ
 
 ---
 
-*Last updated: June 2026. The Pi ecosystem is constantly evolving — check [pi.dev/packages](https://pi.dev/packages) for the latest.*
+*Last updated: August 2026. The Pi ecosystem is constantly evolving — check [pi.dev/packages](https://pi.dev/packages) for the latest.*
