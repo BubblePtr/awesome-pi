@@ -286,6 +286,7 @@ Pi 核心不内置 plan mode，用扩展补只读规划。
 - [jayshah5696/pi-agent-extensions](https://github.com/jayshah5696/pi-agent-extensions) - 15+ 扩展集合（sessions, ask_user, handoff, powerline-footer 等）。`pi install git:github.com/jayshah5696/pi-agent-extensions`
 - [pi-toolbox](https://github.com/indydevdan/pi-toolbox) - 17 个扩展 + 11 个主题 + 技能和智能体编排模板的综合工具包。`pi install npm:pi-toolbox`
 - [pi-workstation](https://github.com/marv1nnnnn/pi-workstation) - 9 个手工制作主题（前卫剧场、赛博朋克、葛饰北斋风格等）+ 扩展。`pi install npm:pi-workstation`
+- [Blue-B/pi-custom-packages](https://github.com/Blue-B/pi-custom-packages) - 10 个扩展的 monorepo：会话守护（bash 超时单位纠正、切换模型后重新注入身份）、上下文图片裁剪与会话文件瘦身，以及 WSL 下驱动 Windows 桌面的截屏、鼠标键盘与录屏（winshot, cursor, recordly, verify-gate, gpt-img 等）。`pi install git:github.com/Blue-B/pi-custom-packages`
 
 ---
 
