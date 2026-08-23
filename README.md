@@ -274,6 +274,7 @@ Pi 核心不内置 plan mode，用扩展补只读规划。
 
 ---
 
+- [pisesh](https://github.com/Blue-B/pisesh) - Pi 会话管理 TUI：星标收藏、搜索、自定义标题、按项目过滤、AI 标题生成。`pi install npm:pisesh`
 ### Package Collections
 
 精选 Package 集合与套件，一次安装多个工具。
