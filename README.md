@@ -128,6 +128,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [pi-hooks/permission](https://github.com/prateekmedia/pi-hooks) - 四层权限控制（Minimal/Low/Medium/High）。`pi install npm:pi-hooks`
 - [filter-output](https://github.com/michalvavra/agents) - 自动捕获敏感值并在发送给 AI 前编辑。`pi install git:github.com/michalvavra/agents`
 - [security](https://github.com/michalvavra/agents) - 阻止危险命令（如 sudo），需要显式用户批准。`pi install git:github.com/michalvavra/agents`
+- [pi-verdict](https://github.com/jesset/pi-verdict) - Claude Code auto mode 式权限门禁：三态裁决（allow/ask/deny），规则层先行 + 携带会话上下文的分类器兜灰区，全链 fail-closed，零依赖单文件，含不可关闭的自保护层。`pi install npm:pi-verdict`
 
 ---
 

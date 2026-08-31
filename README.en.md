@@ -128,6 +128,7 @@ Security and permission control packages.
 - [pi-hooks/permission](https://github.com/prateekmedia/pi-hooks) - Four-tier permission control (Minimal/Low/Medium/High). `pi install npm:pi-hooks`
 - [filter-output](https://github.com/michalvavra/agents) - Automatically captures sensitive values and redacts them before sending to the AI. `pi install git:github.com/michalvavra/agents`
 - [security](https://github.com/michalvavra/agents) - Blocks dangerous commands (e.g., sudo) requiring explicit user approval. `pi install git:github.com/michalvavra/agents`
+- [pi-verdict](https://github.com/jesset/pi-verdict) - Claude Code auto-mode-style permission gate: three-state verdicts (allow/ask/deny), rule layer first with a context-aware classifier for the gray zone, fail-closed throughout; zero-dependency single file with a non-disableable self-protection layer. `pi install npm:pi-verdict`
 
 ---
 
