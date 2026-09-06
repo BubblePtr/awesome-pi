@@ -1,0 +1,31 @@
+name: 验证静态目录
+
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', 'README.md', 'README.en.md', 'vercel.json', '.github/workflows/site.yml']
+  pull_request:
+    paths: ['site/**', 'README.md', 'README.en.md', 'vercel.json', '.github/workflows/site.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.12
+      - run: bun install --frozen-lockfile
+        working-directory: site
+      - run: bun run validate
+        working-directory: site

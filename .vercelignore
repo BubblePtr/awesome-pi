@@ -1,0 +1,10 @@
+.git/
+.pi/
+.vercel/
+.env*
+output/
+.playwright-cli/
+node_modules/
+site/node_modules/
+site/.astro/
+site/dist/
