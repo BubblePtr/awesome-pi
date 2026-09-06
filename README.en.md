@@ -2,7 +2,7 @@ English | [中文](./README.md)
 
 # Awesome Pi [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-[Browse the website](https://awesome-pi-two.vercel.app/) · Find resources by category, read descriptions, and copy installation commands.
+[Browse the website](https://awesome-pi-list.vercel.app/) · Find resources by category, read descriptions, and copy installation commands.
 
 > A community-maintained list of [Pi Coding Agent](https://pi.dev) packages. Pi is a terminal AI coding harness by earendil-works with a thriving package ecosystem. Most listed extensions, skills, and themes are published by community authors; inclusion does not imply an official Pi release or endorsement.
 

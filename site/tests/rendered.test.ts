@@ -14,7 +14,7 @@ describe('generated static pages', () => {
       expect(win.document.querySelectorAll('h1')).toHaveLength(1);
       expect(win.document.querySelector('meta[name="description"]')?.getAttribute('content')?.length).toBeGreaterThan(30);
       const canonical = win.document.querySelector('link[rel="canonical"]')?.getAttribute('href');
-      expect(canonical).toBe(`https://awesome-pi-two.vercel.app/${locale === 'zh' ? 'zh/' : ''}`);
+      expect(canonical).toBe(`https://awesome-pi-list.vercel.app/${locale === 'zh' ? 'zh/' : ''}`);
       for (const link of win.document.querySelectorAll('link[rel="alternate"]')) expect(link.getAttribute('href')).toStartWith('https://');
       expect(win.document.querySelector('label[for="search"]')).not.toBeNull();
       expect(win.document.querySelector('label[for="mobile-category"]')).not.toBeNull();

@@ -2,7 +2,7 @@
 
 网站将仓库中已有的资源清单转换为可搜索、可筛选的静态目录。默认英文，`/zh/` 提供中文；搜索会同时匹配中英文介绍。
 
-网站地址：<https://awesome-pi-two.vercel.app/>，中文入口：<https://awesome-pi-two.vercel.app/zh/>。
+网站地址：<https://awesome-pi-list.vercel.app/>，中文入口：<https://awesome-pi-list.vercel.app/zh/>。
 
 ## 内容来源
 
