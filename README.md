@@ -133,6 +133,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [filter-output](https://github.com/michalvavra/agents) - 自动捕获敏感值并在发送给 AI 前编辑。`pi install git:github.com/michalvavra/agents`
 - [security](https://github.com/michalvavra/agents) - 阻止危险命令（如 sudo），需要显式用户批准。`pi install git:github.com/michalvavra/agents`
 - [pi-vetter](https://github.com/jesset/pi-vetter) - npm 插件安装/更新前的供应链风险评估：通过 `/vet`、`/vet-install` 主动检查 OSV 漏洞、发布来源、静态模式与版本差异，报告 ALLOW/ASK/DENY；未发现风险不代表安全。`pi install npm:pi-vetter`
+- [pi-verdict](https://github.com/jesset/pi-verdict) - 实验性工具调用权限控制：规则优先，结合会话上下文的模型分类器处理不确定操作，支持 allow/ask/deny；模型调用会增加延迟和成本，不替代系统级沙箱。`pi install npm:pi-verdict`
 
 ---
 
