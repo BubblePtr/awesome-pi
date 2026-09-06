@@ -11,7 +11,7 @@ const catalog = createCatalog({ en: englishReadme, zh: chineseReadme });
 const t = text[locale];
 const base = locale === 'zh' ? '/zh/' : '/';
 const canonicalUrl = new URL(base, Astro.site);
-const socialImageUrl = new URL('/og-image.png', Astro.site);
+const socialImageUrl = new URL('/og-image-v2.png', Astro.site);
 const categoryMap = new Map(catalog.categories.map(category => [category.id, category]));
 const total = catalog.resources.length;
 const categoryUrl = (id: string) => `${base}?category=${id}`;
