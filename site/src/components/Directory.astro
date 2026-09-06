@@ -11,6 +11,7 @@ const catalog = createCatalog({ en: englishReadme, zh: chineseReadme });
 const t = text[locale];
 const base = locale === 'zh' ? '/zh/' : '/';
 const canonicalUrl = new URL(base, Astro.site);
+const socialImageUrl = new URL('/og-image.png', Astro.site);
 const categoryMap = new Map(catalog.categories.map(category => [category.id, category]));
 const total = catalog.resources.length;
 const categoryUrl = (id: string) => `${base}?category=${id}`;
@@ -26,7 +27,17 @@ const categoryUrl = (id: string) => `${base}?category=${id}`;
     <meta property="og:description" content={t.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:image" content={socialImageUrl.href} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1731" />
+    <meta property="og:image:height" content="909" />
+    <meta property="og:image:alt" content={t.title} />
     <meta property="og:locale" content={locale === 'zh' ? 'zh_CN' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.title} />
+    <meta name="twitter:description" content={t.description} />
+    <meta name="twitter:image" content={socialImageUrl.href} />
+    <meta name="twitter:image:alt" content={t.title} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl.href} />
     <link rel="alternate" hreflang="en" href={new URL('/', Astro.site).href} />
