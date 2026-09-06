@@ -2,19 +2,19 @@
 
 # Awesome Pi [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> 精选 [Pi Coding Agent](https://pi.dev) Package 列表。Pi 是由 earendil-works 开发的终端 AI 编程助手，拥有丰富的 Package 生态。
+> 社区维护的 [Pi Coding Agent](https://pi.dev) Package 精选列表。Pi 是由 earendil-works 开发的终端 AI 编程助手，拥有丰富的 Package 生态。本列表收录的扩展、技能和主题主要由社区作者发布，收录不代表 Pi 官方发布或背书。
 
 [![Pi](https://img.shields.io/badge/Pi-v0.84+-blue.svg)](https://pi.dev)
 [![Packages](https://img.shields.io/badge/Packages-5500+-green.svg)](https://pi.dev/packages)
 [![License](https://img.shields.io/badge/License-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-[Pi Coding Agent](https://pi.dev) 是一个 AI Coding Harness 框架 Package 机制支持扩展（Extensions）、技能（Skills）、主题（Themes）和提示词模板（Prompt Templates）。本列表精选社区最佳 Package，帮助开发者打造高效的 AI 编程环境。
+[Pi Coding Agent](https://pi.dev) 是一个 AI Coding Harness 框架，其 Package 机制支持扩展（Extensions）、技能（Skills）、主题（Themes）和提示词模板（Prompt Templates）。本列表精选社区 Package，帮助开发者打造高效的 AI 编程环境。
 
 ```
-# 安装 Pi AgentOS/Linux)
+# 安装 Pi 核心 CLI
 curl -fsSL https://pi.dev/install.sh | sh
 
-# 安装 Pi ckage
+# 安装社区 Package（示例）
 pi install npm:context-mode
 
 # 查看已安装的 Pi Package
@@ -57,7 +57,11 @@ pi list
 
 ## Packages
 
-> 🔵 **官方 Package**：无需 `@scope` 即可安装的包（如 `pi install npm:context-mode`）。🟢 **社区 Package**：需带 `@scope` 安装的包（如 `pi install npm:@narumitw/pi-statusline`），列表中以 `@scope/name` 格式标注。
+> **包名与来源**：`npm:` 仅表示从 npm 安装；`name` 和 `@scope/name` 都可以是社区包名。`@scope` 是 npm 命名空间，有无 scope 都不能作为 Pi 官方身份的判断依据。请按各项目提供的完整包名安装，并核对发布者和源码仓库。参见 [npm scope 说明](https://docs.npmjs.com/about-scopes/)。
+>
+> [pi.dev/packages](https://pi.dev/packages) 是生态包目录，收录不代表 Pi 官方发布、审核或背书；[Pi Package 文档](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/packages.md) 说明了 npm / Git 分发方式和目录发现机制。
+>
+> [Pi 官方核心](https://github.com/earendil-works/pi)（如 `@earendil-works/pi-coding-agent`）、[上游扩展示例](https://github.com/earendil-works/pi/tree/main/packages/coding-agent/examples/extensions)与各作者独立发布的 Package 应分别看待。某个功能有官方示例，不代表实现该功能的社区包也是官方发布。
 
 ### Web Access & Search
 
@@ -87,7 +91,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 
 子代理 Package，支持任务委托、并行执行和多代理编排。
 
-- 🔥 [pi-subagents](https://github.com/nicobailon/pi-subagents) - 官方子代理扩展，支持链式、并行执行和 TUI 澄清。`pi install npm:pi-subagents`
+- 🔥 [pi-subagents](https://github.com/nicobailon/pi-subagents) - Nico Bailon（nicobailon）维护的社区子代理扩展，支持链式、并行执行和 TUI 澄清。`pi install npm:pi-subagents`
 - 🔥 [@tintinweb/pi-subagents](https://github.com/tintinweb/pi-subagents) - Claude Code 风格子代理，并行后台代理、实时 widget、Git worktree 隔离。`pi install npm:@tintinweb/pi-subagents`
 - 🔥 [@gotgenes/pi-subagents](https://pi.dev/packages/@gotgenes/pi-subagents) - tintinweb 的友好分支。`pi install npm:@gotgenes/pi-subagents`
 - [@narumitw/pi-subagents](https://github.com/narumiruna/pi-extensions) - 单/并行/链式执行模式的子代理。`pi install npm:@narumitw/pi-subagents`
@@ -128,7 +132,8 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [pi-hooks/permission](https://github.com/prateekmedia/pi-hooks) - 四层权限控制（Minimal/Low/Medium/High）。`pi install npm:pi-hooks`
 - [filter-output](https://github.com/michalvavra/agents) - 自动捕获敏感值并在发送给 AI 前编辑。`pi install git:github.com/michalvavra/agents`
 - [security](https://github.com/michalvavra/agents) - 阻止危险命令（如 sudo），需要显式用户批准。`pi install git:github.com/michalvavra/agents`
-- [pi-verdict](https://github.com/jesset/pi-verdict) - Claude Code auto mode 式权限门禁：三态裁决（allow/ask/deny），规则层先行 + 携带会话上下文的分类器兜灰区，全链 fail-closed，零依赖单文件，含不可关闭的自保护层。`pi install npm:pi-verdict`
+- [pi-vetter](https://github.com/jesset/pi-vetter) - npm 插件安装/更新前的供应链风险评估：通过 `/vet`、`/vet-install` 主动检查 OSV 漏洞、发布来源、静态模式与版本差异，报告 ALLOW/ASK/DENY；未发现风险不代表安全。`pi install npm:pi-vetter`
+- [pi-verdict](https://github.com/jesset/pi-verdict) - 实验性工具调用权限控制：规则优先，结合会话上下文的模型分类器处理不确定操作，支持 allow/ask/deny；模型调用会增加延迟和成本，不替代系统级沙箱。`pi install npm:pi-verdict`
 
 ---
 
@@ -343,7 +348,7 @@ Pi 核心不内置 plan mode，用扩展补只读规划。
 
 特色主题，独特的设计理念和用途。
 
-- 🔥 [pi-kanagawa](https://github.com/earendil-works/pi-kanagawa) - 受葛饰北斋《神奈川冲浪里》启发，深蓝色和温暖金色，含波浪动画和 git 分支小部件。`pi install npm:pi-kanagawa`
+- 🔥 [pi-kanagawa](https://www.npmjs.com/package/pi-kanagawa) - williy_cole 发布的社区主题，受葛饰北斋《神奈川冲浪里》启发，深蓝色和温暖金色，含波浪动画和 git 分支小部件。`pi install npm:pi-kanagawa`
 - [pi-terminal-theme](https://github.com/mavam/pi-terminal-theme) - 使用 ANSI 0-15 颜色的终端主题，让终端提供实际颜色。`pi install npm:pi-terminal-theme`
 - [pi-ansi-themes](https://github.com/leblancfg/pi-ansi-themes) - 标准 16 色 ANSI 主题，避免与终端主题冲突。`pi install git:github.com/leblancfg/pi-ansi-themes`
 - [my-pi-themes/e-ink](https://pi.dev/packages/my-pi-themes) - 电子墨水友好主题，高对比度低色彩。`pi install npm:my-pi-themes`
@@ -400,12 +405,13 @@ Pi 的 fork/替代发行版，提供开箱即用的增强体验。
 - 使用中文描述，保留英文名称和命令
 - 每个条目包含名称、链接、描述和安装命令（如果适用）
 - 按功能分类，保持格式一致
-- 优先选择有 GitHub 仓库或官方文档的资源
+- 优先选择有 GitHub 仓库或项目自身文档的资源
 - 标注作者信息（如有）
+- 仅在发布者和源码仓库可核实的情况下标注“Pi 官方”；不要根据安装方式、包名是否带 scope 或目录收录情况判断归属
 
 ### npm Scope 迁移说明
 
-2026-05-07，Pi 从 `@mariozechner` 迁移到 `@earendil-works` npm 作用域。旧包已弃用但不会被删除，运行 `pi update` 即可自动迁移。
+Pi 官方核心 npm 包已从 `@mariozechner` 迁移到 `@earendil-works`。下表列出的是核心包的命名变化，不是社区扩展的命名规则；各扩展仍使用其发布者指定的完整包名。
 
 | 旧包名 | 新包名 |
 |--------|--------|
@@ -425,6 +431,6 @@ Pi 的 fork/替代发行版，提供开箱即用的增强体验。
 
 ---
 
-*本文档最后更新于 2026 年 8 月。Pi 生态持续发展，建议定期查看 [pi.dev/packages](https://pi.dev/packages) 获取最新信息。*
+*本文档最后更新于 2026 年 9 月（来源说明修订；包选录和数量数据截至 2026 年 8 月）。Pi 生态持续发展，建议定期查看 [pi.dev/packages](https://pi.dev/packages) 获取最新信息。*
 
 <!-- END OF awesome-pi-list.md Part 2 -->
