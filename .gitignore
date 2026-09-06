@@ -1,1 +1,10 @@
 .pi/
+node_modules/
+site/.astro/
+site/dist/
+.vercel/
+output/
+.playwright-cli/
+.env
+.env.*
+!.env.example

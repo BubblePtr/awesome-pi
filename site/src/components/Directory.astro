@@ -1,0 +1,130 @@
+---
+import { createCatalog, type Locale } from '../lib/catalog';
+import englishReadme from '../../../README.en.md?raw';
+import chineseReadme from '../../../README.md?raw';
+import { categoryLabel, kindOrder, repository, text } from '../lib/i18n';
+import Icon from './Icon.astro';
+import '../styles/global.css';
+
+const { locale = 'en' } = Astro.props as { locale: Locale };
+const catalog = createCatalog({ en: englishReadme, zh: chineseReadme });
+const t = text[locale];
+const base = locale === 'zh' ? '/zh/' : '/';
+const canonicalUrl = new URL(base, Astro.site);
+const categoryMap = new Map(catalog.categories.map(category => [category.id, category]));
+const total = catalog.resources.length;
+const categoryUrl = (id: string) => `${base}?category=${id}`;
+---
+<!doctype html>
+<html lang={locale === 'zh' ? 'zh-CN' : 'en'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={t.description} />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:locale" content={locale === 'zh' ? 'zh_CN' : 'en_US'} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site).href} />
+    <link rel="alternate" hreflang="zh-CN" href={new URL('/zh/', Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site).href} />
+    <title>{t.title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#resources">{t.skip}</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href={base} aria-label="Awesome Pi"><span class="brand-mark" aria-hidden="true">π</span><span>awesome<span class="brand-muted">pi</span></span></a>
+        <nav class="header-links" aria-label={locale === 'zh' ? '主要导航' : 'Main navigation'}>
+          <a class="language-link" data-language href={locale === 'en' ? '/zh/' : '/'} lang={locale === 'en' ? 'zh-CN' : 'en'}><Icon name="globe" size={16} />{locale === 'en' ? '中文' : 'English'}</a>
+          <a class="github-link" href={repository} aria-label={t.github} target="_blank" rel="noopener noreferrer"><Icon name="github" size={17} /><span>{t.github}</span></a>
+          <a class="contribute-link" href={`${repository}/issues/new`} target="_blank" rel="noopener noreferrer"><Icon name="plus" size={16} /><span>{t.contribute}</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell" data-directory data-locale={locale} data-total={total}>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="status-dot"></span>{t.eyebrow}</p>
+          <h1 id="page-title">{t.heading}</h1>
+          <p class="intro-description">{t.intro}</p>
+        </div>
+        <div class="intro-stats" aria-label={locale === 'zh' ? '目录统计' : 'Directory statistics'}>
+          <div><strong>{total}</strong><span>{t.resources}</span></div>
+          <span class="stat-separator" aria-hidden="true"></span>
+          <div><strong>{catalog.categories.length}</strong><span>{t.categories.toLowerCase()}</span></div>
+        </div>
+      </section>
+
+      <div class="directory-layout">
+        <aside class="sidebar" aria-label={t.filter}>
+          <a class="category-all" data-category="all" data-label={t.all} href={base} aria-current="true"><span><Icon name="grid" size={17} />{t.all}</span><span class="category-count">{total}</span></a>
+          {kindOrder.map(kind => <div class="category-group">
+            <a class="category-group-heading" data-category={kind} data-label={t.kinds[kind]} href={categoryUrl(kind)}><span>{t.kinds[kind]}</span><span>{catalog.resources.filter(resource => resource.kind === kind).length}</span></a>
+            {catalog.categories.filter(category => category.kind === kind).map(category => (
+              <a class="category-link" data-category={category.id} data-label={categoryLabel(category.name, locale)} href={categoryUrl(category.id)}><span>{categoryLabel(category.name, locale)}</span><span class="category-count">{category.count}</span></a>
+            ))}
+          </div>)}
+          <div class="sidebar-footer"><span class="status-dot"></span>{t.maintained}</div>
+        </aside>
+
+        <section class="results" id="resources" aria-labelledby="results-heading">
+          <div class="search-box">
+            <Icon name="search" size={20} />
+            <label class="sr-only" for="search">{t.search}</label>
+            <input id="search" type="search" placeholder={t.placeholder} autocomplete="off" spellcheck="false" />
+            <button id="clear-search" class="icon-button" aria-label={t.clear} hidden><Icon name="close" size={17} /></button>
+          </div>
+          <div class="mobile-filter">
+            <label for="mobile-category">{t.filter}</label>
+            <select id="mobile-category">
+              <option value="all">{t.all} ({total})</option>
+              {kindOrder.map(kind => <optgroup label={t.kinds[kind]}>
+                <option value={kind}>{t.kinds[kind]} ({catalog.resources.filter(resource => resource.kind === kind).length})</option>
+                {catalog.categories.filter(category => category.kind === kind).map(category => <option value={category.id}>{categoryLabel(category.name, locale)} ({category.count})</option>)}
+              </optgroup>)}
+            </select>
+          </div>
+          <noscript><p class="no-script">{t.noScript}</p></noscript>
+          <div class="results-header"><h2 id="results-heading">{t.all}</h2><span id="result-count" aria-live="polite" aria-atomic="true">{locale === 'zh' ? `${total} 项资源` : `${total} resources`}</span></div>
+          <div class="resource-list">
+            {catalog.resources.map(resource => {
+              const descriptions = resource.descriptions[locale];
+              const description = descriptions.join(' ');
+              const long = description.length > (locale === 'zh' ? 110 : 220);
+              const search = `${resource.searchText} ${resource.categories.map(id => categoryLabel(categoryMap.get(id)!.name, 'zh')).join(' ')}`;
+              return <article class="resource" id={resource.id} data-resource data-kind={resource.kind} data-categories={resource.categories.join(' ')} data-search={search}>
+                <div class="resource-heading"><h3><a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.name}<Icon name="arrow" size={16} /></a></h3><span class="resource-type">{t.kinds[resource.kind]}</span></div>
+                <div class="resource-description">
+                  {long ? <details class="description-details"><summary><span class="description-preview">{description}</span><span class="details-toggle"><span class="when-closed">{t.more}</span><span class="when-open">{t.less}</span><Icon name="chevron" size={12} /></span></summary><p class="description-full">{description}</p></details> : <p>{description}</p>}
+                </div>
+                <div class="resource-categories">{resource.categories.map(id => <a href={categoryUrl(id)} class="resource-tag" data-category={id} data-label={categoryLabel(categoryMap.get(id)!.name, locale)}>{categoryLabel(categoryMap.get(id)!.name, locale)}</a>)}</div>
+                {resource.install ? <div class="install-command"><span class="command-prompt" aria-hidden="true">$</span><code>{resource.install}</code><button class="copy-button" data-copy={resource.install} aria-label={`${t.copyCommand}: ${resource.name}`}><Icon name="copy" size={14} /><span data-copy-label>{t.copy}</span></button></div> : <a class="install-instructions" href={resource.url} target="_blank" rel="noopener noreferrer">{t.missing}<Icon name="arrow" size={14} /></a>}
+              </article>;
+            })}
+          </div>
+          <div class="empty-state" id="empty-state" hidden><Icon name="search" size={32} /><h3>{t.emptyTitle}</h3><p>{t.emptyBody}</p><button data-reset>{t.reset}</button></div>
+        </section>
+      </div>
+      <footer class="site-footer">
+        <div><a class="footer-brand" href={base}>awesome<span>pi</span></a><p>{t.notice}</p></div>
+        <div class="footer-links">
+          <a href={`${repository}/issues/new`} target="_blank" rel="noopener noreferrer">{t.contribute}</a>
+          <a href={`${repository}/blob/main/${locale === 'zh' ? 'README.md' : 'README.en.md'}`} target="_blank" rel="noopener noreferrer">{t.source}<Icon name="arrow" size={13} /></a>
+          <a href={`${repository}/issues`} target="_blank" rel="noopener noreferrer">{t.report}</a>
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">{t.license}</a>
+        </div>
+      </footer>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+    </main>
+    <script>
+      import { initializeDirectory } from '../scripts/directory';
+      initializeDirectory(document, window);
+    </script>
+  </body>
+</html>
