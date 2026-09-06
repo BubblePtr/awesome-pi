@@ -128,7 +128,7 @@ Security and permission control packages.
 - [pi-hooks/permission](https://github.com/prateekmedia/pi-hooks) - Four-tier permission control (Minimal/Low/Medium/High). `pi install npm:pi-hooks`
 - [filter-output](https://github.com/michalvavra/agents) - Automatically captures sensitive values and redacts them before sending to the AI. `pi install git:github.com/michalvavra/agents`
 - [security](https://github.com/michalvavra/agents) - Blocks dangerous commands (e.g., sudo) requiring explicit user approval. `pi install git:github.com/michalvavra/agents`
-- [pi-vetter](https://github.com/jesset/pi-vetter) - Supply-chain vetting before install/update: OSV vulns, sigstore provenance verification, static-pattern and version-diff evidence, ALLOW/ASK/DENY verdicts with the full evidence list, fail-closed on scanner failure. `pi install npm:pi-vetter`
+- [pi-vetter](https://github.com/jesset/pi-vetter) - On-demand supply-chain risk assessment for npm packages via `/vet` and `/vet-install`: OSV advisories, provenance verification, static patterns, and version diffs with ALLOW/ASK/DENY reports. A clean report does not prove safety. `pi install npm:pi-vetter`
 
 ---
 
