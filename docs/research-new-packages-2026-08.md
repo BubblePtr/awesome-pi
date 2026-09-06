@@ -4,6 +4,8 @@
 
 > **落地状态（2026-08-19）：** 建议入选已全部写入 `README.md` / `README.en.md`（含 6 个必加项、worktree / betterwright、第二梯队、补遗 `pi-sandbox` / `pi-interactive-shell`）。观察名单未进。
 
+> **来源勘误（2026-09-06）：** 本文的“官方目录”指 Pi 官网提供的生态包目录，不代表其中的包由 Pi 官方发布或背书。`npm:` 和包名是否带 `@scope` 均不能用于判断官方身份；`pi-subagents` 是 [Nico Bailon 维护的社区扩展](https://github.com/nicobailon/pi-subagents)。其余调研数据保留 2026-08-19 的时间边界。
+
 精选列表不是全量目录。官方目录约 5500+、npm `keywords:pi-package` 约 7788，绝大多数是主题、个人 fork、空壳 skill、第 N 个 todo。下面只推荐能对上现有 README 质量门槛的包。
 
 ## 1. 调研范围与截止点
@@ -69,7 +71,7 @@ Pi 核心故意不内置 MCP、sub-agent、权限弹窗、plan mode、todo、后
 | 作者 | narumiruna / `@narumitw`（列表已收录其 statusline / lsp / goal / subagents） |
 | 首次发布 / 最近发布 | 2026-05-17 / 2026-08-05，v0.49.3，72 个版本，MIT |
 | 仓库 | https://github.com/narumiruna/pi-extensions/tree/main/packages/pi-plan-mode |
-| npm / 官方页 | https://www.npmjs.com/package/@narumitw/pi-plan-mode · https://pi.dev/packages/@narumitw/pi-plan-mode |
+| npm / Pi 目录页 | https://www.npmjs.com/package/@narumitw/pi-plan-mode · https://pi.dev/packages/@narumitw/pi-plan-mode |
 | 月下载 | 19,389 |
 | 实现信号 | 包内 47 个文件、15 个测试 |
 | 一句话能力 | Codex 风格只读 `/plan`：探索、澄清、产出可实施计划后再改代码。 |
@@ -89,7 +91,7 @@ README 原文：Pi 核心故意不内置 plan mode；本包补上。默认启用
 | 首次发布 / 最近发布 | 2026-05-30 / 2026-08-16，v3.6.0，51 个版本，MIT |
 | 仓库 | https://github.com/QuintinShaw/pi-dynamic-workflows（427★） |
 | 文档站 | https://quintinshaw.github.io/pi-dynamic-workflows/ |
-| npm / 官方页 | https://www.npmjs.com/package/@quintinshaw/pi-dynamic-workflows · https://pi.dev/packages/@quintinshaw/pi-dynamic-workflows |
+| npm / Pi 目录页 | https://www.npmjs.com/package/@quintinshaw/pi-dynamic-workflows · https://pi.dev/packages/@quintinshaw/pi-dynamic-workflows |
 | 月下载 | 27,843 |
 | 实现信号 | 仓库约 179 blob、`tests/` 下数十个单测 |
 | 一句话能力 | 把一次请求写成 JS 编排，扇出到隔离子代理，按任务路由模型并交叉校验。 |
@@ -106,7 +108,7 @@ README：`agent()` / `parallel()` / `pipeline()` / `phase()`；中间结果留�
 | 作者 | monotykamary |
 | 首次发布 / 最近发布 | **2026-07-13** / 2026-08-17，v0.61.2，200 个版本，MIT |
 | 仓库 | https://github.com/monotykamary/pi-fabric（124★，有 `.github/workflows/test.yml`） |
-| npm / 官方页 | https://www.npmjs.com/package/pi-fabric · https://pi.dev/packages/pi-fabric |
+| npm / Pi 目录页 | https://www.npmjs.com/package/pi-fabric · https://pi.dev/packages/pi-fabric |
 | 月下载 | 32,966 |
 | 实现信号 | 约 500 blob、大量 `tests/*.test.ts` |
 | 一句话能力 | 可编程工具运行时：在受检 TypeScript 里编排核心工具、MCP、agent 与工作流。 |
@@ -123,7 +125,7 @@ README：一个 `fabric_exec` 工具；默认跑在 QuickJS；支持 one-shot / 
 | 作者 | juicesharp（列表已收录 rpiv-todo / web-tools / advisor / ask-user 等） |
 | 首次发布 / 最近发布 | 2026-05-11 / 2026-08-18，v2.6.2，51 个版本，MIT |
 | 仓库 | https://github.com/juicesharp/rpiv-mono/tree/main/packages/rpiv-voice |
-| npm / 官方页 | https://www.npmjs.com/package/@juicesharp/rpiv-voice · https://pi.dev/packages/@juicesharp/rpiv-voice |
+| npm / Pi 目录页 | https://www.npmjs.com/package/@juicesharp/rpiv-voice · https://pi.dev/packages/@juicesharp/rpiv-voice |
 | 月下载 | 21,118 |
 | 实现信号 | 包内 88 个文件、29 个 `*.test.ts`（mic / STT / hallucination filter / command） |
 | 一句话能力 | `/voice` 本机 Whisper 听写，无云、无 API key。 |
@@ -141,7 +143,7 @@ README：overlay 听写；sherpa-onnx Whisper base multilingual int8；首次下
 | 首次发布 / 最近发布 | 2026-05-09 / 2026-08-11，v1.202608.1，28 个版本，MIT |
 | 仓库 | https://github.com/jmfederico/pi-web（567★，watch=3，forks=114，有 CI） |
 | 站点 | https://pi-web.dev/ |
-| npm / 官方页 | https://www.npmjs.com/package/@jmfederico/pi-web · https://pi.dev/packages/@jmfederico/pi-web |
+| npm / Pi 目录页 | https://www.npmjs.com/package/@jmfederico/pi-web · https://pi.dev/packages/@jmfederico/pi-web |
 | 月下载 | 7,866 |
 | 一句话能力 | 浏览器监督跑在真实工作区里的 Pi 会话，断线不杀进程。 |
 | 安装 | `pi install npm:@jmfederico/pi-web`（也支持 `npm i -g @jmfederico/pi-web` + `pi-web install`） |
@@ -173,7 +175,7 @@ README：就绪标记 / 错误 / 退出会把 Pi 拉回对话；`/ps`、`/ps:log
 | 作者 | narumiruna |
 | 首次发布 / 最近发布 | **2026-07-21** / 2026-08-18，v0.51.2，22 个版本，MIT |
 | 仓库 | https://github.com/narumiruna/pi-extensions/tree/main/packages/pi-worktree |
-| npm / 官方页 | https://www.npmjs.com/package/@narumitw/pi-worktree · https://pi.dev/packages/@narumitw/pi-worktree |
+| npm / Pi 目录页 | https://www.npmjs.com/package/@narumitw/pi-worktree · https://pi.dev/packages/@narumitw/pi-worktree |
 | 月下载 | 3,629 |
 | 实现信号 | 包内 23 个文件、11 个测试 |
 | 一句话能力 | 交互式 Git worktree：创建 / 切换 / 删除，并把 Pi 会话带到新工作区。 |
@@ -190,7 +192,7 @@ README 点出真实缺口：Pi 不能 `cd` 改父进程工作目录。本包用�
 | 作者 | BetterWright / curiosityos |
 | 首次发布 / 最近发布 | **2026-07-14** / 2026-08-19，v1.9.6，53 个版本，MIT |
 | 仓库 | https://github.com/BetterWright/betterwright（114★，有 CI / `release:check`） |
-| npm / 官方页 | https://www.npmjs.com/package/betterwright · https://pi.dev/packages/betterwright |
+| npm / Pi 目录页 | https://www.npmjs.com/package/betterwright · https://pi.dev/packages/betterwright |
 | 月下载 | 8,993 |
 | 实现信号 | `package.json` 含 `pi.extensions`；约 76 个测试相关文件；`prepublishOnly` 跑 lint + typecheck + unit |
 | 一句话能力 | 持久、策略守卫的 Playwright：网络策略、凭证保险库、证明截图。 |
@@ -333,7 +335,7 @@ README：压缩 snapshot 而不是整页 HTML；会话跨回合保持；同时�
 ## 7. 明确不推荐（这次）
 
 - **纯主题 / 欢迎屏 / 节日皮肤**：`sort=recent` 里大量当日主题。现有 Featured/Tools 门槛是「设计理念独特」（kanagawa / theme-sync），新主题默认不进。
-- **subagent 第 5、第 6 个 fork**（`@lpb-work/*`、`@ferris1225/*`、`wj-pi-subagents`）。列表已有官方 `pi-subagents`、tintinweb、gotgenes、narumitw、interactive、roach-pi。
+- **subagent 第 5、第 6 个 fork**（`@lpb-work/*`、`@ferris1225/*`、`wj-pi-subagents`）。列表已有 Nico Bailon 的社区包 `pi-subagents`、tintinweb、gotgenes、narumitw、interactive、roach-pi。
 - **包名带 personal、无仓库、无 README 的 npm 包**。
 - **用异常 star 当唯一质量信号**（`ponytail`：10.5 万★ vs 255 watch）。
 - **只把已收录包再发一个 scope**。

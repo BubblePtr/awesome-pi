@@ -2,22 +2,22 @@ English | [中文](./README.md)
 
 # Awesome Pi [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of [Pi Coding Agent](https://pi.dev) packages. Pi is a terminal AI coding harness by earendil-works with a thriving package ecosystem.
+> A community-maintained list of [Pi Coding Agent](https://pi.dev) packages. Pi is a terminal AI coding harness by earendil-works with a thriving package ecosystem. Most listed extensions, skills, and themes are published by community authors; inclusion does not imply an official Pi release or endorsement.
 
 [![Pi](https://img.shields.io/badge/Pi-v0.84+-blue.svg)](https://pi.dev)
 [![Packages](https://img.shields.io/badge/Packages-5500+-green.svg)](https://pi.dev/packages)
 [![License](https://img.shields.io/badge/License-CC0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-[Pi Coding Agent](https://pi.dev) is an AI coding harness that supports Extensions, Skills, Themes, and Prompt Templates through its Package system. This list curates the best community packages to help developers build an efficient AI-powered coding environment.
+[Pi Coding Agent](https://pi.dev) is an AI coding harness that supports Extensions, Skills, Themes, and Prompt Templates through its Package system. This list curates community packages to help developers build an efficient AI-powered coding environment.
 
 ```
-# Install Pi AgentOS/Linux)
+# Install the Pi core CLI
 curl -fsSL https://pi.dev/install.sh | sh
 
-# Install a Pi Page
+# Install a community package (example)
 pi install npm:context-mode
 
-# List installed Pi Pages
+# List installed Pi packages
 pi list
 ```
 
@@ -57,7 +57,11 @@ pi list
 
 ## Packages
 
-> 🔵 **Official Packages**: Installed without `@scope` (e.g. `pi install npm:context-mode`). 🟢 **Community Packages**: Installed with `@scope` (e.g. `pi install npm:@narumitw/pi-statusline`), shown in `@scope/name` format.
+> **Package names and sources**: `npm:` only means installation from npm; both `name` and `@scope/name` can be community packages. An `@scope` is an npm namespace, and its presence or absence does not establish official Pi status. Use each project's full published package name and check its publisher and source repository. See [npm's scope documentation](https://docs.npmjs.com/about-scopes/).
+>
+> [pi.dev/packages](https://pi.dev/packages) is an ecosystem package catalog. Inclusion does not imply an official Pi release, review, or endorsement. The [Pi Package documentation](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/packages.md) explains npm / Git distribution and catalog discovery.
+>
+> Distinguish the [official Pi core](https://github.com/earendil-works/pi) (such as `@earendil-works/pi-coding-agent`), [upstream extension examples](https://github.com/earendil-works/pi/tree/main/packages/coding-agent/examples/extensions), and packages published independently by their authors. An official example of a feature does not make a community package implementing it an official release.
 
 ### Web Access & Search
 
@@ -87,7 +91,7 @@ MCP (Model Context Protocol) adapter packages for connecting to external tool ec
 
 Subagent packages for task delegation, parallel execution, and multi-agent orchestration.
 
-- 🔥 [pi-subagents](https://github.com/nicobailon/pi-subagents) - Official subagent extension with chain, parallel execution, and TUI clarification. `pi install npm:pi-subagents`
+- 🔥 [pi-subagents](https://github.com/nicobailon/pi-subagents) - Community subagent extension maintained by Nico Bailon (nicobailon), with chain, parallel execution, and TUI clarification. `pi install npm:pi-subagents`
 - 🔥 [@tintinweb/pi-subagents](https://github.com/tintinweb/pi-subagents) - Claude Code-style subagents with parallel background agents, real-time widgets, and Git worktree isolation. `pi install npm:@tintinweb/pi-subagents`
 - 🔥 [@gotgenes/pi-subagents](https://pi.dev/packages/@gotgenes/pi-subagents) - Friendly fork of tintinweb's subagents. `pi install npm:@gotgenes/pi-subagents`
 - [@narumitw/pi-subagents](https://github.com/narumiruna/pi-extensions) - Subagents with single/parallel/chain execution modes. `pi install npm:@narumitw/pi-subagents`
@@ -342,7 +346,7 @@ Theme collection packs — install multiple color schemes at once.
 
 Featured themes with unique design concepts and purposes.
 
-- 🔥 [pi-kanagawa](https://github.com/earendil-works/pi-kanagawa) - Inspired by Hokusai's "The Great Wave off Kanagawa", deep blue and warm gold with wave animations and git branch widgets. `pi install npm:pi-kanagawa`
+- 🔥 [pi-kanagawa](https://www.npmjs.com/package/pi-kanagawa) - Community theme published by williy_cole, inspired by Hokusai's "The Great Wave off Kanagawa", with deep blue and warm gold, wave animations, and git branch widgets. `pi install npm:pi-kanagawa`
 - [pi-terminal-theme](https://github.com/mavam/pi-terminal-theme) - Uses ANSI 0-15 colors, letting the terminal provide the actual colors. `pi install npm:pi-terminal-theme`
 - [pi-ansi-themes](https://github.com/leblancfg/pi-ansi-themes) - Standard 16-color ANSI themes to avoid conflicts with terminal themes. `pi install git:github.com/leblancfg/pi-ansi-themes`
 - [my-pi-themes/e-ink](https://pi.dev/packages/my-pi-themes) - E-ink friendly theme with high contrast and low color. `pi install npm:my-pi-themes`
@@ -398,12 +402,13 @@ Contributions are welcome! Here's how you can help:
 
 - Each entry should include name, link, description, and install command (where applicable)
 - Organize by functional category and maintain consistent formatting
-- Prefer resources with GitHub repositories or official documentation
+- Prefer resources with GitHub repositories or the project's own documentation
 - Include author information where available
+- Only label a resource as "official Pi" when its publisher and source repository support that attribution; do not infer it from installation method, scoped or unscoped names, or catalog inclusion
 
 ### npm Scope Migration Note
 
-On 2026-05-07, Pi migrated from `@mariozechner` to `@earendil-works` npm scope. Old packages are deprecated but will not be deleted. Run `pi update` to automatically migrate.
+Official Pi core npm packages have migrated from `@mariozechner` to `@earendil-works`. The table below lists core package renames, not a naming rule for community extensions. Each extension keeps the full package name specified by its publisher.
 
 | Old Package | New Package |
 |-------------|-------------|
@@ -423,4 +428,4 @@ This list is licensed under [CC0 1.0 Universal](https://creativecommons.org/publ
 
 ---
 
-*Last updated: August 2026. The Pi ecosystem is constantly evolving — check [pi.dev/packages](https://pi.dev/packages) for the latest.*
+*Last updated: September 2026 (source attribution revised; package selection and counts are from August 2026). The Pi ecosystem is constantly evolving — check [pi.dev/packages](https://pi.dev/packages) for the latest.*
