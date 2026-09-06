@@ -213,6 +213,7 @@ Task management and goal tracking packages.
 - [pi-agent-flow](https://pi.dev/packages/pi-agent-flow) - Agent workflow orchestration tool. `pi install npm:pi-agent-flow`
 - [@gonrocca/zero-pi](https://pi.dev/packages/@gonrocca/zero-pi) - Spec-driven development workflow (explore→plan→build→verify). `pi install npm:@gonrocca/zero-pi`
 - [@narumitw/pi-worktree](https://github.com/narumiruna/pi-extensions) - Interactive Git worktrees: create, switch, remove, and move the Pi session into the new workspace. `pi install npm:@narumitw/pi-worktree`
+- [@dingdinglz/pi-worktree](https://github.com/dingdinglz/pi-worktree) - Git worktree workflows for Pi with verified PR publishing and resumable merges back to the original checkout. `pi install git:github.com/dingdinglz/pi-worktree`
 
 ---
 
