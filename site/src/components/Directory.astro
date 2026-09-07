@@ -1,4 +1,5 @@
 ---
+import Analytics from '@vercel/analytics/astro';
 import { createCatalog, type Locale } from '../lib/catalog';
 import englishReadme from '../../../README.en.md?raw';
 import chineseReadme from '../../../README.md?raw';
@@ -137,5 +138,6 @@ const categoryUrl = (id: string) => `${base}?category=${id}`;
       import { initializeDirectory } from '../scripts/directory';
       initializeDirectory(document, window);
     </script>
+    <Analytics />
   </body>
 </html>

@@ -13,6 +13,7 @@
     "validate": "bun run test && bun run check && bun run build && bun run test:rendered"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
     "astro": "7.3.1",
     "mdast-util-to-string": "4.0.0",
     "remark-parse": "11.0.0",

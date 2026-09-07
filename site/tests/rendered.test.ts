@@ -5,6 +5,18 @@ import { loadCatalog } from '../src/lib/catalog';
 
 describe('generated static pages', () => {
   for (const [locale, path] of [['en', '../dist/index.html'], ['zh', '../dist/zh/index.html']] as const) {
+    test(`${locale} includes exactly one analytics tracker for its page route`, () => {
+      const win = new Window();
+      try {
+        win.document.write(readFileSync(new URL(path, import.meta.url), 'utf8'));
+        const trackers = win.document.querySelectorAll('vercel-analytics');
+        expect(trackers).toHaveLength(1);
+        expect(trackers[0]?.getAttribute('data-pathname')).toBe(locale === 'zh' ? '/zh/' : '/');
+      } finally {
+        win.happyDOM.abort();
+      }
+    });
+
     test(`${locale} contains the full directory and accessible controls before JavaScript runs`, () => {
       const html = readFileSync(new URL(path, import.meta.url), 'utf8');
       const win = new Window();
