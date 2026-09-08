@@ -213,6 +213,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 - [pi-agent-flow](https://pi.dev/packages/pi-agent-flow) - Agent 工作流编排工具。`pi install npm:pi-agent-flow`
 - [@gonrocca/zero-pi](https://pi.dev/packages/@gonrocca/zero-pi) - 规范驱动开发工作流（探索→计划→构建→验证）。`pi install npm:@gonrocca/zero-pi`
 - [@narumitw/pi-worktree](https://github.com/narumiruna/pi-extensions) - 交互式 Git worktree：创建 / 切换 / 删除，并把 Pi 会话切到新工作区。`pi install npm:@narumitw/pi-worktree`
+- [@dinglz/pi-worktree](https://github.com/dingdinglz/pi-worktree) - 面向 Pi 的 Git worktree 工作流：隔离开发、校验 PR 发布结果，并支持恢复中断流程、合并回原工作目录。`pi install npm:@dinglz/pi-worktree`
 
 ---
 
