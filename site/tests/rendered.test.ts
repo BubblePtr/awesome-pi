@@ -26,8 +26,8 @@ describe('generated static pages', () => {
       expect(win.document.querySelectorAll('h1')).toHaveLength(1);
       expect(win.document.querySelector('meta[name="description"]')?.getAttribute('content')?.length).toBeGreaterThan(30);
       const canonical = win.document.querySelector('link[rel="canonical"]')?.getAttribute('href');
-      expect(canonical).toBe(`https://awesome-pi-list.vercel.app/${locale === 'zh' ? 'zh/' : ''}`);
-      const socialImage = 'https://awesome-pi-list.vercel.app/og-image-v2.png';
+      expect(canonical).toBe(`https://piindex.dev/${locale === 'zh' ? 'zh/' : ''}`);
+      const socialImage = 'https://piindex.dev/og-image-v2.png';
       expect(win.document.querySelector('meta[property="og:image"]')?.getAttribute('content')).toBe(socialImage);
       const image = readFileSync(new URL('../dist/og-image-v2.png', import.meta.url));
       expect(image.subarray(0, 8).toString('hex')).toBe('89504e470d0a1a0a');
