@@ -7,9 +7,9 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "awesome-pi-list.vercel.app" }],
-      "destination": "https://piindex.dev/:path*",
+      "destination": "https://piindex.dev/$1",
       "permanent": true
     }
   ]
