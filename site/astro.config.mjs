@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.piindex.dev',
+  site: 'https://piindex.dev',
   output: 'static',
   devToolbar: { enabled: false },
   integrations: [

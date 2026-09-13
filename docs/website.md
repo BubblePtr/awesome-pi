@@ -2,7 +2,7 @@
 
 网站将仓库中已有的资源清单转换为可搜索、可筛选的静态目录。默认英文，`/zh/` 提供中文；搜索会同时匹配中英文介绍。
 
-网站地址：<https://www.piindex.dev/>，中文入口：<https://www.piindex.dev/zh/>。裸域 `piindex.dev` 在 Vercel 侧 308 到 `www`，旧域名 `awesome-pi-list.vercel.app` 通过 `vercel.json` 中的 `has` 规则 301 跳转到正式域名。
+网站地址：<https://piindex.dev/>，中文入口：<https://piindex.dev/zh/>。`www.piindex.dev` 在 Vercel 侧 308 到裸域，旧域名 `awesome-pi-list.vercel.app` 通过 `vercel.json` 中的 `has` 规则 301 跳转到正式域名。
 
 ## 内容来源
 
@@ -58,7 +58,7 @@ bun run --cwd site preview
 - 构建指令运行完整验证，失败时阻止发布。
 - 无数据库、服务端函数或运行时密钥需求。
 - `.vercel/`、`site/dist/`、依赖与本地截图不纳入版本控制。
-- 正式域名为 `www.piindex.dev`，DNS 托管在 Cloudflare，记录需设为 DNS only（关闭 CF 代理）供 Vercel 签发证书。canonical、OG 链接、sitemap 与 hreflang 均由 `site/astro.config.mjs` 的 `site` 派生；`site/public/robots.txt` 指向 `sitemap-index.xml`（由 `@astrojs/sitemap` 生成）。
+- 正式域名为 `piindex.dev`，DNS 托管在 Cloudflare，记录需设为 DNS only（关闭 CF 代理）供 Vercel 签发证书。canonical、OG 链接、sitemap 与 hreflang 均由 `site/astro.config.mjs` 的 `site` 派生；`site/public/robots.txt` 指向 `sitemap-index.xml`（由 `@astrojs/sitemap` 生成）。
 
 分支验证通过后再合入 `main`。后续只需通过 PR 修改 README，合并后 Vercel 即会重新生成网站。
 

@@ -9,7 +9,7 @@
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "awesome-pi-list.vercel.app" }],
-      "destination": "https://www.piindex.dev/:path*",
+      "destination": "https://piindex.dev/:path*",
       "permanent": true
     }
   ]
