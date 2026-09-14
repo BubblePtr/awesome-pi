@@ -1,9 +1,9 @@
 # OG 分享图片
 
 - 生成方式：Codex 内置 imagegen 生图工具。
-- 当前图片：`site/public/og-image-v3.png`；品牌名更新为 Pi Index，域名文字为 piindex.dev，左侧对齐布局。
-- 历史图片：`og-image.png`（初版居中版式）、`og-image-v2.png`（居中修正版），保留旧文件供已有链接使用。
-- 图片尺寸：1731 × 909 像素，保留生图工具原始输出。
+- 当前图片：`site/public/og-image-v4.png`；Pi Index 品牌，插画风格（包裹、主题色卡、终端等元素）。
+- 历史图片：`og-image.png`（初版居中版式）、`og-image-v2.png`（居中修正版）、`og-image-v3.png`（文字版式），保留旧文件供已有链接使用。
+- 图片尺寸：1730 × 909 像素，保留生图工具原始输出。
 - 用途：中英文页面共用的 Open Graph 和 X 大图分享卡片。
 
 ## 初版生成提示词
