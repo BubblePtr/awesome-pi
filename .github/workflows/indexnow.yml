@@ -1,0 +1,26 @@
+name: IndexNow
+
+on:
+  deployment_status:
+
+jobs:
+  submit:
+    # Only ping after Vercel reports a successful Production deployment,
+    # so Bing recrawls pages that already serve the new content.
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment_status.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -sf -X POST 'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "host": "piindex.dev",
+              "key": "de36895509049d938c9de542280e4173",
+              "keyLocation": "https://piindex.dev/de36895509049d938c9de542280e4173.txt",
+              "urlList": [
+                "https://piindex.dev/",
+                "https://piindex.dev/zh/"
+              ]
+            }'
