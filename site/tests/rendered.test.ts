@@ -27,9 +27,9 @@ describe('generated static pages', () => {
       expect(win.document.querySelector('meta[name="description"]')?.getAttribute('content')?.length).toBeGreaterThan(30);
       const canonical = win.document.querySelector('link[rel="canonical"]')?.getAttribute('href');
       expect(canonical).toBe(`https://piindex.dev/${locale === 'zh' ? 'zh/' : ''}`);
-      const socialImage = 'https://piindex.dev/og-image-v2.png';
+      const socialImage = 'https://piindex.dev/og-image-v3.png';
       expect(win.document.querySelector('meta[property="og:image"]')?.getAttribute('content')).toBe(socialImage);
-      const image = readFileSync(new URL('../dist/og-image-v2.png', import.meta.url));
+      const image = readFileSync(new URL('../dist/og-image-v3.png', import.meta.url));
       expect(image.subarray(0, 8).toString('hex')).toBe('89504e470d0a1a0a');
       expect(win.document.querySelector('meta[property="og:image:width"]')?.getAttribute('content')).toBe(String(image.readUInt32BE(16)));
       expect(win.document.querySelector('meta[property="og:image:height"]')?.getAttribute('content')).toBe(String(image.readUInt32BE(20)));
