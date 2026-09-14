@@ -50,7 +50,7 @@ const categoryUrl = (id: string) => `${base}?category=${id}`;
     <a class="skip-link" href="#resources">{t.skip}</a>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href={base} aria-label="Awesome Pi"><span class="brand-mark" aria-hidden="true">π</span><span>awesome<span class="brand-muted">pi</span></span></a>
+        <a class="brand" href={base} aria-label="Pi Index"><span class="brand-mark" aria-hidden="true">π</span><span><span class="brand-muted">pi</span>index</span></a>
         <nav class="header-links" aria-label={locale === 'zh' ? '主要导航' : 'Main navigation'}>
           <a class="language-link" data-language href={locale === 'en' ? '/zh/' : '/'} lang={locale === 'en' ? 'zh-CN' : 'en'}><Icon name="globe" size={16} />{locale === 'en' ? '中文' : 'English'}</a>
           <a class="github-link" href={repository} aria-label={t.github} target="_blank" rel="noopener noreferrer"><Icon name="github" size={17} /><span>{t.github}</span></a>
@@ -124,7 +124,7 @@ const categoryUrl = (id: string) => `${base}?category=${id}`;
         </section>
       </div>
       <footer class="site-footer">
-        <div><a class="footer-brand" href={base}>awesome<span>pi</span></a><p>{t.notice}</p></div>
+        <div><a class="footer-brand" href={base}><span>pi</span>index</a><p>{t.notice}</p></div>
         <div class="footer-links">
           <a href={`${repository}/issues/new`} target="_blank" rel="noopener noreferrer">{t.contribute}</a>
           <a href={`${repository}/blob/main/${locale === 'zh' ? 'README.md' : 'README.en.md'}`} target="_blank" rel="noopener noreferrer">{t.source}<Icon name="arrow" size={13} /></a>

@@ -22,7 +22,7 @@ describe('generated static pages', () => {
       const win = new Window();
       win.document.write(html);
       expect(win.document.documentElement.lang).toBe(locale === 'zh' ? 'zh-CN' : 'en');
-      expect(win.document.title).toContain('Awesome Pi');
+      expect(win.document.title).toContain('Pi Index');
       expect(win.document.querySelectorAll('h1')).toHaveLength(1);
       expect(win.document.querySelector('meta[name="description"]')?.getAttribute('content')?.length).toBeGreaterThan(30);
       const canonical = win.document.querySelector('link[rel="canonical"]')?.getAttribute('href');
@@ -34,7 +34,7 @@ describe('generated static pages', () => {
       expect(win.document.querySelector('meta[property="og:image:width"]')?.getAttribute('content')).toBe(String(image.readUInt32BE(16)));
       expect(win.document.querySelector('meta[property="og:image:height"]')?.getAttribute('content')).toBe(String(image.readUInt32BE(20)));
       expect(win.document.querySelector('meta[property="og:image:type"]')?.getAttribute('content')).toBe('image/png');
-      expect(win.document.querySelector('meta[property="og:image:alt"]')?.getAttribute('content')).toContain('Awesome Pi');
+      expect(win.document.querySelector('meta[property="og:image:alt"]')?.getAttribute('content')).toContain('Pi Index');
       expect(win.document.querySelector('meta[name="twitter:card"]')?.getAttribute('content')).toBe('summary_large_image');
       expect(win.document.querySelector('meta[name="twitter:image"]')?.getAttribute('content')).toBe(socialImage);
       for (const link of win.document.querySelectorAll('link[rel="alternate"]')) expect(link.getAttribute('href')).toStartWith('https://');
