@@ -4,7 +4,7 @@ export const repository = 'https://github.com/BubblePtr/awesome-pi';
 export const kindOrder: ResourceKind[] = ['packages', 'themes', 'integrations', 'distributions'];
 export const text = {
   en: {
-    title: 'Awesome Pi — A curated directory for Pi Coding Agent',
+    title: 'Pi Index — A curated directory for Pi Coding Agent',
     description: 'Discover community packages, themes, and tools for Pi Coding Agent. Browse by category, search in English or Chinese, and copy installation commands.',
     eyebrow: 'THE COMMUNITY DIRECTORY', heading: 'Make Pi your own.',
     intro: 'Discover packages, themes, and tools for Pi Coding Agent. Curated by the community, ready for your workflow.',
@@ -24,7 +24,7 @@ export const text = {
     kinds: { packages: 'Packages', themes: 'Themes', integrations: 'Editor integrations', distributions: 'Distributions' },
   },
   zh: {
-    title: 'Awesome Pi — Pi Coding Agent 社区资源精选',
+    title: 'Pi Index — Pi Coding Agent 社区资源精选',
     description: '发现 Pi Coding Agent 的社区扩展、主题与工具。按功能分类浏览，使用中英文搜索，一键复制安装命令。社区维护的精选资源目录。',
     eyebrow: 'PI 社区资源目录', heading: '让 Pi 更适合你。',
     intro: '发现 Pi Coding Agent 的扩展、主题与工具。由社区精选，为你的工作方式找到合适的搭配。',
