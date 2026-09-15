@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import type { Locale, Resource } from './catalog';
 
 export type GitHubStats = { stars: number };
-export type NpmStats = { weekly: number; trend: number | null };
+export type NpmStats = { weekly: number; trend: number | null; repo?: string | null };
 export type StatsSnapshot = {
   generatedAt: string;
   github: Record<string, GitHubStats>;
@@ -29,6 +29,15 @@ export function npmPackage(install: string | null): string | null {
   const command = /^(?:pi install npm:|npm install (?:-g )?)(\S+)$/.exec(install);
   const name = command?.[1] ?? '';
   return /^(?:@[a-z0-9][\w.-]*\/)?[a-z0-9][\w.-]*$/i.test(name) ? name : null;
+}
+
+export function registryRepo(repository: unknown): string | null {
+  const url = typeof repository === 'string' ? repository : (repository as { url?: unknown } | null)?.url;
+  if (typeof url !== 'string') return null;
+  if (url.startsWith('github:')) return githubRepo(`https://github.com/${url.slice('github:'.length)}`);
+  const ssh = /^git@github\.com:(.+)$/.exec(url);
+  if (ssh) return githubRepo(`https://github.com/${ssh[1]}`);
+  return githubRepo(url.replace(/^git\+/, ''));
 }
 
 export function weeklyTrend(days: number[]): NpmStats | null {
@@ -67,9 +76,9 @@ export function loadStats(): StatsSnapshot {
 }
 
 export function statsFor(resource: Resource, snapshot: StatsSnapshot): ResourceStats {
-  const repo = githubRepo(resource.url);
   const pkg = npmPackage(resource.install);
-  const github = repo ? snapshot.github[repo] : undefined;
   const npm = pkg ? snapshot.npm[pkg] : undefined;
+  const repo = githubRepo(resource.url) ?? npm?.repo ?? null;
+  const github = repo ? snapshot.github[repo] : undefined;
   return { repo, package: pkg, stars: github?.stars ?? null, weekly: npm?.weekly ?? null, trend: npm?.trend ?? null };
 }
