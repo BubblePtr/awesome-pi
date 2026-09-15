@@ -75,11 +75,11 @@ h1 { margin: 0; font-size: clamp(2rem, 3.7vw, 2.8rem); line-height: 1.13; letter
 .results-header h2 { margin: 0; font-size: .92rem; line-height: 1.5; font-weight: 600; }
 #result-count { font-size: .78rem; color: #68746c; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .resource { padding: 22px 0 24px; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
-.resource-heading { display: flex; gap: 18px; align-items: flex-start; justify-content: space-between; }
+.resource-heading { display: flex; flex-wrap: wrap; gap: 3px 18px; align-items: flex-start; justify-content: space-between; }
 .resource h3 { margin: 0; min-width: 0; font-family: var(--mono); font-size: .98rem; line-height: 1.5; letter-spacing: -.025em; font-weight: 500; }
 .resource h3 a { overflow-wrap: anywhere; }
 .resource h3 svg { display: inline-block; margin-left: 7px; vertical-align: -2px; color: #95a098; }
-.resource-type { flex-shrink: 0; padding-top: 4px; font-size: .75rem; letter-spacing: .015em; color: #69766d; }
+.resource-kind { padding: 3px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); font-size: .75rem; line-height: 1.5; }
 .resource-description { margin-top: 9px; color: #5e6a62; font-size: .96rem; line-height: 1.65; overflow-wrap: anywhere; }
 .resource-description p { margin: 0; }
 .description-details summary { list-style: none; }
@@ -93,6 +93,12 @@ h1 { margin: 0; font-size: clamp(2rem, 3.7vw, 2.8rem); line-height: 1.13; letter
 .description-details[open] .details-toggle svg { transform: rotate(90deg); }
 .resource-categories { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
 .resource-tag { padding: 3px 7px; border-radius: 4px; background: #f1f4f2; color: #687a6d; font-size: .75rem; line-height: 1.5; }
+.resource-stats { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; margin-left: auto; padding-top: 4px; font-size: .96rem; color: #68766c; font-variant-numeric: tabular-nums; }
+.resource-stats .stat { display: inline-flex; align-items: center; gap: 5px; }
+.resource-stats svg { color: #9aa79e; }
+.resource-stats .trend { margin-left: 5px; font-size: .8rem; font-weight: 500; }
+.resource-stats .trend.up { color: #2e7d4f; }
+.resource-stats .trend.down { color: #b3552e; }
 .install-command { margin-top: 14px; display: flex; align-items: center; gap: 10px; min-height: 39px; border: 1px solid #e9edea; border-radius: 5px; padding: 0 4px 0 11px; background: #f9faf9; }
 .command-prompt { font-family: var(--mono); font-size: .77rem; color: #8c9990; user-select: none; }
 .install-command code { min-width: 0; overflow-x: auto; padding: 10px 0; flex: 1; white-space: nowrap; font-family: var(--mono); font-size: .75rem; line-height: 1.45; color: #4a5f50; scrollbar-width: thin; }
@@ -110,6 +116,7 @@ h1 { margin: 0; font-size: clamp(2rem, 3.7vw, 2.8rem); line-height: 1.13; letter
 .footer-brand { font-size: 1rem; font-weight: 650; letter-spacing: -.04em; }
 .footer-brand span { color: var(--accent); }
 .site-footer p { margin: 8px 0 0; color: #68746c; font-size: .77rem; line-height: 1.5; }
+.site-footer .stats-updated { color: #95a29a; }
 .footer-links { display: flex; gap: 22px; align-items: flex-start; padding-top: 6px; font-size: .76rem; color: #6b776f; }
 .footer-links a { display: inline-flex; align-items: center; gap: 3px; }
 .copy-status { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 10; max-width: calc(100% - 32px); width: max-content; border-radius: 6px; background: #243e2e; box-shadow: 0 4px 18px #142e2020; color: white; font-size: .875rem; line-height: 1.5; }
@@ -119,6 +126,7 @@ h1 { margin: 0; font-size: clamp(2rem, 3.7vw, 2.8rem); line-height: 1.13; letter
   .category-link:hover, .category-group-heading:hover { background: #f5f8f5; color: var(--accent); }
   .resource h3 a:hover, .resource h3 a:hover svg { color: var(--accent); }
   .resource-tag:hover { color: var(--accent); background: #e6f1e9; }
+  .resource-kind:hover { background: #ddefe4; }
   .copy-button:hover { color: var(--accent); background: #edf4ef; }
   .icon-button:hover { background: #eff4f0; }
 }
@@ -156,11 +164,11 @@ h1 { margin: 0; font-size: clamp(2rem, 3.7vw, 2.8rem); line-height: 1.13; letter
   .results-header h2 { font-size: .875rem; }
   #result-count { font-size: .75rem; }
   .resource { padding: 21px 0 23px; }
-  .resource-heading { gap: 10px; }
+  .resource-heading { gap: 2px 10px; }
+  .resource-stats { padding-top: 2px; font-size: .94rem; }
   .resource h3 { font-size: .92rem; }
-  .resource-type { font-size: .75rem; }
   .resource-description { font-size: .94rem; }
-  .resource-tag { padding: 6px 8px; min-height: 30px; font-size: .75rem; }
+  .resource-kind, .resource-tag { padding: 6px 8px; min-height: 30px; font-size: .75rem; }
   .install-command { gap: 7px; padding-left: 9px; }
   .install-command code { font-size: .75rem; padding: 13px 0; }
   .copy-button { min-height: 40px; min-width: 44px; }

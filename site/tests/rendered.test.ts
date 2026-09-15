@@ -2,6 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import { Window, type HTMLAnchorElement } from 'happy-dom';
 import { loadCatalog } from '../src/lib/catalog';
+import { loadStats, statsFor } from '../src/lib/stats';
 
 describe('generated static pages', () => {
   for (const [locale, path] of [['en', '../dist/index.html'], ['zh', '../dist/zh/index.html']] as const) {
@@ -44,6 +45,7 @@ describe('generated static pages', () => {
       expect(win.document.querySelector('.github-link')?.getAttribute('aria-label')).toBe('GitHub');
       expect(win.document.querySelector('footer a[href="https://github.com/BubblePtr/awesome-pi/issues/new"]')).not.toBeNull();
       const catalog = loadCatalog();
+      const stats = loadStats();
       expect(win.document.querySelectorAll('[data-resource]').length).toBe(catalog.resources.length);
       for (const resource of catalog.resources) {
         const row = win.document.getElementById(resource.id)!;
@@ -51,7 +53,13 @@ describe('generated static pages', () => {
         expect(row.querySelector<HTMLAnchorElement>('h3 a')?.getAttribute('href')).toBe(resource.url);
         expect(row.querySelector('[data-copy]')?.getAttribute('data-copy') ?? null).toBe(resource.install);
         for (const description of resource.descriptions[locale]) expect(row.textContent).toContain(description);
+        const metrics = statsFor(resource, stats);
+        expect(row.getAttribute('data-stars')).toBe(metrics.stars === null ? null : String(metrics.stars));
+        expect(row.getAttribute('data-downloads')).toBe(metrics.weekly === null ? null : String(metrics.weekly));
+        expect(row.querySelector('.resource-stats') !== null).toBe(metrics.stars !== null || metrics.weekly !== null);
       }
+      expect(win.document.querySelectorAll('.resource-stats').length).toBeGreaterThan(0);
+      expect(win.document.querySelector('.stats-updated')).not.toBeNull();
       win.happyDOM.abort();
     });
   }

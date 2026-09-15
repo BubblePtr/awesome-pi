@@ -4,11 +4,14 @@ import { createCatalog, type Locale } from '../lib/catalog';
 import englishReadme from '../../../README.en.md?raw';
 import chineseReadme from '../../../README.md?raw';
 import { categoryLabel, kindOrder, repository, text } from '../lib/i18n';
+import { emptySnapshot, formatCount, parseSnapshot, statsFor } from '../lib/stats';
 import Icon from './Icon.astro';
 import '../styles/global.css';
 
 const { locale = 'en' } = Astro.props as { locale: Locale };
 const catalog = createCatalog({ en: englishReadme, zh: chineseReadme });
+const statsRaw = Object.values(import.meta.glob('../data/stats.json', { query: '?raw', import: 'default', eager: true }))[0] as string | undefined;
+const stats = statsRaw ? parseSnapshot(statsRaw) : emptySnapshot();
 const t = text[locale];
 const base = locale === 'zh' ? '/zh/' : '/';
 const canonicalUrl = new URL(base, Astro.site);
@@ -16,6 +19,9 @@ const socialImageUrl = new URL('/og-image-v4.png', Astro.site);
 const categoryMap = new Map(catalog.categories.map(category => [category.id, category]));
 const total = catalog.resources.length;
 const categoryUrl = (id: string) => `${base}?category=${id}`;
+const statsDate = stats.generatedAt
+  ? new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', { dateStyle: 'medium' }).format(new Date(stats.generatedAt))
+  : null;
 ---
 <!doctype html>
 <html lang={locale === 'zh' ? 'zh-CN' : 'en'}>
@@ -110,12 +116,13 @@ const categoryUrl = (id: string) => `${base}?category=${id}`;
               const description = descriptions.join(' ');
               const long = description.length > (locale === 'zh' ? 110 : 220);
               const search = `${resource.searchText} ${resource.categories.map(id => categoryLabel(categoryMap.get(id)!.name, 'zh')).join(' ')}`;
-              return <article class="resource" id={resource.id} data-resource data-kind={resource.kind} data-categories={resource.categories.join(' ')} data-search={search}>
-                <div class="resource-heading"><h3><a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.name}<Icon name="arrow" size={16} /></a></h3><span class="resource-type">{t.kinds[resource.kind]}</span></div>
+              const metrics = statsFor(resource, stats);
+              return <article class="resource" id={resource.id} data-resource data-kind={resource.kind} data-categories={resource.categories.join(' ')} data-search={search} data-stars={metrics.stars ?? undefined} data-downloads={metrics.weekly ?? undefined}>
+                <div class="resource-heading"><h3><a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.name}<Icon name="arrow" size={16} /></a></h3>{(metrics.stars !== null || metrics.weekly !== null) && <span class="resource-stats">{metrics.stars !== null && <span class="stat" title={t.statsStars}><Icon name="star" size={15} />{formatCount(metrics.stars, locale)}</span>}{metrics.weekly !== null && <span class="stat" title={t.statsDownloads}><Icon name="download" size={15} />{formatCount(metrics.weekly, locale)}{t.perWeek}{metrics.trend !== null && <span class:list={['trend', metrics.trend >= 0 ? 'up' : 'down']}>{metrics.trend >= 0 ? '▲' : '▼'}{Math.abs(metrics.trend)}%</span>}</span>}</span>}</div>
                 <div class="resource-description">
                   {long ? <details class="description-details"><summary><span class="description-preview">{description}</span><span class="details-toggle"><span class="when-closed">{t.more}</span><span class="when-open">{t.less}</span><Icon name="chevron" size={12} /></span></summary><p class="description-full">{description}</p></details> : <p>{description}</p>}
                 </div>
-                <div class="resource-categories">{resource.categories.map(id => <a href={categoryUrl(id)} class="resource-tag" data-category={id} data-label={categoryLabel(categoryMap.get(id)!.name, locale)}>{categoryLabel(categoryMap.get(id)!.name, locale)}</a>)}</div>
+                <div class="resource-categories"><a href={categoryUrl(resource.kind)} class="resource-kind" data-category={resource.kind} data-label={t.kinds[resource.kind]}>{t.kinds[resource.kind]}</a>{resource.categories.map(id => <a href={categoryUrl(id)} class="resource-tag" data-category={id} data-label={categoryLabel(categoryMap.get(id)!.name, locale)}>{categoryLabel(categoryMap.get(id)!.name, locale)}</a>)}</div>
                 {resource.install ? <div class="install-command"><span class="command-prompt" aria-hidden="true">$</span><code>{resource.install}</code><button class="copy-button" data-copy={resource.install} aria-label={`${t.copyCommand}: ${resource.name}`}><Icon name="copy" size={14} /><span data-copy-label>{t.copy}</span></button></div> : <a class="install-instructions" href={resource.url} target="_blank" rel="noopener noreferrer">{t.missing}<Icon name="arrow" size={14} /></a>}
               </article>;
             })}
@@ -124,7 +131,7 @@ const categoryUrl = (id: string) => `${base}?category=${id}`;
         </section>
       </div>
       <footer class="site-footer">
-        <div><a class="footer-brand" href={base}><span>pi</span>index</a><p>{t.notice}</p></div>
+        <div><a class="footer-brand" href={base}><span>pi</span>index</a><p>{t.notice}</p>{statsDate && <p class="stats-updated">{t.statsUpdated.replace('{date}', statsDate)}</p>}</div>
         <div class="footer-links">
           <a href={`${repository}/issues/new`} target="_blank" rel="noopener noreferrer">{t.contribute}</a>
           <a href={`${repository}/blob/main/${locale === 'zh' ? 'README.md' : 'README.en.md'}`} target="_blank" rel="noopener noreferrer">{t.source}<Icon name="arrow" size={13} /></a>

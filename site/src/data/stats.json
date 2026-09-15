@@ -1,0 +1,691 @@
+{
+  "generatedAt": "2026-09-14T18:00:09.885Z",
+  "github": {
+    "acolomba/pi-claude-marketplace": {
+      "stars": 23
+    },
+    "acsezen/pi-memory-honcho": {
+      "stars": 2
+    },
+    "adstastic/pi-theme-flip": {
+      "stars": 0
+    },
+    "aliou/pi-guardrails": {
+      "stars": 278
+    },
+    "aliou/pi-processes": {
+      "stars": 89
+    },
+    "apmantza/pi-lens": {
+      "stars": 411
+    },
+    "BetterWright/betterwright": {
+      "stars": 278
+    },
+    "can1357/oh-my-pi": {
+      "stars": 31103
+    },
+    "carderne/pi-sandbox": {
+      "stars": 234
+    },
+    "championswimmer/pi-cache-graph": {
+      "stars": 33
+    },
+    "championswimmer/pi-context-prune": {
+      "stars": 239
+    },
+    "chandra447/pi-hermes-memory": {
+      "stars": 435
+    },
+    "code-yeongyu/pi-ast-grep": {
+      "stars": 18
+    },
+    "code-yeongyu/pi-lsp-client": {
+      "stars": 16
+    },
+    "code-yeongyu/pi-rules": {
+      "stars": 11
+    },
+    "code-yeongyu/pi-webfetch": {
+      "stars": 7
+    },
+    "code-yeongyu/pi-websearch": {
+      "stars": 10
+    },
+    "code-yeongyu/senpi": {
+      "stars": 429
+    },
+    "codella/pi-packages": {
+      "stars": 1
+    },
+    "dbachelder/pi-btw": {
+      "stars": 189
+    },
+    "dingdinglz/pi-worktree": {
+      "stars": 0
+    },
+    "dkmnx/pi-cursor-theme": {
+      "stars": 0
+    },
+    "ElieMessieCode/pi-code-theme": {
+      "stars": 0
+    },
+    "fitchmultz/pi-agent-browser-native": {
+      "stars": 219
+    },
+    "gintasz/neuralyzer": {
+      "stars": 39
+    },
+    "gotgenes/pi-packages": {
+      "stars": 218
+    },
+    "hasit/pi-community-themes": {
+      "stars": 33
+    },
+    "HazAT/pi-interactive-subagents": {
+      "stars": 689
+    },
+    "heyhuynhgiabuu/openpi": {
+      "stars": 214
+    },
+    "Hypabolic/Hypa": {
+      "stars": 182
+    },
+    "javierportillo/pi-hackerman": {
+      "stars": 1
+    },
+    "jayshah5696/pi-agent-extensions": {
+      "stars": 69
+    },
+    "jayzeng/pi-memory": {
+      "stars": 159
+    },
+    "jesset/pi-verdict": {
+      "stars": 2
+    },
+    "jesset/pi-vetter": {
+      "stars": 0
+    },
+    "jmfederico/pi-web": {
+      "stars": 760
+    },
+    "jonjonrankin/pi-caveman": {
+      "stars": 104
+    },
+    "juicesharp/rpiv-mono": {
+      "stars": 785
+    },
+    "kylebrodeur/pi-agent-bus": {
+      "stars": 2
+    },
+    "leblancfg/pi-ansi-themes": {
+      "stars": 16
+    },
+    "markacianfrani/pi-theme-flexoki": {
+      "stars": 2
+    },
+    "marv1nnnnn/pi-workstation": {
+      "stars": 16
+    },
+    "mavam/pi-terminal-theme": {
+      "stars": 13
+    },
+    "michalvavra/agents": {
+      "stars": 16
+    },
+    "milanglacier/pi-theme-switcher": {
+      "stars": 0
+    },
+    "MitoroMisaka/pi-tokyo-night": {
+      "stars": 2
+    },
+    "mitsuhiko/agent-stuff": {
+      "stars": 3127
+    },
+    "mjasnikovs/pi-task": {
+      "stars": 83
+    },
+    "monotykamary/pi-fabric": {
+      "stars": 221
+    },
+    "narumiruna/pi-extensions": {
+      "stars": 558
+    },
+    "nicobailon/pi-interactive-shell": {
+      "stars": 583
+    },
+    "nicobailon/pi-mcp-adapter": {
+      "stars": 1465
+    },
+    "nicobailon/pi-subagents": {
+      "stars": 3587
+    },
+    "nicobailon/pi-web-access": {
+      "stars": 1440
+    },
+    "ogulcancelik/pi-extensions": {
+      "stars": 532
+    },
+    "prateekmedia/pi-hooks": {
+      "stars": 97
+    },
+    "QuintinShaw/pi-dynamic-workflows": {
+      "stars": 522
+    },
+    "robzolkos/pi-theme-synthwave-84": {
+      "stars": 4
+    },
+    "samfoy/pi-rose-pine": {
+      "stars": 2
+    },
+    "saravananravi08/pi-langfuse-extension": {
+      "stars": 1
+    },
+    "sherif-fanous/pi-catppuccin": {
+      "stars": 6
+    },
+    "sherif-fanous/pi-theme-sync": {
+      "stars": 1
+    },
+    "spences10/my-pi": {
+      "stars": 126
+    },
+    "svkozak/pi-acp": {
+      "stars": 676
+    },
+    "Thinkscape/agent-smart-fetch": {
+      "stars": 61
+    },
+    "tintinweb/pi-subagents": {
+      "stars": 1151
+    },
+    "tintinweb/pi-tasks": {
+      "stars": 204
+    },
+    "tmdgusya/roach-pi": {
+      "stars": 275
+    },
+    "tomsej/pi-ext": {
+      "stars": 72
+    },
+    "tunnckoCore/pi-venice": {
+      "stars": 8
+    },
+    "victor-software-house/pi-curated-themes": {
+      "stars": 14
+    },
+    "Zetaphor/pi-vscode-extension": {
+      "stars": 46
+    }
+  },
+  "npm": {
+    "@a5c-ai/babysitter-pi": {
+      "weekly": 690,
+      "trend": -53
+    },
+    "@aliou/pi-guardrails": {
+      "weekly": 560,
+      "trend": -17
+    },
+    "@aliou/pi-processes": {
+      "weekly": 444,
+      "trend": -30
+    },
+    "@baretread/pi-forge": {
+      "weekly": 37,
+      "trend": -52
+    },
+    "@codella/pi-theme-candy": {
+      "weekly": 6,
+      "trend": 50
+    },
+    "@codella/pi-theme-christmas": {
+      "weekly": 1,
+      "trend": -86
+    },
+    "@codella/pi-theme-cyberpunk": {
+      "weekly": 7,
+      "trend": -22
+    },
+    "@codella/pi-theme-grayscale": {
+      "weekly": 2,
+      "trend": -60
+    },
+    "@cryptolibertus/pi-peer": {
+      "weekly": 74,
+      "trend": 21
+    },
+    "@dinglz/pi-worktree": {
+      "weekly": 14,
+      "trend": null
+    },
+    "@eliemessiecode/pi-code-theme": {
+      "weekly": 10,
+      "trend": 400
+    },
+    "@ff-labs/pi-fff": {
+      "weekly": 5018,
+      "trend": -48
+    },
+    "@gintasz/pi-neuralyzer": {
+      "weekly": 11,
+      "trend": 0
+    },
+    "@gonrocca/zero-pi": {
+      "weekly": 146,
+      "trend": 403
+    },
+    "@gotgenes/pi-permission-system": {
+      "weekly": 7285,
+      "trend": -37
+    },
+    "@gotgenes/pi-subagents": {
+      "weekly": 2402,
+      "trend": -42
+    },
+    "@gravewhisper/pi-theme-monokai-classic": {
+      "weekly": 0,
+      "trend": -100
+    },
+    "@hypabolic/pi-hypa": {
+      "weekly": 890,
+      "trend": 22
+    },
+    "@ifi/oh-pi-themes": {
+      "weekly": 87,
+      "trend": -29
+    },
+    "@javiportillo/pi-hackerman": {
+      "weekly": 3,
+      "trend": -57
+    },
+    "@jmfederico/pi-web": {
+      "weekly": 1587,
+      "trend": -23
+    },
+    "@juicesharp/rpiv-advisor": {
+      "weekly": 1520,
+      "trend": -26
+    },
+    "@juicesharp/rpiv-ask-user-question": {
+      "weekly": 43444,
+      "trend": -11
+    },
+    "@juicesharp/rpiv-btw": {
+      "weekly": 1653,
+      "trend": 34
+    },
+    "@juicesharp/rpiv-i18n": {
+      "weekly": 1569,
+      "trend": -1
+    },
+    "@juicesharp/rpiv-pi": {
+      "weekly": 831,
+      "trend": 17
+    },
+    "@juicesharp/rpiv-todo": {
+      "weekly": 34219,
+      "trend": -21
+    },
+    "@juicesharp/rpiv-voice": {
+      "weekly": 751,
+      "trend": -8
+    },
+    "@juicesharp/rpiv-web-tools": {
+      "weekly": 1382,
+      "trend": 0
+    },
+    "@juicesharp/rpiv-workflow": {
+      "weekly": 760,
+      "trend": 11
+    },
+    "@llblab/pi-telegram": {
+      "weekly": 3948,
+      "trend": 0
+    },
+    "@m64/pi-remembra-theme": {
+      "weekly": 10,
+      "trend": -52
+    },
+    "@matyah00/openpi": {
+      "weekly": 10,
+      "trend": 233
+    },
+    "@mjasnikovs/pi-task": {
+      "weekly": 3789,
+      "trend": -21
+    },
+    "@narumitw/pi-accounts": {
+      "weekly": 216,
+      "trend": -44
+    },
+    "@narumitw/pi-caffeinate": {
+      "weekly": 397,
+      "trend": -43
+    },
+    "@narumitw/pi-chrome-devtools": {
+      "weekly": 729,
+      "trend": 81
+    },
+    "@narumitw/pi-firecrawl": {
+      "weekly": 2067,
+      "trend": -10
+    },
+    "@narumitw/pi-goal": {
+      "weekly": 3597,
+      "trend": -41
+    },
+    "@narumitw/pi-lsp": {
+      "weekly": 1359,
+      "trend": -14
+    },
+    "@narumitw/pi-plan-mode": {
+      "weekly": 5897,
+      "trend": 31
+    },
+    "@narumitw/pi-retry": {
+      "weekly": 163,
+      "trend": -11
+    },
+    "@narumitw/pi-statusline": {
+      "weekly": 897,
+      "trend": -34
+    },
+    "@narumitw/pi-subagents": {
+      "weekly": 363,
+      "trend": -56
+    },
+    "@narumitw/pi-sync": {
+      "weekly": 377,
+      "trend": -44
+    },
+    "@narumitw/pi-usage": {
+      "weekly": 11278,
+      "trend": 52
+    },
+    "@narumitw/pi-worktree": {
+      "weekly": 360,
+      "trend": 13
+    },
+    "@nitra/cursor": {
+      "weekly": 796,
+      "trend": -14
+    },
+    "@ogulcancelik/pi-ghostty-theme-sync": {
+      "weekly": 15,
+      "trend": -6
+    },
+    "@ollama/pi-web-search": {
+      "weekly": 1590,
+      "trend": -2
+    },
+    "@plannotator/pi-extension": {
+      "weekly": 17830,
+      "trend": 17
+    },
+    "@quintinshaw/pi-dynamic-workflows": {
+      "weekly": 4818,
+      "trend": -56
+    },
+    "@ravan08/pi-langfuse": {
+      "weekly": 19,
+      "trend": -79
+    },
+    "@samfp/pi-memory": {
+      "weekly": 262,
+      "trend": -24
+    },
+    "@sherif-fanous/pi-catppuccin": {
+      "weekly": 44,
+      "trend": -51
+    },
+    "@sherif-fanous/pi-theme-sync": {
+      "weekly": 57,
+      "trend": 613
+    },
+    "@smoose/pi-themes": {
+      "weekly": 18,
+      "trend": -90
+    },
+    "@spences10/pi-themes": {
+      "weekly": 275,
+      "trend": 64
+    },
+    "@taterdoge/pi-ayu": {
+      "weekly": 8,
+      "trend": -20
+    },
+    "@tintinweb/pi-subagents": {
+      "weekly": 6553,
+      "trend": -25
+    },
+    "@tintinweb/pi-tasks": {
+      "weekly": 925,
+      "trend": -4
+    },
+    "@victor-software-house/pi-curated-themes": {
+      "weekly": 323,
+      "trend": -4
+    },
+    "@vigolium/piolium": {
+      "weekly": 225,
+      "trend": -33
+    },
+    "agent-comms": {
+      "weekly": 9705,
+      "trend": 5090
+    },
+    "betterwright": {
+      "weekly": 3873,
+      "trend": 37
+    },
+    "context-mode": {
+      "weekly": 16324,
+      "trend": 2
+    },
+    "gentle-engram": {
+      "weekly": 2474,
+      "trend": 7
+    },
+    "gentle-pi": {
+      "weekly": 4166,
+      "trend": 25
+    },
+    "pi-acp": {
+      "weekly": 78951,
+      "trend": -22
+    },
+    "pi-agent-browser-native": {
+      "weekly": 3743,
+      "trend": 43
+    },
+    "pi-agent-bus": {
+      "weekly": 16,
+      "trend": 60
+    },
+    "pi-agent-flow": {
+      "weekly": 160,
+      "trend": 0
+    },
+    "pi-ask-user": {
+      "weekly": 1690,
+      "trend": -9
+    },
+    "pi-btw": {
+      "weekly": 2269,
+      "trend": -21
+    },
+    "pi-cache-graph": {
+      "weekly": 42,
+      "trend": -11
+    },
+    "pi-caveman": {
+      "weekly": 737,
+      "trend": -2
+    },
+    "pi-chrome": {
+      "weekly": 1901,
+      "trend": 273
+    },
+    "pi-claude-marketplace": {
+      "weekly": 478,
+      "trend": 0
+    },
+    "pi-context-prune": {
+      "weekly": 301,
+      "trend": -18
+    },
+    "pi-crew": {
+      "weekly": 1178,
+      "trend": 94
+    },
+    "pi-cursor-theme": {
+      "weekly": 6,
+      "trend": 100
+    },
+    "pi-digital-rust-theme": {
+      "weekly": 13,
+      "trend": 333
+    },
+    "pi-fabric": {
+      "weekly": 3318,
+      "trend": -49
+    },
+    "pi-hermes-memory": {
+      "weekly": 3902,
+      "trend": -27
+    },
+    "pi-hooks": {
+      "weekly": 21,
+      "trend": 24
+    },
+    "pi-interactive-shell": {
+      "weekly": 964,
+      "trend": -12
+    },
+    "pi-intercom": {
+      "weekly": 2405,
+      "trend": -54
+    },
+    "pi-kanagawa": {
+      "weekly": 24,
+      "trend": 14
+    },
+    "pi-lean-ctx": {
+      "weekly": 831,
+      "trend": 9
+    },
+    "pi-lens": {
+      "weekly": 32297,
+      "trend": 126
+    },
+    "pi-macos-theme-sync": {
+      "weekly": 3,
+      "trend": 200
+    },
+    "pi-markdown-preview": {
+      "weekly": 1072,
+      "trend": -62
+    },
+    "pi-mcp-adapter": {
+      "weekly": 241578,
+      "trend": -6
+    },
+    "pi-memory": {
+      "weekly": 7364,
+      "trend": -2
+    },
+    "pi-memory-honcho": {
+      "weekly": 7,
+      "trend": -30
+    },
+    "pi-peacock": {
+      "weekly": 4,
+      "trend": -20
+    },
+    "pi-permission-system": {
+      "weekly": 315,
+      "trend": -18
+    },
+    "pi-powerline-footer": {
+      "weekly": 13738,
+      "trend": 93
+    },
+    "pi-sandbox": {
+      "weekly": 867,
+      "trend": -4
+    },
+    "pi-simplify": {
+      "weekly": 5848,
+      "trend": -40
+    },
+    "pi-smart-fetch": {
+      "weekly": 403,
+      "trend": -22
+    },
+    "pi-studio": {
+      "weekly": 465,
+      "trend": -65
+    },
+    "pi-subagents": {
+      "weekly": 87065,
+      "trend": -25
+    },
+    "pi-system-theme": {
+      "weekly": 14,
+      "trend": 0
+    },
+    "pi-terminal-theme": {
+      "weekly": 210,
+      "trend": 34
+    },
+    "pi-theme-flexoki": {
+      "weekly": 5,
+      "trend": -29
+    },
+    "pi-theme-flip": {
+      "weekly": 5,
+      "trend": 67
+    },
+    "pi-theme-switcher": {
+      "weekly": 17,
+      "trend": 113
+    },
+    "pi-theme-synthwave-84": {
+      "weekly": 28,
+      "trend": -38
+    },
+    "pi-themes-rose-pine": {
+      "weekly": 7,
+      "trend": -42
+    },
+    "pi-tokyo-night": {
+      "weekly": 19,
+      "trend": 36
+    },
+    "pi-toolbox": {
+      "weekly": 24,
+      "trend": -11
+    },
+    "pi-venice": {
+      "weekly": 26,
+      "trend": 44
+    },
+    "pi-verdict": {
+      "weekly": 394,
+      "trend": -70
+    },
+    "pi-vetter": {
+      "weekly": 67,
+      "trend": -83
+    },
+    "pi-web-access": {
+      "weekly": 90738,
+      "trend": -3
+    },
+    "pi-workstation": {
+      "weekly": 12,
+      "trend": 20
+    }
+  }
+}

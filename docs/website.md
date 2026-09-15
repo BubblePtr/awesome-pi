@@ -7,7 +7,8 @@
 ## 内容来源
 
 - `README.en.md` 与 `README.md` 是唯一的资源内容来源。添加或修改资源时，应同步更新两份文件。
-- 构建时使用 Markdown AST 提取名称、项目链接、介绍、分类与安装命令，不需要维护额外的 JSON 清单，也不会访问 npm 或 GitHub API。
+- 构建时使用 Markdown AST 提取名称、项目链接、介绍、分类与安装命令，不需要维护额外的资源清单，构建本身不访问 npm 或 GitHub API。
+- 资源卡片上的 GitHub Star 数与 npm 周下载量来自统计快照 `site/src/data/stats.json`（纳入版本控制）。快照由独立脚本 `bun run stats` 调用 GitHub 与 npm 公开 API 生成，`.github/workflows/stats.yml` 每周定时刷新并提交；构建只读取本地快照。
 - 使用“名称 + 项目链接”识别资源。同一资源在不同分类出现时合并分类与介绍；同一仓库中的不同扩展保留为独立资源。
 - 两种语言的名称、项目链接、分类及安装命令必须对应。缺少翻译、重复行、安装命令不一致或无法解析的资源行会阻止构建，避免静默丢失内容。
 - `Editor Integration` 兼容现有的三级标题。编辑器集成、主题、扩展和独立发行版分别展示。
@@ -24,6 +25,12 @@ bun run --cwd site dev
 ```
 
 默认地址为 `http://127.0.0.1:4321/`。README 通过构建期原文导入参与页面生成，修改内容后可在开发环境刷新查看。
+
+如需刷新资源卡片上的 Star 数与下载量统计，可运行（可选，需要网络；GitHub 数据通过 `GITHUB_TOKEN`、`GH_TOKEN` 或本机 `gh` 登录态提高限额）：
+
+```sh
+bun run --cwd site stats
+```
 
 完整验证：
 
