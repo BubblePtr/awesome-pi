@@ -21,6 +21,8 @@ export const text = {
     source: 'Read the list on GitHub', report: 'Report an issue', license: 'List licensed under CC0',
     copiedStatus: 'Installation command copied.', copyError: 'Could not copy. Please select the command and copy it manually.',
     noScript: 'All resources are listed below. Enable JavaScript to search, filter, and copy commands.',
+    statsStars: 'GitHub stars', statsDownloads: 'npm downloads per week', perWeek: '/wk',
+    statsUpdated: 'GitHub stars and npm downloads updated {date}.',
     kinds: { packages: 'Packages', themes: 'Themes', integrations: 'Editor integrations', distributions: 'Distributions' },
   },
   zh: {
@@ -41,6 +43,8 @@ export const text = {
     source: '在 GitHub 阅读清单', report: '报告问题', license: '清单采用 CC0 许可',
     copiedStatus: '安装命令已复制。', copyError: '复制失败，请选中安装命令后手动复制。',
     noScript: '下方已展示全部资源。启用 JavaScript 后可使用搜索、筛选与命令复制。',
+    statsStars: 'GitHub Star 数', statsDownloads: 'npm 每周下载量', perWeek: '/周',
+    statsUpdated: 'GitHub Star 与 npm 下载数据更新于 {date}。',
     kinds: { packages: '扩展包', themes: '主题', integrations: '编辑器集成', distributions: '替代发行版' },
   },
 } satisfies Record<Locale, object>;

@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
-    "test": "bun test tests/catalog.test.ts tests/directory.test.ts",
+    "stats": "bun run scripts/update-stats.ts",
+    "test": "bun test tests/catalog.test.ts tests/directory.test.ts tests/stats.test.ts",
     "test:rendered": "bun test tests/rendered.test.ts",
     "validate": "bun run test && bun run check && bun run build && bun run test:rendered"
   },
