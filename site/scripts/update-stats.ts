@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { loadCatalog } from '../src/lib/catalog';
-import { githubRepo, npmPackage, readSnapshot, weeklyTrend, type NpmStats, type StatsSnapshot } from '../src/lib/stats';
+import { githubRepo, npmPackage, readSnapshot, registryRepo, weeklyTrend, type NpmStats, type StatsSnapshot } from '../src/lib/stats';
 
 const statsFile = new URL('../src/data/stats.json', import.meta.url);
 const userAgent = 'awesome-pi-stats (https://github.com/BubblePtr/awesome-pi)';
@@ -41,6 +41,8 @@ async function fetchJson(url: string, headers: Record<string, string>): Promise<
   }
 }
 
+const encodePackage = (pkg: string) => pkg.replace('/', '%2F');
+
 async function fetchStars(repo: string, token: string | null): Promise<number | null> {
   const headers: Record<string, string> = {
     Accept: 'application/vnd.github+json',
@@ -58,6 +60,16 @@ async function fetchStars(repo: string, token: string | null): Promise<number | 
   }
 }
 
+async function fetchRegistryRepo(pkg: string): Promise<string | null> {
+  try {
+    const data = await fetchJson(`https://registry.npmjs.org/${encodePackage(pkg)}/latest`, { 'User-Agent': userAgent }) as { repository?: unknown };
+    return registryRepo(data.repository);
+  } catch (error) {
+    console.warn(`warning: npm registry ${pkg}: ${(error as Error).message}`);
+    return null;
+  }
+}
+
 function dateRange(days: number): { start: string; end: string } {
   const dayMs = 24 * 60 * 60 * 1000;
   const end = new Date(Date.now() - dayMs);
@@ -68,7 +80,7 @@ function dateRange(days: number): { start: string; end: string } {
 
 async function fetchDownloads(pkg: string, range: { start: string; end: string }): Promise<NpmStats | null> {
   try {
-    const data = await fetchJson(`https://api.npmjs.org/downloads/range/${range.start}:${range.end}/${pkg.replace('/', '%2F')}`, {
+    const data = await fetchJson(`https://api.npmjs.org/downloads/range/${range.start}:${range.end}/${encodePackage(pkg)}`, {
       'User-Agent': userAgent,
     }) as { downloads?: { downloads: number }[] };
     if (!Array.isArray(data.downloads)) throw new Error('missing daily downloads');
@@ -84,21 +96,33 @@ async function fetchDownloads(pkg: string, range: { start: string; end: string }
 const catalog = loadCatalog();
 const repos = new Set<string>();
 const packages = new Set<string>();
+const needsRepo = new Set<string>();
 for (const resource of catalog.resources) {
   const repo = githubRepo(resource.url);
   if (repo) repos.add(repo);
   const pkg = npmPackage(resource.install);
-  if (pkg) packages.add(pkg);
+  if (pkg) {
+    packages.add(pkg);
+    if (!repo) needsRepo.add(pkg);
+  }
 }
 
 const previous = readSnapshot(statsFile);
 const token = await resolveToken();
 if (!token) console.warn('warning: no GitHub token found (GITHUB_TOKEN, GH_TOKEN, or `gh auth token`); the anonymous API limit is 60 requests/hour.');
 
-const github: StatsSnapshot['github'] = {};
-const npm: StatsSnapshot['npm'] = {};
 let failures = 0;
 
+const npmRepos = new Map<string, string | null>();
+await mapPool([...needsRepo], 2, 200, async pkg => {
+  const resolved = await fetchRegistryRepo(pkg);
+  if (resolved === null) failures++;
+  const repo = resolved ?? previous.npm[pkg]?.repo ?? null;
+  npmRepos.set(pkg, repo);
+  if (repo) repos.add(repo);
+});
+
+const github: StatsSnapshot['github'] = {};
 await mapPool([...repos], 5, 100, async repo => {
   const stars = await fetchStars(repo, token);
   if (stars !== null) { github[repo] = { stars }; return; }
@@ -109,10 +133,11 @@ await mapPool([...repos], 5, 100, async repo => {
   }
 });
 
+const npm: StatsSnapshot['npm'] = {};
 const range = dateRange(14);
 await mapPool([...packages], 2, 200, async pkg => {
   const stats = await fetchDownloads(pkg, range);
-  if (stats) { npm[pkg] = stats; return; }
+  if (stats) { npm[pkg] = { ...stats, repo: npmRepos.get(pkg) ?? null }; return; }
   failures++;
   if (previous.npm[pkg]) {
     npm[pkg] = previous.npm[pkg];
@@ -120,7 +145,7 @@ await mapPool([...packages], 2, 200, async pkg => {
   }
 });
 
-if (failures === repos.size + packages.size && failures > 0) {
+if (failures === repos.size + packages.size + needsRepo.size && failures > 0) {
   console.error('error: every stats request failed; leaving the existing snapshot untouched.');
   process.exit(1);
 }
@@ -129,4 +154,4 @@ const sortObject = <T>(values: Record<string, T>) => Object.fromEntries(Object.e
 const snapshot: StatsSnapshot = { generatedAt: new Date().toISOString(), github: sortObject(github), npm: sortObject(npm) };
 mkdirSync(new URL('../src/data/', import.meta.url), { recursive: true });
 writeFileSync(statsFile, `${JSON.stringify(snapshot, null, 2)}\n`);
-console.log(`stats: ${Object.keys(github).length}/${repos.size} repositories, ${Object.keys(npm).length}/${packages.size} npm packages, window ${range.start}…${range.end}, ${failures} request(s) fell back to previous values.`);
+console.log(`stats: ${Object.keys(github).length}/${repos.size} repositories (${needsRepo.size} resolved via npm metadata), ${Object.keys(npm).length}/${packages.size} npm packages, window ${range.start}…${range.end}, ${failures} request(s) fell back to previous values.`);

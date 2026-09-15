@@ -74,8 +74,8 @@ Web search and content fetching packages that give Pi access to internet informa
 - 🔥 [@ollama/pi-web-search](https://pi.dev/packages/@ollama/pi-web-search) - Ollama web search and fetch API integration. `pi install npm:@ollama/pi-web-search`
 - [pi-smart-fetch](https://github.com/Thinkscape/agent-smart-fetch) - Desktop browser TLS emulation, batch fetching, multi-format output (markdown/html/text/json). `pi install npm:pi-smart-fetch`
 - [@narumitw/pi-firecrawl](https://github.com/narumiruna/pi-extensions) - Firecrawl-powered web scraping, crawling, URL discovery, and web search. `pi install npm:@narumitw/pi-firecrawl`
-- [@code-yeongyu/pi-webfetch](https://github.com/code-yeongyu/pi-webfetch) - URL content fetching with markdown/plain text/raw HTML support. `pi install npm:@code-yeongyu/pi-webfetch`
-- [@code-yeongyu/pi-websearch](https://github.com/code-yeongyu/pi-websearch) - Provider-backed web search with configuration gating and TUI status. `pi install npm:@code-yeongyu/pi-websearch`
+- [@code-yeongyu/pi-webfetch](https://github.com/code-yeongyu/pi-webfetch) - URL content fetching with markdown/plain text/raw HTML support. `pi install git:github.com/code-yeongyu/pi-webfetch`
+- [@code-yeongyu/pi-websearch](https://github.com/code-yeongyu/pi-websearch) - Provider-backed web search with configuration gating and TUI status. `pi install git:github.com/code-yeongyu/pi-websearch`
 
 ---
 
@@ -272,7 +272,7 @@ Other utility packages.
 - 🔥 [pi-markdown-preview](https://pi.dev/packages/pi-markdown-preview) - Renders markdown + LaTeX previews with terminal, browser, and PDF output. `pi install npm:pi-markdown-preview`
 - 🔥 [pi-studio](https://pi.dev/packages/pi-studio) - Dual-pane browser workspace with prompt/response editing, annotations, and live preview. `pi install npm:pi-studio`
 - [pi-ask-user](https://pi.dev/packages/pi-ask-user) - Interactive ask_user tool. `pi install npm:pi-ask-user`
-- [@code-yeongyu/pi-rules](https://github.com/code-yeongyu/pi-rules) - Auto-discovers rule files like .claude/rules, .cursor/rules, AGENTS.md, etc. `pi install npm:@code-yeongyu/pi-rules`
+- [@code-yeongyu/pi-rules](https://github.com/code-yeongyu/pi-rules) - Auto-discovers rule files like .claude/rules, .cursor/rules, AGENTS.md, etc. `pi install git:github.com/code-yeongyu/pi-rules`
 - [@ravan08/pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse observability, tracking tokens, cost, model, and tool calls. `pi install npm:@ravan08/pi-langfuse`
 - [pi-venice](https://github.com/tunnckoCore/pi-venice) - Venice.AI extension supporting text/image/video models. `pi install npm:pi-venice`
 - [@juicesharp/rpiv-i18n](https://pi.dev/packages/@juicesharp/rpiv-i18n) - Localization foundation for rpiv-* extensions. `pi install npm:@juicesharp/rpiv-i18n`
@@ -287,13 +287,13 @@ Other utility packages.
 
 Curated package collections and suites — install multiple tools at once.
 
-- 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - Monorepo grouped as Coding / Browser / Workflow / Accounts / Observability (statusline, plan-mode, worktree, usage, lsp, firecrawl, goal, subagents, sync, etc.). `pi install npm:@narumitw/pi-extensions`
+- 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - Monorepo grouped as Coding / Browser / Workflow / Accounts / Observability (statusline, plan-mode, worktree, usage, lsp, firecrawl, goal, subagents, sync, etc.). `pi install git:github.com/narumiruna/pi-extensions`
 - 🔥 [@juicesharp/rpiv-pi](https://github.com/juicesharp/rpiv-mono) - Pipeline system (research→design→plan→implement→validate), plus optional voice, warp, and args packages. `pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher's 15+ extension collection (review, btw, goal, whimsical, notify, todos, etc.). `pi install git:github.com/mitsuhiko/agent-stuff`
 - [tomsej/pi-ext](https://github.com/tomsej/pi-ext) - Comprehensive UI and workflow tools (leader-key, telescope, powerline footer, semantic git, etc.). `pi install git:github.com/tomsej/pi-ext`
 - [code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) - 15+ extensions ported from OMO (lsp-client, ast-grep, websearch, sandbox, etc.). `pi install git:github.com/code-yeongyu/senpi`
 - [jayshah5696/pi-agent-extensions](https://github.com/jayshah5696/pi-agent-extensions) - 15+ extension collection (sessions, ask_user, handoff, powerline-footer, etc.). `pi install git:github.com/jayshah5696/pi-agent-extensions`
-- [pi-toolbox](https://github.com/indydevdan/pi-toolbox) - Comprehensive toolkit with 17 extensions + 11 themes + skills and agent orchestration templates. `pi install npm:pi-toolbox`
+- [pi-toolbox](https://www.npmjs.com/package/pi-toolbox) - Comprehensive toolkit with 17 extensions + 11 themes + skills and agent orchestration templates. `pi install npm:pi-toolbox`
 - [pi-workstation](https://github.com/marv1nnnnn/pi-workstation) - 9 handcrafted themes (avant-garde theatre, cyberpunk, Hokusai style, etc.) + extensions. `pi install npm:pi-workstation`
 
 ---
@@ -339,11 +339,11 @@ Theme collection packs — install multiple color schemes at once.
 - 🔥 [@victor-software-house/pi-curated-themes](https://github.com/victor-software-house/pi-curated-themes) - Massive 65-theme collection adapted from iTerm2: Adventure, Aura, Catppuccin, Dracula+, Everforest, Gruvbox, Jellybeans, Kanagawa, Nord, Tomorrow Night, and more. `pi install npm:@victor-software-house/pi-curated-themes`
 - [@ifi/oh-pi-themes](https://pi.dev/packages/@ifi/oh-pi-themes) - 6 themes: Catppuccin Mocha, Cyberpunk, Gruvbox Dark, Nord, Tokyo Night. `pi install npm:@ifi/oh-pi-themes`
 - [hasit/pi-community-themes](https://github.com/hasit/pi-community-themes) - Community curated: atom-one, catppuccin (4 variants), dracula, gruvbox (6 variants), nord, solarized. `pi install git:github.com/hasit/pi-community-themes`
-- [@smoose/pi-themes](https://github.com/smoose/pi-themes) - Light/dark pairing toggle: Everforest, Tundra, Rosé Pine, OneDark, Gruvbox, and more. `pi install npm:@smoose/pi-themes`
+- [@smoose/pi-themes](https://github.com/smoosex/pi-themes) - Light/dark pairing toggle: Everforest, Tundra, Rosé Pine, OneDark, Gruvbox, and more. `pi install npm:@smoose/pi-themes`
 - [my-pi-themes](https://pi.dev/packages/my-pi-themes) - 14 themes: monokai-pro, onedark-pro, tokyo-dark, e-ink/e-ink-dark, gruvbox-light, and more. `pi install npm:my-pi-themes`
 - [@matyah00/openpi](https://github.com/heyhuynhgiabuu/openpi) - 11 bundled themes + multi-agent orchestration. `pi install npm:@matyah00/openpi`
 
-> Also listed under [Package Collections](#package-collections): [pi-toolbox](https://github.com/indydevdan/pi-toolbox).
+> Also listed under [Package Collections](#package-collections): [pi-toolbox](https://www.npmjs.com/package/pi-toolbox).
 
 ---
 
@@ -382,7 +382,7 @@ Theme tools and utility packages.
 Editor integration packages for embedding Pi into IDEs.
 
 - [pi-acp](https://github.com/svkozak/pi-acp) - Pi's ACP (Agent Client Protocol) adapter, bridging to editors like Zed. `npm install -g pi-acp`
-- [VS Code Pi Chat Provider](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-pi-model-chat-provider) - VS Code language model chat provider integration. `pi install npm:@tintinweb/vscode-pi-model-chat-provider`
+- [VS Code Pi Chat Provider](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-pi-model-chat-provider) - VS Code language model chat provider integration.
 - [pi-vscode-extension](https://github.com/Zetaphor/pi-vscode-extension) - Embeds Pi as a VS Code extension. `pi install git:github.com/Zetaphor/pi-vscode-extension`
 
 > Zed editor natively supports Pi via the ACP Registry: configure `"agent_servers": { "pi-acp": { "type": "registry" } }`.

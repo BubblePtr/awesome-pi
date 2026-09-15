@@ -2,8 +2,9 @@ import { describe, expect, test } from 'bun:test';
 import { mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import type { Resource } from '../src/lib/catalog';
 import { loadCatalog } from '../src/lib/catalog';
-import { emptySnapshot, formatCount, githubRepo, npmPackage, readSnapshot, statsFor, weeklyTrend } from '../src/lib/stats';
+import { emptySnapshot, formatCount, githubRepo, npmPackage, readSnapshot, registryRepo, statsFor, weeklyTrend } from '../src/lib/stats';
 
 describe('GitHub repository parsing', () => {
   test('extracts owner/repo from repository URLs including subpaths and .git suffixes', () => {
@@ -29,6 +30,17 @@ describe('npm package parsing', () => {
     expect(npmPackage('pi install git:github.com/HazAT/pi-interactive-subagents')).toBeNull();
     expect(npmPackage('curl -fsSL https://omp.sh/install | sh')).toBeNull();
     expect(npmPackage(null)).toBeNull();
+  });
+});
+
+describe('npm registry repository parsing', () => {
+  test('normalizes the repository field shapes npm packages use', () => {
+    expect(registryRepo(undefined)).toBeNull();
+    expect(registryRepo('git+https://github.com/o/r.git')).toBe('o/r');
+    expect(registryRepo({ url: 'https://github.com/o/r' })).toBe('o/r');
+    expect(registryRepo({ url: 'git@github.com:o/r.git' })).toBe('o/r');
+    expect(registryRepo('github:o/r')).toBe('o/r');
+    expect(registryRepo({ url: 'https://gitlab.com/o/r' })).toBeNull();
   });
 });
 
@@ -75,6 +87,12 @@ describe('stats snapshot', () => {
     expect(statsFor(webAccess, emptySnapshot())).toEqual({ repo: 'nicobailon/pi-web-access', package: 'pi-web-access', stars: null, weekly: null, trend: null });
     const snapshot = { ...emptySnapshot(), github: { 'nicobailon/pi-web-access': { stars: 100 } }, npm: { 'pi-web-access': { weekly: 50, trend: 10 } } };
     expect(statsFor(webAccess, snapshot)).toMatchObject({ stars: 100, weekly: 50, trend: 10 });
+  });
+  test('falls back to the npm-registry repository for resources without a GitHub link', () => {
+    const resource = { id: 'x', name: 'x', url: 'https://pi.dev/packages/x', install: 'pi install npm:x', kind: 'packages', categories: [], descriptions: { en: [], zh: [] }, searchText: '' } as Resource;
+    const snapshot = { ...emptySnapshot(), github: { 'o/r': { stars: 9 }, 'other/repo': { stars: 999 } }, npm: { x: { weekly: 5, trend: null, repo: 'o/r' } } };
+    expect(statsFor(resource, snapshot)).toMatchObject({ repo: 'o/r', stars: 9, weekly: 5 });
+    expect(statsFor({ ...resource, url: 'https://github.com/other/repo' }, snapshot).stars).toBe(999);
   });
 });
 

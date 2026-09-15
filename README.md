@@ -74,8 +74,8 @@ Web 搜索和内容获取 Package，让 Pi 能够访问互联网信息。
 - 🔥 [@ollama/pi-web-search](https://pi.dev/packages/@ollama/pi-web-search) - 使用 Ollama Web 搜索和获取 API。`pi install npm:@ollama/pi-web-search`
 - [pi-smart-fetch](https://github.com/Thinkscape/agent-smart-fetch) - 桌面浏览器 TLS 模拟，批量获取，多格式输出（markdown/html/text/json）。`pi install npm:pi-smart-fetch`
 - [@narumitw/pi-firecrawl](https://github.com/narumiruna/pi-extensions) - Firecrawl 驱动的网页抓取、爬取、URL 发现和 Web 搜索。`pi install npm:@narumitw/pi-firecrawl`
-- [@code-yeongyu/pi-webfetch](https://github.com/code-yeongyu/pi-webfetch) - URL 内容获取，支持 markdown/plain text/raw HTML。`pi install npm:@code-yeongyu/pi-webfetch`
-- [@code-yeongyu/pi-websearch](https://github.com/code-yeongyu/pi-websearch) - Provider-backed Web 搜索，带配置门控和 TUI 状态。`pi install npm:@code-yeongyu/pi-websearch`
+- [@code-yeongyu/pi-webfetch](https://github.com/code-yeongyu/pi-webfetch) - URL 内容获取，支持 markdown/plain text/raw HTML。`pi install git:github.com/code-yeongyu/pi-webfetch`
+- [@code-yeongyu/pi-websearch](https://github.com/code-yeongyu/pi-websearch) - Provider-backed Web 搜索，带配置门控和 TUI 状态。`pi install git:github.com/code-yeongyu/pi-websearch`
 
 ---
 
@@ -272,7 +272,7 @@ Pi 核心不内置 plan mode，用扩展补只读规划。
 - 🔥 [pi-markdown-preview](https://pi.dev/packages/pi-markdown-preview) - 渲染 markdown + LaTeX 预览，支持终端、浏览器和 PDF 输出。`pi install npm:pi-markdown-preview`
 - 🔥 [pi-studio](https://pi.dev/packages/pi-studio) - 双窗格浏览器工作空间，支持提示/响应编辑、注释、实时预览。`pi install npm:pi-studio`
 - [pi-ask-user](https://pi.dev/packages/pi-ask-user) - 交互式 ask_user 工具。`pi install npm:pi-ask-user`
-- [@code-yeongyu/pi-rules](https://github.com/code-yeongyu/pi-rules) - 自动发现 .claude/rules, .cursor/rules, AGENTS.md 等规则文件。`pi install npm:@code-yeongyu/pi-rules`
+- [@code-yeongyu/pi-rules](https://github.com/code-yeongyu/pi-rules) - 自动发现 .claude/rules, .cursor/rules, AGENTS.md 等规则文件。`pi install git:github.com/code-yeongyu/pi-rules`
 - [@ravan08/pi-langfuse](https://github.com/saravananravi08/pi-langfuse-extension) - Langfuse 可观测性，追踪 token、费用、模型和工具调用。`pi install npm:@ravan08/pi-langfuse`
 - [pi-venice](https://github.com/tunnckoCore/pi-venice) - Venice.AI 扩展，支持文本/图像/视频模型。`pi install npm:pi-venice`
 - [@juicesharp/rpiv-i18n](https://pi.dev/packages/@juicesharp/rpiv-i18n) - rpiv-* 扩展的本地化基础。`pi install npm:@juicesharp/rpiv-i18n`
@@ -287,13 +287,13 @@ Pi 核心不内置 plan mode，用扩展补只读规划。
 
 精选 Package 集合与套件，一次安装多个工具。
 
-- 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - 按 Coding / Browser / Workflow / Accounts / Observability 分组的 monorepo（statusline, plan-mode, worktree, usage, lsp, firecrawl, goal, subagents, sync 等）。`pi install npm:@narumitw/pi-extensions`
+- 🔥 [@narumitw/pi-extensions](https://github.com/narumiruna/pi-extensions) - 按 Coding / Browser / Workflow / Accounts / Observability 分组的 monorepo（statusline, plan-mode, worktree, usage, lsp, firecrawl, goal, subagents, sync 等）。`pi install git:github.com/narumiruna/pi-extensions`
 - 🔥 [@juicesharp/rpiv-pi](https://github.com/juicesharp/rpiv-mono) - 管道系统（研究→设计→计划→实施→验证），另有独立可选的 voice、warp、args。`pi install npm:@juicesharp/rpiv-pi`
 - [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) - Armin Ronacher 的 15+ 扩展集合（review, btw, goal, whimsical, notify, todos 等）。`pi install git:github.com/mitsuhiko/agent-stuff`
 - [tomsej/pi-ext](https://github.com/tomsej/pi-ext) - 综合 UI 和工作流工具集合（leader-key, telescope, powerline footer, semantic git 等）。`pi install git:github.com/tomsej/pi-ext`
 - [code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) - 从 OMO 移植的 15+ 扩展（lsp-client, ast-grep, websearch, sandbox 等）。`pi install git:github.com/code-yeongyu/senpi`
 - [jayshah5696/pi-agent-extensions](https://github.com/jayshah5696/pi-agent-extensions) - 15+ 扩展集合（sessions, ask_user, handoff, powerline-footer 等）。`pi install git:github.com/jayshah5696/pi-agent-extensions`
-- [pi-toolbox](https://github.com/indydevdan/pi-toolbox) - 17 个扩展 + 11 个主题 + 技能和智能体编排模板的综合工具包。`pi install npm:pi-toolbox`
+- [pi-toolbox](https://www.npmjs.com/package/pi-toolbox) - 17 个扩展 + 11 个主题 + 技能和智能体编排模板的综合工具包。`pi install npm:pi-toolbox`
 - [pi-workstation](https://github.com/marv1nnnnn/pi-workstation) - 9 个手工制作主题（前卫剧场、赛博朋克、葛饰北斋风格等）+ 扩展。`pi install npm:pi-workstation`
 
 ---
@@ -339,11 +339,11 @@ Pi 核心不内置 plan mode，用扩展补只读规划。
 - 🔥 [@victor-software-house/pi-curated-themes](https://github.com/victor-software-house/pi-curated-themes) - 65 个主题大合集，从 iTerm2 配色适配：Adventure、Aura、Catppuccin、Dracula+、Everforest、Gruvbox、Jellybeans、Kanagawa、Nord、Tomorrow Night 等。`pi install npm:@victor-software-house/pi-curated-themes`
 - [@ifi/oh-pi-themes](https://pi.dev/packages/@ifi/oh-pi-themes) - 6 个主题：Catppuccin Mocha、Cyberpunk、Gruvbox Dark、Nord、Tokyo Night。`pi install npm:@ifi/oh-pi-themes`
 - [hasit/pi-community-themes](https://github.com/hasit/pi-community-themes) - 社区精选：atom-one、catppuccin（4 变体）、dracula、gruvbox（6 变体）、nord、solarized。`pi install git:github.com/hasit/pi-community-themes`
-- [@smoose/pi-themes](https://github.com/smoose/pi-themes) - 支持亮暗配对切换：Everforest、Tundra、Rosé Pine、OneDark、Gruvbox 等。`pi install npm:@smoose/pi-themes`
+- [@smoose/pi-themes](https://github.com/smoosex/pi-themes) - 支持亮暗配对切换：Everforest、Tundra、Rosé Pine、OneDark、Gruvbox 等。`pi install npm:@smoose/pi-themes`
 - [my-pi-themes](https://pi.dev/packages/my-pi-themes) - 14 个主题：monokai-pro、onedark-pro、tokyo-dark、e-ink/e-ink-dark、gruvbox-light 等。`pi install npm:my-pi-themes`
 - [@matyah00/openpi](https://github.com/heyhuynhgiabuu/openpi) - 11 个捆绑主题 + 多智能体编排。`pi install npm:@matyah00/openpi`
 
-> 亦见 [Package Collections](#package-collections) 中的 [pi-toolbox](https://github.com/indydevdan/pi-toolbox)。
+> 亦见 [Package Collections](#package-collections) 中的 [pi-toolbox](https://www.npmjs.com/package/pi-toolbox)。
 
 ---
 
@@ -382,7 +382,7 @@ Pi 核心不内置 plan mode，用扩展补只读规划。
 编辑器集成 Package，将 Pi 嵌入到 IDE 中。
 
 - [pi-acp](https://github.com/svkozak/pi-acp) - Pi 的 ACP（Agent Client Protocol）适配器，桥接到 Zed 等编辑器。`npm install -g pi-acp`
-- [VS Code Pi Chat Provider](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-pi-model-chat-provider) - VS Code 语言模型聊天提供程序集成。`pi install npm:@tintinweb/vscode-pi-model-chat-provider`
+- [VS Code Pi Chat Provider](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-pi-model-chat-provider) - VS Code 语言模型聊天提供程序集成。
 - [pi-vscode-extension](https://github.com/Zetaphor/pi-vscode-extension) - 将 Pi 嵌入为 VS Code 扩展。`pi install git:github.com/Zetaphor/pi-vscode-extension`
 
 > Zed 编辑器通过 ACP Registry 原生支持 Pi：配置 `"agent_servers": { "pi-acp": { "type": "registry" } }` 即可使用。
