@@ -22,6 +22,35 @@ const categoryUrl = (id: string) => `${base}?category=${id}`;
 const statsDate = stats.generatedAt
   ? new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', { dateStyle: 'medium' }).format(new Date(stats.generatedAt))
   : null;
+
+// Provide structured schema so search engines recognize the curated directory and language relations.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://piindex.dev/#website',
+      url: 'https://piindex.dev/',
+      name: 'Pi Index',
+      description: text.en.description,
+      inLanguage: ['en', 'zh-CN'],
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${canonicalUrl.href}#webpage`,
+      url: canonicalUrl.href,
+      name: t.title,
+      description: t.description,
+      isPartOf: { '@id': 'https://piindex.dev/#website' },
+      inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+      about: {
+        '@type': 'SoftwareApplication',
+        name: 'Pi',
+        applicationCategory: 'DeveloperApplication',
+      },
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang={locale === 'zh' ? 'zh-CN' : 'en'}>
@@ -51,6 +80,7 @@ const statsDate = stats.generatedAt
     <link rel="alternate" hreflang="zh-CN" href={new URL('/zh/', Astro.site).href} />
     <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site).href} />
     <title>{t.title}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <a class="skip-link" href="#resources">{t.skip}</a>

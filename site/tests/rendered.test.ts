@@ -39,6 +39,18 @@ describe('generated static pages', () => {
       expect(win.document.querySelector('meta[name="twitter:card"]')?.getAttribute('content')).toBe('summary_large_image');
       expect(win.document.querySelector('meta[name="twitter:image"]')?.getAttribute('content')).toBe(socialImage);
       for (const link of win.document.querySelectorAll('link[rel="alternate"]')) expect(link.getAttribute('href')).toStartWith('https://');
+      const ldJsonScript = win.document.querySelector('script[type="application/ld+json"]');
+      expect(ldJsonScript).not.toBeNull();
+      const ldJson = JSON.parse(ldJsonScript!.textContent || '{}');
+      expect(ldJson['@context']).toBe('https://schema.org');
+      expect(Array.isArray(ldJson['@graph'])).toBe(true);
+      const websiteEntity = ldJson['@graph'].find((item: { '@type': string }) => item['@type'] === 'WebSite');
+      expect(websiteEntity).toBeDefined();
+      expect(websiteEntity.url).toBe('https://piindex.dev/');
+      const pageEntity = ldJson['@graph'].find((item: { '@type': string }) => item['@type'] === 'CollectionPage');
+      expect(pageEntity).toBeDefined();
+      expect(pageEntity.url).toBe(canonical);
+      expect(pageEntity.inLanguage).toBe(locale === 'zh' ? 'zh-CN' : 'en');
       expect(win.document.querySelector('label[for="search"]')).not.toBeNull();
       expect(win.document.querySelector('label[for="mobile-category"]')).not.toBeNull();
       expect(win.document.querySelector('[data-language]')?.getAttribute('href')).toBe(locale === 'en' ? '/zh/' : '/');
