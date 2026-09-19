@@ -144,6 +144,7 @@ MCP (Model Context Protocol) 适配 Package，连接外部工具生态。
 开发工具与代码智能 Package。
 
 - 🔥 [pi-lens](https://github.com/apmantza/pi-lens) - 实时代码反馈——LSP、linter、formatter、类型检查、结构分析。`pi install npm:pi-lens`
+- [pi-agent-ide](https://github.com/alexshpunt/pi-agent-ide) - Pi 的统一 Agent 原生 IDE：安全编辑、文本/AST/LSP 搜索、持久终端、交互式调试、视觉检查、诊断、撤销和渐进式能力指南。`pi install npm:pi-agent-ide`
 - 🔥 [@nitra/cursor](https://pi.dev/packages/@nitra/cursor) - CLI 下载 Cursor 规则到本地仓库。`pi install npm:@nitra/cursor`
 - 🔥 [@narumitw/pi-lsp](https://github.com/narumiruna/pi-extensions) - 可配置 LSP 诊断和源码修复，按文件扩展名路由。`pi install npm:@narumitw/pi-lsp`
 - [@ff-labs/pi-fff](https://pi.dev/packages/@ff-labs/pi-fff) - FFF 驱动的模糊文件和内容搜索。`pi install npm:@ff-labs/pi-fff`

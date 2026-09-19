@@ -144,6 +144,7 @@ Security and permission control packages.
 Development tools and code intelligence packages.
 
 - 🔥 [pi-lens](https://github.com/apmantza/pi-lens) - Real-time code feedback — LSP, linters, formatters, type checking, structural analysis. `pi install npm:pi-lens`
+- [pi-agent-ide](https://github.com/alexshpunt/pi-agent-ide) - Unified agent-native IDE for Pi: guarded editing, text/AST/LSP search, persistent terminals, interactive debugging, visual inspection, diagnostics, undo, and progressive capability guides. `pi install npm:pi-agent-ide`
 - 🔥 [@nitra/cursor](https://pi.dev/packages/@nitra/cursor) - CLI to download Cursor rules into local repositories. `pi install npm:@nitra/cursor`
 - 🔥 [@narumitw/pi-lsp](https://github.com/narumiruna/pi-extensions) - Configurable LSP diagnostics and source fixes, routed by file extension. `pi install npm:@narumitw/pi-lsp`
 - [@ff-labs/pi-fff](https://pi.dev/packages/@ff-labs/pi-fff) - FFF-powered fuzzy file and content search. `pi install npm:@ff-labs/pi-fff`
